@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Wed Jan 27 21:14:57 2021
+                                                                                               Wed Jan 27 21:16:18 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -366,17 +366,17 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    352  07AC  2FDA               	goto	l778
    353  07AD                     l764:
    354                           
-   355                           ;newmain.c: 53:                 _delay((unsigned long)((50)*(8000000/4000.0)));
-   356  07AD  3082               	movlw	130
+   355                           ;newmain.c: 53:                 _delay((unsigned long)((40)*(8000000/4000.0)));
+   356  07AD  3068               	movlw	104
    357  07AE  00F7               	movwf	??_main+1
-   358  07AF  30DD               	movlw	221
+   358  07AF  30E4               	movlw	228
    359  07B0  00F6               	movwf	??_main
    360  07B1                     u217:
    361  07B1  0BF6               	decfsz	??_main,f
    362  07B2  2FB1               	goto	u217
    363  07B3  0BF7               	decfsz	??_main+1,f
    364  07B4  2FB1               	goto	u217
-   365  07B5  2FB6               	nop2
+   365  07B5  0000               	nop
    366  07B6                     l766:
    367                           
    368                           ;newmain.c: 54:                 if (PORTBbits.RB0 == 1){
@@ -1118,7 +1118,7 @@ DATA                 0      0       8      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Wed Jan 27 21:14:57 2021
+Symbol Table                                                                                   Wed Jan 27 21:16:18 2021
 
                      l46 07F5                       l54 07F5                       l80 0709  
                      l57 06EB                       l67 074F                       l77 0795  

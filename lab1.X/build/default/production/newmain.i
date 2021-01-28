@@ -2533,7 +2533,7 @@ void main(void) {
         semaforo();
         if(PORTDbits.RD2 == 1){
             while (cont < 8 && cont2 < 8) {
-                _delay((unsigned long)((50)*(8000000/4000.0)));
+                _delay((unsigned long)((40)*(8000000/4000.0)));
                 if (PORTBbits.RB0 == 1){
                     cont = cont+1;
                  }
