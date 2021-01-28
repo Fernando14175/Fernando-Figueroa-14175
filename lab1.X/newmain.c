@@ -27,7 +27,6 @@
 
 #include <xc.h>
 #include "PIC16F887.h"
-#include <string.h>
 #define _XTAL_FREQ 8000000
 
 //definimos las variables y les damos un valor inicial
@@ -149,7 +148,7 @@ void main(void) {
         __delay_ms(50);
         PORTDbits.RD0 = 0; //ponemos el puerto en 0
         PORTDbits.RD1 = 1; //ponemos el siguiente puerto en 1 
-         __delay_ms(40);
+         __delay_ms(50);
         PORTDbits.RD1 = 0;//ponemos el puerto en 0
         PORTDbits.RD2 = 1;//ponemos el siguiente puerto en 0
          

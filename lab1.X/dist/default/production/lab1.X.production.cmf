@@ -21,7 +21,7 @@ maintext CODE 0 796 796 62 2
 cstackCOMMON COMMON 1 74 74 4 1
 bssCOMMON COMMON 1 70 70 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+$C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -70,82 +70,82 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\lab1.X.production.o
-7F8 cinit CODE >455:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7F8 cinit CODE >458:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7F8 cinit CODE >472:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7F9 cinit CODE >473:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7FA cinit CODE >474:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7FB cinit CODE >475:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7FC cinit CODE >481:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7FC cinit CODE >483:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-7FD cinit CODE >484:C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.s
-6D9 text4 CODE >71:C:\digital\lab1.X\newmain.c
-6D9 text4 CODE >73:C:\digital\lab1.X\newmain.c
-6DC text4 CODE >74:C:\digital\lab1.X\newmain.c
-6DD text4 CODE >76:C:\digital\lab1.X\newmain.c
-6E0 text4 CODE >77:C:\digital\lab1.X\newmain.c
-6E2 text4 CODE >78:C:\digital\lab1.X\newmain.c
-6E4 text4 CODE >79:C:\digital\lab1.X\newmain.c
-6E6 text4 CODE >81:C:\digital\lab1.X\newmain.c
-6E9 text4 CODE >82:C:\digital\lab1.X\newmain.c
-6EA text4 CODE >83:C:\digital\lab1.X\newmain.c
-6EB text4 CODE >87:C:\digital\lab1.X\newmain.c
-70A text3 CODE >90:C:\digital\lab1.X\newmain.c
-70A text3 CODE >92:C:\digital\lab1.X\newmain.c
-710 text3 CODE >93:C:\digital\lab1.X\newmain.c
-713 text3 CODE >95:C:\digital\lab1.X\newmain.c
-71A text3 CODE >96:C:\digital\lab1.X\newmain.c
-71D text3 CODE >98:C:\digital\lab1.X\newmain.c
-724 text3 CODE >99:C:\digital\lab1.X\newmain.c
-727 text3 CODE >101:C:\digital\lab1.X\newmain.c
-72E text3 CODE >102:C:\digital\lab1.X\newmain.c
-731 text3 CODE >104:C:\digital\lab1.X\newmain.c
-738 text3 CODE >105:C:\digital\lab1.X\newmain.c
-73B text3 CODE >108:C:\digital\lab1.X\newmain.c
-742 text3 CODE >109:C:\digital\lab1.X\newmain.c
-745 text3 CODE >111:C:\digital\lab1.X\newmain.c
-74C text3 CODE >112:C:\digital\lab1.X\newmain.c
-74F text3 CODE >115:C:\digital\lab1.X\newmain.c
-750 text2 CODE >118:C:\digital\lab1.X\newmain.c
-750 text2 CODE >119:C:\digital\lab1.X\newmain.c
-756 text2 CODE >120:C:\digital\lab1.X\newmain.c
-759 text2 CODE >122:C:\digital\lab1.X\newmain.c
-760 text2 CODE >123:C:\digital\lab1.X\newmain.c
-763 text2 CODE >125:C:\digital\lab1.X\newmain.c
-76A text2 CODE >126:C:\digital\lab1.X\newmain.c
-76D text2 CODE >128:C:\digital\lab1.X\newmain.c
-774 text2 CODE >129:C:\digital\lab1.X\newmain.c
-777 text2 CODE >131:C:\digital\lab1.X\newmain.c
-77E text2 CODE >132:C:\digital\lab1.X\newmain.c
-781 text2 CODE >134:C:\digital\lab1.X\newmain.c
-788 text2 CODE >135:C:\digital\lab1.X\newmain.c
-78B text2 CODE >137:C:\digital\lab1.X\newmain.c
-792 text2 CODE >138:C:\digital\lab1.X\newmain.c
-795 text2 CODE >141:C:\digital\lab1.X\newmain.c
-6EC text1 CODE >146:C:\digital\lab1.X\newmain.c
-6EC text1 CODE >148:C:\digital\lab1.X\newmain.c
-6EF text1 CODE >149:C:\digital\lab1.X\newmain.c
-6F8 text1 CODE >150:C:\digital\lab1.X\newmain.c
-6FB text1 CODE >151:C:\digital\lab1.X\newmain.c
-6FC text1 CODE >152:C:\digital\lab1.X\newmain.c
-705 text1 CODE >153:C:\digital\lab1.X\newmain.c
-708 text1 CODE >154:C:\digital\lab1.X\newmain.c
-709 text1 CODE >158:C:\digital\lab1.X\newmain.c
-796 maintext CODE >45:C:\digital\lab1.X\newmain.c
-796 maintext CODE >47:C:\digital\lab1.X\newmain.c
-79B maintext CODE >50:C:\digital\lab1.X\newmain.c
-7A1 maintext CODE >51:C:\digital\lab1.X\newmain.c
-7A6 maintext CODE >52:C:\digital\lab1.X\newmain.c
-7AD maintext CODE >54:C:\digital\lab1.X\newmain.c
-7B6 maintext CODE >55:C:\digital\lab1.X\newmain.c
-7BC maintext CODE >56:C:\digital\lab1.X\newmain.c
-7C4 maintext CODE >58:C:\digital\lab1.X\newmain.c
-7C8 maintext CODE >59:C:\digital\lab1.X\newmain.c
-7D0 maintext CODE >61:C:\digital\lab1.X\newmain.c
-7D5 maintext CODE >62:C:\digital\lab1.X\newmain.c
-7DA maintext CODE >53:C:\digital\lab1.X\newmain.c
-7F5 maintext CODE >64:C:\digital\lab1.X\newmain.c
-7F5 maintext CODE >68:C:\digital\lab1.X\newmain.c
+7F8 cinit CODE >455:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7F8 cinit CODE >458:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7F8 cinit CODE >472:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7F9 cinit CODE >473:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7FA cinit CODE >474:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7FB cinit CODE >475:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7FC cinit CODE >481:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7FC cinit CODE >483:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+7FD cinit CODE >484:C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.s
+6D9 text4 CODE >70:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6D9 text4 CODE >72:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6DC text4 CODE >73:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6DD text4 CODE >75:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6E0 text4 CODE >76:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6E2 text4 CODE >77:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6E4 text4 CODE >78:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6E6 text4 CODE >80:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6E9 text4 CODE >81:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6EA text4 CODE >82:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6EB text4 CODE >86:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+70A text3 CODE >89:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+70A text3 CODE >91:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+710 text3 CODE >92:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+713 text3 CODE >94:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+71A text3 CODE >95:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+71D text3 CODE >97:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+724 text3 CODE >98:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+727 text3 CODE >100:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+72E text3 CODE >101:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+731 text3 CODE >103:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+738 text3 CODE >104:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+73B text3 CODE >107:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+742 text3 CODE >108:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+745 text3 CODE >110:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+74C text3 CODE >111:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+74F text3 CODE >114:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+750 text2 CODE >117:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+750 text2 CODE >118:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+756 text2 CODE >119:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+759 text2 CODE >121:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+760 text2 CODE >122:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+763 text2 CODE >124:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+76A text2 CODE >125:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+76D text2 CODE >127:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+774 text2 CODE >128:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+777 text2 CODE >130:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+77E text2 CODE >131:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+781 text2 CODE >133:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+788 text2 CODE >134:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+78B text2 CODE >136:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+792 text2 CODE >137:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+795 text2 CODE >140:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6EC text1 CODE >145:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6EC text1 CODE >147:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6EF text1 CODE >148:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6F8 text1 CODE >149:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6FB text1 CODE >150:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+6FC text1 CODE >151:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+705 text1 CODE >152:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+708 text1 CODE >153:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+709 text1 CODE >157:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+796 maintext CODE >44:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+796 maintext CODE >46:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+79B maintext CODE >49:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7A1 maintext CODE >50:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7A6 maintext CODE >51:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7AD maintext CODE >53:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7B6 maintext CODE >54:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7BC maintext CODE >55:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7C4 maintext CODE >57:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7C8 maintext CODE >58:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7D0 maintext CODE >60:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7D5 maintext CODE >61:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7DA maintext CODE >52:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7F5 maintext CODE >63:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
+7F5 maintext CODE >67:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -168,20 +168,20 @@ __size_of_jugador1 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __size_of_jugador2 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 _cont 72 0 COMMON 1 bssCOMMON dist/default/production\lab1.X.production.o
 _main F2C 0 CODE 0 maintext dist/default/production\lab1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\lab1.X.production.o
-start 0 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+start 0 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 __size_of_main 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _jugador1 E14 0 CODE 0 text3 dist/default/production\lab1.X.production.o
 _jugador2 EA0 0 CODE 0 text2 dist/default/production\lab1.X.production.o
@@ -193,10 +193,10 @@ __end_of_jugador2 F2C 0 CODE 0 text2 dist/default/production\lab1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\lab1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_config DD8 0 CODE 0 text4 dist/default/production\lab1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
-___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
+___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 start_initialization FF0 0 CODE 0 cinit dist/default/production\lab1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -239,7 +239,7 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _config DB2 0 CODE 0 text4 dist/default/production\lab1.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\s4u4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\s7f4.o
 __size_of_semaforo 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __size_of_config 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __pmaintext F2C 0 CODE 0 maintext dist/default/production\lab1.X.production.o

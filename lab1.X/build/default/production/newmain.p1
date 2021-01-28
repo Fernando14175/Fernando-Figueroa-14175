@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"40 newmain.c
-[; ;newmain.c: 40: void config (void);
+"39 newmain.c
+[; ;newmain.c: 39: void config (void);
 [v _config `(v ~T0 @X0 0 ef ]
 "420 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -11,8 +11,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S13 . . ]
 "427
 [v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
-"39 newmain.c
-[; ;newmain.c: 39: void semaforo (void);
+"38 newmain.c
+[; ;newmain.c: 38: void semaforo (void);
 [v _semaforo `(v ~T0 @X0 0 ef ]
 "358 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
 [s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -42,11 +42,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S9 . . ]
 "307
 [v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
-"42 newmain.c
-[; ;newmain.c: 42: void jugador2 (void);
+"41 newmain.c
+[; ;newmain.c: 41: void jugador2 (void);
 [v _jugador2 `(v ~T0 @X0 0 ef ]
-"41
-[; ;newmain.c: 41: void jugador1 (void);
+"40
+[; ;newmain.c: 40: void jugador1 (void);
 [v _jugador1 `(v ~T0 @X0 0 ef ]
 "3449 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
@@ -246,334 +246,334 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3546
 [; <" EECON2 equ 018Dh ;# ">
-"34 newmain.c
-[; ;newmain.c: 34: int cont = 0;
+"33 newmain.c
+[; ;newmain.c: 33: int cont = 0;
 [v _cont `i ~T0 @X0 1 e ]
 [i _cont
 -> 0 `i
 ]
-"35
-[; ;newmain.c: 35: int cont2 = 0;
+"34
+[; ;newmain.c: 34: int cont2 = 0;
 [v _cont2 `i ~T0 @X0 1 e ]
 [i _cont2
 -> 0 `i
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"45
-[; ;newmain.c: 45: void main(void) {
+"44
+[; ;newmain.c: 44: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"47
-[; ;newmain.c: 47:     config();
+"46
+[; ;newmain.c: 46:     config();
 [e ( _config ..  ]
-"50
-[; ;newmain.c: 50:     if (PORTEbits.RE0 == 1){
+"49
+[; ;newmain.c: 49:     if (PORTEbits.RE0 == 1){
 [e $ ! == -> . . _PORTEbits 0 0 `i -> 1 `i 139  ]
 {
-"51
-[; ;newmain.c: 51:         semaforo();
+"50
+[; ;newmain.c: 50:         semaforo();
 [e ( _semaforo ..  ]
-"52
-[; ;newmain.c: 52:         if(PORTDbits.RD2 == 1){
+"51
+[; ;newmain.c: 51:         if(PORTDbits.RD2 == 1){
 [e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 140  ]
 {
-"53
-[; ;newmain.c: 53:             while (cont < 8 && cont2 < 8) {
+"52
+[; ;newmain.c: 52:             while (cont < 8 && cont2 < 8) {
 [e $U 141  ]
 [e :U 142 ]
 {
-"54
-[; ;newmain.c: 54:                 _delay((unsigned long)((50)*(8000000/4000.0)));
+"53
+[; ;newmain.c: 53:                 _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"55
-[; ;newmain.c: 55:                 if (PORTBbits.RB0 == 1){
+"54
+[; ;newmain.c: 54:                 if (PORTBbits.RB0 == 1){
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 144  ]
 {
-"56
-[; ;newmain.c: 56:                     cont = cont+1;
+"55
+[; ;newmain.c: 55:                     cont = cont+1;
 [e = _cont + _cont -> 1 `i ]
-"57
-[; ;newmain.c: 57:                  }
+"56
+[; ;newmain.c: 56:                  }
 }
 [e :U 144 ]
-"58
-[; ;newmain.c: 58:                 if (PORTCbits.RC0 == 1){
+"57
+[; ;newmain.c: 57:                 if (PORTCbits.RC0 == 1){
 [e $ ! == -> . . _PORTCbits 0 0 `i -> 1 `i 145  ]
 {
-"59
-[; ;newmain.c: 59:                     cont2 = cont2+1;
+"58
+[; ;newmain.c: 58:                     cont2 = cont2+1;
 [e = _cont2 + _cont2 -> 1 `i ]
-"60
-[; ;newmain.c: 60:                  }
+"59
+[; ;newmain.c: 59:                  }
 }
 [e :U 145 ]
-"61
-[; ;newmain.c: 61:             jugador2();
+"60
+[; ;newmain.c: 60:             jugador2();
 [e ( _jugador2 ..  ]
-"62
-[; ;newmain.c: 62:             jugador1();
+"61
+[; ;newmain.c: 61:             jugador1();
 [e ( _jugador1 ..  ]
-"63
-[; ;newmain.c: 63:              }
+"62
+[; ;newmain.c: 62:              }
 }
 [e :U 141 ]
-"53
-[; ;newmain.c: 53:             while (cont < 8 && cont2 < 8) {
+"52
+[; ;newmain.c: 52:             while (cont < 8 && cont2 < 8) {
 [e $ && < _cont -> 8 `i < _cont2 -> 8 `i 142  ]
 [e :U 143 ]
-"64
-[; ;newmain.c: 64:         }
+"63
+[; ;newmain.c: 63:         }
 }
 [e :U 140 ]
-"66
-[; ;newmain.c: 66:     }
+"65
+[; ;newmain.c: 65:     }
 }
 [e :U 139 ]
-"68
-[; ;newmain.c: 68: }
+"67
+[; ;newmain.c: 67: }
 [e :UE 138 ]
 }
-"71
-[; ;newmain.c: 71:     void config (void) {
+"70
+[; ;newmain.c: 70:     void config (void) {
 [v _config `(v ~T0 @X0 1 ef ]
 {
 [e :U _config ]
 [f ]
-"73
-[; ;newmain.c: 73:         ANSELH = 0b0000000;
+"72
+[; ;newmain.c: 72:         ANSELH = 0b0000000;
 [e = _ANSELH -> -> 0 `i `uc ]
-"74
-[; ;newmain.c: 74:         ANSEL = 0b0000000;
+"73
+[; ;newmain.c: 73:         ANSEL = 0b0000000;
 [e = _ANSEL -> -> 0 `i `uc ]
-"76
-[; ;newmain.c: 76:         TRISD = 0b00000000;
+"75
+[; ;newmain.c: 75:         TRISD = 0b00000000;
 [e = _TRISD -> -> 0 `i `uc ]
-"77
-[; ;newmain.c: 77:         TRISB = 0b00000001;
+"76
+[; ;newmain.c: 76:         TRISB = 0b00000001;
 [e = _TRISB -> -> 1 `i `uc ]
-"78
-[; ;newmain.c: 78:         TRISC = 0b00000001;
+"77
+[; ;newmain.c: 77:         TRISC = 0b00000001;
 [e = _TRISC -> -> 1 `i `uc ]
-"79
-[; ;newmain.c: 79:         TRISE = 0b001;
+"78
+[; ;newmain.c: 78:         TRISE = 0b001;
 [e = _TRISE -> -> 1 `i `uc ]
-"81
-[; ;newmain.c: 81:         PORTB = 0b00000000;
+"80
+[; ;newmain.c: 80:         PORTB = 0b00000000;
 [e = _PORTB -> -> 0 `i `uc ]
-"82
-[; ;newmain.c: 82:         PORTC = 0b00000000;
+"81
+[; ;newmain.c: 81:         PORTC = 0b00000000;
 [e = _PORTC -> -> 0 `i `uc ]
-"83
-[; ;newmain.c: 83:         PORTD = 0b00000000;
+"82
+[; ;newmain.c: 82:         PORTD = 0b00000000;
 [e = _PORTD -> -> 0 `i `uc ]
-"87
-[; ;newmain.c: 87:     }
+"86
+[; ;newmain.c: 86:     }
 [e :UE 146 ]
 }
-"90
-[; ;newmain.c: 90:     void jugador1 (void){
+"89
+[; ;newmain.c: 89:     void jugador1 (void){
 [v _jugador1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _jugador1 ]
 [f ]
-"92
-[; ;newmain.c: 92:             if (cont2 == 1){
+"91
+[; ;newmain.c: 91:             if (cont2 == 1){
 [e $ ! == _cont2 -> 1 `i 148  ]
 {
-"93
-[; ;newmain.c: 93:                 PORTCbits.RC1 = 1;
+"92
+[; ;newmain.c: 92:                 PORTCbits.RC1 = 1;
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"94
-[; ;newmain.c: 94:             }
+"93
+[; ;newmain.c: 93:             }
 }
 [e :U 148 ]
-"95
-[; ;newmain.c: 95:             if (cont2 == 2){
+"94
+[; ;newmain.c: 94:             if (cont2 == 2){
 [e $ ! == _cont2 -> 2 `i 149  ]
 {
-"96
-[; ;newmain.c: 96:                 PORTCbits.RC2 = 1;
+"95
+[; ;newmain.c: 95:                 PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"97
-[; ;newmain.c: 97:             }
+"96
+[; ;newmain.c: 96:             }
 }
 [e :U 149 ]
-"98
-[; ;newmain.c: 98:            if (cont2 == 3){
+"97
+[; ;newmain.c: 97:            if (cont2 == 3){
 [e $ ! == _cont2 -> 3 `i 150  ]
 {
-"99
-[; ;newmain.c: 99:                 PORTCbits.RC3 = 1;
+"98
+[; ;newmain.c: 98:                 PORTCbits.RC3 = 1;
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-"100
-[; ;newmain.c: 100:            }
+"99
+[; ;newmain.c: 99:            }
 }
 [e :U 150 ]
-"101
-[; ;newmain.c: 101:            if (cont2 == 4){
+"100
+[; ;newmain.c: 100:            if (cont2 == 4){
 [e $ ! == _cont2 -> 4 `i 151  ]
 {
-"102
-[; ;newmain.c: 102:                 PORTCbits.RC4 = 1;
+"101
+[; ;newmain.c: 101:                 PORTCbits.RC4 = 1;
 [e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"103
-[; ;newmain.c: 103:             }
+"102
+[; ;newmain.c: 102:             }
 }
 [e :U 151 ]
-"104
-[; ;newmain.c: 104:            if (cont2 == 5){
+"103
+[; ;newmain.c: 103:            if (cont2 == 5){
 [e $ ! == _cont2 -> 5 `i 152  ]
 {
-"105
-[; ;newmain.c: 105:                 PORTCbits.RC5 = 1;
+"104
+[; ;newmain.c: 104:                 PORTCbits.RC5 = 1;
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-"106
-[; ;newmain.c: 106:             }
+"105
+[; ;newmain.c: 105:             }
 }
 [e :U 152 ]
-"108
-[; ;newmain.c: 108:             if (cont2 == 6){
+"107
+[; ;newmain.c: 107:             if (cont2 == 6){
 [e $ ! == _cont2 -> 6 `i 153  ]
 {
-"109
-[; ;newmain.c: 109:                 PORTCbits.RC6 = 1;
+"108
+[; ;newmain.c: 108:                 PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"110
-[; ;newmain.c: 110:             }
+"109
+[; ;newmain.c: 109:             }
 }
 [e :U 153 ]
-"111
-[; ;newmain.c: 111:             if (cont2 == 7){
+"110
+[; ;newmain.c: 110:             if (cont2 == 7){
 [e $ ! == _cont2 -> 7 `i 154  ]
 {
-"112
-[; ;newmain.c: 112:                 PORTCbits.RC7 = 1;
+"111
+[; ;newmain.c: 111:                 PORTCbits.RC7 = 1;
 [e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
-"113
-[; ;newmain.c: 113:             }
+"112
+[; ;newmain.c: 112:             }
 }
 [e :U 154 ]
-"115
-[; ;newmain.c: 115:         }
+"114
+[; ;newmain.c: 114:         }
 [e :UE 147 ]
 }
-"118
-[; ;newmain.c: 118:     void jugador2 (void){
+"117
+[; ;newmain.c: 117:     void jugador2 (void){
 [v _jugador2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _jugador2 ]
 [f ]
-"119
-[; ;newmain.c: 119:             if (cont == 1){
+"118
+[; ;newmain.c: 118:             if (cont == 1){
 [e $ ! == _cont -> 1 `i 156  ]
 {
-"120
-[; ;newmain.c: 120:                 PORTBbits.RB1 = 1;
+"119
+[; ;newmain.c: 119:                 PORTBbits.RB1 = 1;
 [e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"121
-[; ;newmain.c: 121:             }
+"120
+[; ;newmain.c: 120:             }
 }
 [e :U 156 ]
-"122
-[; ;newmain.c: 122:             if (cont == 2){
+"121
+[; ;newmain.c: 121:             if (cont == 2){
 [e $ ! == _cont -> 2 `i 157  ]
 {
-"123
-[; ;newmain.c: 123:                 PORTBbits.RB2 = 1;
+"122
+[; ;newmain.c: 122:                 PORTBbits.RB2 = 1;
 [e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
-"124
-[; ;newmain.c: 124:             }
+"123
+[; ;newmain.c: 123:             }
 }
 [e :U 157 ]
-"125
-[; ;newmain.c: 125:            if (cont == 3){
+"124
+[; ;newmain.c: 124:            if (cont == 3){
 [e $ ! == _cont -> 3 `i 158  ]
 {
-"126
-[; ;newmain.c: 126:                 PORTBbits.RB3 = 1;
+"125
+[; ;newmain.c: 125:                 PORTBbits.RB3 = 1;
 [e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
-"127
-[; ;newmain.c: 127:             }
+"126
+[; ;newmain.c: 126:             }
 }
 [e :U 158 ]
-"128
-[; ;newmain.c: 128:            if (cont == 4){
+"127
+[; ;newmain.c: 127:            if (cont == 4){
 [e $ ! == _cont -> 4 `i 159  ]
 {
-"129
-[; ;newmain.c: 129:                 PORTBbits.RB4 = 1;
+"128
+[; ;newmain.c: 128:                 PORTBbits.RB4 = 1;
 [e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
-"130
-[; ;newmain.c: 130:             }
+"129
+[; ;newmain.c: 129:             }
 }
 [e :U 159 ]
-"131
-[; ;newmain.c: 131:            if (cont == 5){
+"130
+[; ;newmain.c: 130:            if (cont == 5){
 [e $ ! == _cont -> 5 `i 160  ]
 {
-"132
-[; ;newmain.c: 132:                 PORTBbits.RB5 = 1;
+"131
+[; ;newmain.c: 131:                 PORTBbits.RB5 = 1;
 [e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-"133
-[; ;newmain.c: 133:             }
+"132
+[; ;newmain.c: 132:             }
 }
 [e :U 160 ]
-"134
-[; ;newmain.c: 134:             if (cont == 6){
+"133
+[; ;newmain.c: 133:             if (cont == 6){
 [e $ ! == _cont -> 6 `i 161  ]
 {
-"135
-[; ;newmain.c: 135:                 PORTBbits.RB6 = 1;
+"134
+[; ;newmain.c: 134:                 PORTBbits.RB6 = 1;
 [e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-"136
-[; ;newmain.c: 136:             }
+"135
+[; ;newmain.c: 135:             }
 }
 [e :U 161 ]
-"137
-[; ;newmain.c: 137:             if (cont == 7){
+"136
+[; ;newmain.c: 136:             if (cont == 7){
 [e $ ! == _cont -> 7 `i 162  ]
 {
-"138
-[; ;newmain.c: 138:                 PORTBbits.RB7 = 1;
+"137
+[; ;newmain.c: 137:                 PORTBbits.RB7 = 1;
 [e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-"139
-[; ;newmain.c: 139:             }
+"138
+[; ;newmain.c: 138:             }
 }
 [e :U 162 ]
-"141
-[; ;newmain.c: 141:         }
+"140
+[; ;newmain.c: 140:         }
 [e :UE 155 ]
 }
-"146
-[; ;newmain.c: 146:  void semaforo (void){
+"145
+[; ;newmain.c: 145:  void semaforo (void){
 [v _semaforo `(v ~T0 @X0 1 ef ]
 {
 [e :U _semaforo ]
 [f ]
-"148
-[; ;newmain.c: 148:         PORTDbits.RD0 = 1;
+"147
+[; ;newmain.c: 147:         PORTDbits.RD0 = 1;
 [e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-"149
-[; ;newmain.c: 149:         _delay((unsigned long)((50)*(8000000/4000.0)));
+"148
+[; ;newmain.c: 148:         _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"150
-[; ;newmain.c: 150:         PORTDbits.RD0 = 0;
+"149
+[; ;newmain.c: 149:         PORTDbits.RD0 = 0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"151
-[; ;newmain.c: 151:         PORTDbits.RD1 = 1;
+"150
+[; ;newmain.c: 150:         PORTDbits.RD1 = 1;
 [e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"151
+[; ;newmain.c: 151:          _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "152
-[; ;newmain.c: 152:          _delay((unsigned long)((40)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"153
-[; ;newmain.c: 153:         PORTDbits.RD1 = 0;
+[; ;newmain.c: 152:         PORTDbits.RD1 = 0;
 [e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
-"154
-[; ;newmain.c: 154:         PORTDbits.RD2 = 1;
+"153
+[; ;newmain.c: 153:         PORTDbits.RD2 = 1;
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-"158
-[; ;newmain.c: 158:  }
+"157
+[; ;newmain.c: 157:  }
 [e :UE 163 ]
 }
