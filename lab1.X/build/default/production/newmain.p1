@@ -1,0 +1,579 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"40 newmain.c
+[; ;newmain.c: 40: void config (void);
+[v _config `(v ~T0 @X0 0 ef ]
+"420 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . RE0 RE1 RE2 RE3 ]
+"419
+[u S13 `S14 1 ]
+[n S13 . . ]
+"427
+[v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
+"39 newmain.c
+[; ;newmain.c: 39: void semaforo (void);
+[v _semaforo `(v ~T0 @X0 0 ef ]
+"358 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[u S11 `S12 1 ]
+[n S11 . . ]
+"369
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"234 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"233
+[u S7 `S8 1 ]
+[n S7 . . ]
+"245
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"296
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"295
+[u S9 `S10 1 ]
+[n S9 . . ]
+"307
+[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
+"42 newmain.c
+[; ;newmain.c: 42: void jugador2 (void);
+[v _jugador2 `(v ~T0 @X0 0 ef ]
+"41
+[; ;newmain.c: 41: void jugador1 (void);
+[v _jugador1 `(v ~T0 @X0 0 ef ]
+"3449 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"3387
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"1602
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"1478
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1540
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"1664
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"228
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"290
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"352
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"10 newmain.c
+[p x FOSC  =  XT ]
+"11
+[p x WDTE  =  OFF        ]
+"12
+[p x PWRTE  =  OFF       ]
+"13
+[p x MCLRE  =  OFF       ]
+"14
+[p x CP  =  OFF          ]
+"15
+[p x CPD  =  OFF         ]
+"16
+[p x BOREN  =  OFF       ]
+"17
+[p x IESO  =  OFF        ]
+"18
+[p x FCMEN  =  OFF       ]
+"19
+[p x LVP  =  OFF         ]
+"22
+[p x BOR4V  =  BOR40V    ]
+"23
+[p x WRT  =  OFF         ]
+"54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"230
+[; <" PORTB equ 06h ;# ">
+"292
+[; <" PORTC equ 07h ;# ">
+"354
+[; <" PORTD equ 08h ;# ">
+"416
+[; <" PORTE equ 09h ;# ">
+"454
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; <" T1CON equ 010h ;# ">
+"767
+[; <" TMR2 equ 011h ;# ">
+"774
+[; <" T2CON equ 012h ;# ">
+"845
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; <" SSPCON equ 014h ;# ">
+"922
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; <" TXREG equ 019h ;# ">
+"1142
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; <" TRISA equ 085h ;# ">
+"1480
+[; <" TRISB equ 086h ;# ">
+"1542
+[; <" TRISC equ 087h ;# ">
+"1604
+[; <" TRISD equ 088h ;# ">
+"1666
+[; <" TRISE equ 089h ;# ">
+"1704
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; <" PR2 equ 092h ;# ">
+"2050
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; <" MSK equ 093h ;# ">
+"2179
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; <" WPUB equ 095h ;# ">
+"2418
+[; <" IOCB equ 096h ;# ">
+"2488
+[; <" VRCON equ 097h ;# ">
+"2558
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; <" EECON2 equ 018Dh ;# ">
+"34 newmain.c
+[; ;newmain.c: 34: int cont = 0;
+[v _cont `i ~T0 @X0 1 e ]
+[i _cont
+-> 0 `i
+]
+"35
+[; ;newmain.c: 35: int cont2 = 0;
+[v _cont2 `i ~T0 @X0 1 e ]
+[i _cont2
+-> 0 `i
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"45
+[; ;newmain.c: 45: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"47
+[; ;newmain.c: 47:     config();
+[e ( _config ..  ]
+"50
+[; ;newmain.c: 50:     if (PORTEbits.RE0 == 1){
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 1 `i 139  ]
+{
+"51
+[; ;newmain.c: 51:         semaforo();
+[e ( _semaforo ..  ]
+"52
+[; ;newmain.c: 52:         if(PORTDbits.RD2 == 1){
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 140  ]
+{
+"53
+[; ;newmain.c: 53:             while (cont < 8 && cont2 < 8) {
+[e $U 141  ]
+[e :U 142 ]
+{
+"54
+[; ;newmain.c: 54:                 _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"55
+[; ;newmain.c: 55:                 if (PORTBbits.RB0 == 1){
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 144  ]
+{
+"56
+[; ;newmain.c: 56:                     cont = cont+1;
+[e = _cont + _cont -> 1 `i ]
+"57
+[; ;newmain.c: 57:                  }
+}
+[e :U 144 ]
+"58
+[; ;newmain.c: 58:                 if (PORTCbits.RC0 == 1){
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 1 `i 145  ]
+{
+"59
+[; ;newmain.c: 59:                     cont2 = cont2+1;
+[e = _cont2 + _cont2 -> 1 `i ]
+"60
+[; ;newmain.c: 60:                  }
+}
+[e :U 145 ]
+"61
+[; ;newmain.c: 61:             jugador2();
+[e ( _jugador2 ..  ]
+"62
+[; ;newmain.c: 62:             jugador1();
+[e ( _jugador1 ..  ]
+"63
+[; ;newmain.c: 63:              }
+}
+[e :U 141 ]
+"53
+[; ;newmain.c: 53:             while (cont < 8 && cont2 < 8) {
+[e $ && < _cont -> 8 `i < _cont2 -> 8 `i 142  ]
+[e :U 143 ]
+"64
+[; ;newmain.c: 64:         }
+}
+[e :U 140 ]
+"66
+[; ;newmain.c: 66:     }
+}
+[e :U 139 ]
+"68
+[; ;newmain.c: 68: }
+[e :UE 138 ]
+}
+"71
+[; ;newmain.c: 71:     void config (void) {
+[v _config `(v ~T0 @X0 1 ef ]
+{
+[e :U _config ]
+[f ]
+"73
+[; ;newmain.c: 73:         ANSELH = 0b0000000;
+[e = _ANSELH -> -> 0 `i `uc ]
+"74
+[; ;newmain.c: 74:         ANSEL = 0b0000000;
+[e = _ANSEL -> -> 0 `i `uc ]
+"76
+[; ;newmain.c: 76:         TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+"77
+[; ;newmain.c: 77:         TRISB = 0b00000001;
+[e = _TRISB -> -> 1 `i `uc ]
+"78
+[; ;newmain.c: 78:         TRISC = 0b00000001;
+[e = _TRISC -> -> 1 `i `uc ]
+"79
+[; ;newmain.c: 79:         TRISE = 0b001;
+[e = _TRISE -> -> 1 `i `uc ]
+"81
+[; ;newmain.c: 81:         PORTB = 0b00000000;
+[e = _PORTB -> -> 0 `i `uc ]
+"82
+[; ;newmain.c: 82:         PORTC = 0b00000000;
+[e = _PORTC -> -> 0 `i `uc ]
+"83
+[; ;newmain.c: 83:         PORTD = 0b00000000;
+[e = _PORTD -> -> 0 `i `uc ]
+"87
+[; ;newmain.c: 87:     }
+[e :UE 146 ]
+}
+"90
+[; ;newmain.c: 90:     void jugador1 (void){
+[v _jugador1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _jugador1 ]
+[f ]
+"92
+[; ;newmain.c: 92:             if (cont2 == 1){
+[e $ ! == _cont2 -> 1 `i 148  ]
+{
+"93
+[; ;newmain.c: 93:                 PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"94
+[; ;newmain.c: 94:             }
+}
+[e :U 148 ]
+"95
+[; ;newmain.c: 95:             if (cont2 == 2){
+[e $ ! == _cont2 -> 2 `i 149  ]
+{
+"96
+[; ;newmain.c: 96:                 PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"97
+[; ;newmain.c: 97:             }
+}
+[e :U 149 ]
+"98
+[; ;newmain.c: 98:            if (cont2 == 3){
+[e $ ! == _cont2 -> 3 `i 150  ]
+{
+"99
+[; ;newmain.c: 99:                 PORTCbits.RC3 = 1;
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"100
+[; ;newmain.c: 100:            }
+}
+[e :U 150 ]
+"101
+[; ;newmain.c: 101:            if (cont2 == 4){
+[e $ ! == _cont2 -> 4 `i 151  ]
+{
+"102
+[; ;newmain.c: 102:                 PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"103
+[; ;newmain.c: 103:             }
+}
+[e :U 151 ]
+"104
+[; ;newmain.c: 104:            if (cont2 == 5){
+[e $ ! == _cont2 -> 5 `i 152  ]
+{
+"105
+[; ;newmain.c: 105:                 PORTCbits.RC5 = 1;
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"106
+[; ;newmain.c: 106:             }
+}
+[e :U 152 ]
+"108
+[; ;newmain.c: 108:             if (cont2 == 6){
+[e $ ! == _cont2 -> 6 `i 153  ]
+{
+"109
+[; ;newmain.c: 109:                 PORTCbits.RC6 = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+"110
+[; ;newmain.c: 110:             }
+}
+[e :U 153 ]
+"111
+[; ;newmain.c: 111:             if (cont2 == 7){
+[e $ ! == _cont2 -> 7 `i 154  ]
+{
+"112
+[; ;newmain.c: 112:                 PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"113
+[; ;newmain.c: 113:             }
+}
+[e :U 154 ]
+"115
+[; ;newmain.c: 115:         }
+[e :UE 147 ]
+}
+"118
+[; ;newmain.c: 118:     void jugador2 (void){
+[v _jugador2 `(v ~T0 @X0 1 ef ]
+{
+[e :U _jugador2 ]
+[f ]
+"119
+[; ;newmain.c: 119:             if (cont == 1){
+[e $ ! == _cont -> 1 `i 156  ]
+{
+"120
+[; ;newmain.c: 120:                 PORTBbits.RB1 = 1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"121
+[; ;newmain.c: 121:             }
+}
+[e :U 156 ]
+"122
+[; ;newmain.c: 122:             if (cont == 2){
+[e $ ! == _cont -> 2 `i 157  ]
+{
+"123
+[; ;newmain.c: 123:                 PORTBbits.RB2 = 1;
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+"124
+[; ;newmain.c: 124:             }
+}
+[e :U 157 ]
+"125
+[; ;newmain.c: 125:            if (cont == 3){
+[e $ ! == _cont -> 3 `i 158  ]
+{
+"126
+[; ;newmain.c: 126:                 PORTBbits.RB3 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"127
+[; ;newmain.c: 127:             }
+}
+[e :U 158 ]
+"128
+[; ;newmain.c: 128:            if (cont == 4){
+[e $ ! == _cont -> 4 `i 159  ]
+{
+"129
+[; ;newmain.c: 129:                 PORTBbits.RB4 = 1;
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+"130
+[; ;newmain.c: 130:             }
+}
+[e :U 159 ]
+"131
+[; ;newmain.c: 131:            if (cont == 5){
+[e $ ! == _cont -> 5 `i 160  ]
+{
+"132
+[; ;newmain.c: 132:                 PORTBbits.RB5 = 1;
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+"133
+[; ;newmain.c: 133:             }
+}
+[e :U 160 ]
+"134
+[; ;newmain.c: 134:             if (cont == 6){
+[e $ ! == _cont -> 6 `i 161  ]
+{
+"135
+[; ;newmain.c: 135:                 PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+"136
+[; ;newmain.c: 136:             }
+}
+[e :U 161 ]
+"137
+[; ;newmain.c: 137:             if (cont == 7){
+[e $ ! == _cont -> 7 `i 162  ]
+{
+"138
+[; ;newmain.c: 138:                 PORTBbits.RB7 = 1;
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
+"139
+[; ;newmain.c: 139:             }
+}
+[e :U 162 ]
+"141
+[; ;newmain.c: 141:         }
+[e :UE 155 ]
+}
+"146
+[; ;newmain.c: 146:  void semaforo (void){
+[v _semaforo `(v ~T0 @X0 1 ef ]
+{
+[e :U _semaforo ]
+[f ]
+"148
+[; ;newmain.c: 148:         PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"149
+[; ;newmain.c: 149:         _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"150
+[; ;newmain.c: 150:         PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"151
+[; ;newmain.c: 151:         PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"152
+[; ;newmain.c: 152:          _delay((unsigned long)((40)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"153
+[; ;newmain.c: 153:         PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"154
+[; ;newmain.c: 154:         PORTDbits.RD2 = 1;
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+"158
+[; ;newmain.c: 158:  }
+[e :UE 163 ]
+}
