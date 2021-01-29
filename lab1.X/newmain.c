@@ -50,7 +50,7 @@ void main(void) {
         semaforo();//llamamos a nuestra funcion semaforo
         if(PORTDbits.RD2 == 1){ //revisamos si el semaforo ya se enucentra con el led verde encendido
             while (cont < 8 && cont2 < 8) {    //revisamos que los contadores no hayan llegado al final
-                __delay_ms(40);
+                __delay_ms(25);
                 if (PORTBbits.RB0 == 1){ //revisamos que el boton del jugador1 este presionado
                     cont = cont+1; //aumentamos el contador del jugador 1 
                  }

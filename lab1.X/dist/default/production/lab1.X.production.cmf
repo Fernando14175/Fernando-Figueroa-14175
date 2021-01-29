@@ -21,7 +21,7 @@ maintext CODE 0 796 796 62 2
 cstackCOMMON COMMON 1 74 74 4 1
 bssCOMMON COMMON 1 70 70 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+$C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -70,15 +70,15 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\lab1.X.production.o
-7F8 cinit CODE >455:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7F8 cinit CODE >458:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7F8 cinit CODE >472:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7F9 cinit CODE >473:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7FA cinit CODE >474:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7FB cinit CODE >475:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7FC cinit CODE >481:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7FC cinit CODE >483:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
-7FD cinit CODE >484:C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.s
+7F8 cinit CODE >455:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7F8 cinit CODE >458:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7F8 cinit CODE >472:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7F9 cinit CODE >473:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7FA cinit CODE >474:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7FB cinit CODE >475:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7FC cinit CODE >481:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7FC cinit CODE >483:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
+7FD cinit CODE >484:C:\Users\FERNAN~1\AppData\Local\Temp\scds.s
 6D9 text4 CODE >70:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
 6D9 text4 CODE >72:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
 6DC text4 CODE >73:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab1.X\newmain.c
@@ -168,20 +168,20 @@ __size_of_jugador1 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __size_of_jugador2 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 _cont 72 0 COMMON 1 bssCOMMON dist/default/production\lab1.X.production.o
 _main F2C 0 CODE 0 maintext dist/default/production\lab1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\lab1.X.production.o
-start 0 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+start 0 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 __size_of_main 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _jugador1 E14 0 CODE 0 text3 dist/default/production\lab1.X.production.o
 _jugador2 EA0 0 CODE 0 text2 dist/default/production\lab1.X.production.o
@@ -193,10 +193,10 @@ __end_of_jugador2 F2C 0 CODE 0 text2 dist/default/production\lab1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\lab1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_config DD8 0 CODE 0 text4 dist/default/production\lab1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
-___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
+___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 start_initialization FF0 0 CODE 0 cinit dist/default/production\lab1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -239,7 +239,7 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _config DB2 0 CODE 0 text4 dist/default/production\lab1.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\sdgs.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\scds.o
 __size_of_semaforo 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __size_of_config 0 0 ABS 0 - dist/default/production\lab1.X.production.o
 __pmaintext F2C 0 CODE 0 maintext dist/default/production\lab1.X.production.o
