@@ -2529,21 +2529,22 @@ void main(void) {
      _delay((unsigned long)((30)*(8000000/4000.0)));
      if (PORTBbits.RB0 == 1){
          cont = cont+1;
-                            }
-     if (PORTBbits.RB0 == 1){
+        }
+     if (PORTBbits.RB1 == 1){
          cont = cont-1;
-                            }
+        }
+
      contled();
-
-
-
     }
+     return;
 
-
-
-
-    return;
 }
+
+
+
+
+
+
 
 void config (void){
     ANSEL = 0b00000000;
@@ -2595,7 +2596,7 @@ void config (void){
                 PORTDbits.RD3 = 0;
                 PORTDbits.RD4 = 1;
             }
-            if(cont > 4){
+            if(cont > 4 || cont < 0){
                 cont = 0;
             }
     }
