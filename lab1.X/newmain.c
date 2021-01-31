@@ -45,7 +45,6 @@ void main(void) {
     
     config();//llamamos a la funcion config 
     
-    
     if (PORTEbits.RE0 == 1){ //revisamos si el boton del semaforo esta presionado
         semaforo();//llamamos a nuestra funcion semaforo
         if(PORTDbits.RD2 == 1){ //revisamos si el semaforo ya se enucentra con el led verde encendido
@@ -59,7 +58,8 @@ void main(void) {
                  }
             jugador2();//llamamos a la funcion jugador2
             jugador1();//llamamos a la funcion jugador1
-             }   
+            }   
+        
         }
     
     }       
@@ -80,9 +80,6 @@ void main(void) {
         PORTB = 0b00000000; //ponemos los puertos en 0 
         PORTC = 0b00000000; //ponemos los puertos en 0 
         PORTD = 0b00000000; //ponemos los puertos en 0 
-   
-        
-    
     }
  
     
@@ -96,7 +93,7 @@ void main(void) {
             }
            if (cont2 == 3){ //revisamos el valor del contador 
                 PORTCbits.RC3 = 1; //encendemos el primer led si el contador es 3          
-           }
+            }
            if (cont2 == 4){ //revisamos el valor del contador 
                 PORTCbits.RC4 = 1; //encendemos el primer led si el contador es 4          
             }
@@ -105,13 +102,13 @@ void main(void) {
             }
             
             if (cont2 == 6){ //revisamos el valor del contador               
-                PORTCbits.RC6 = 1; //encendemos el primer led si el contador es 6           
+                PORTCbits.RC6 = 1; //encendemos el primer led si el contador es 6               
             }
             if (cont2 == 7){ //revisamos el valor del contador              
                 PORTCbits.RC7 = 1; //encendemos el primer led si el contador es 7              
-            }
+            }   
             
-        }
+    }
     
     
     void jugador2 (void){ //creamos la funcion jugador 2 
@@ -137,7 +134,7 @@ void main(void) {
                 PORTBbits.RB7 = 1; //encendemos el primer led si el contador es 7            
             }
             
-        }
+    }
     
     
     
