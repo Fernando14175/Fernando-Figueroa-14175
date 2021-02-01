@@ -42,37 +42,40 @@ void main(void) {
     
     config();
     
-    while(cont < 5){
+    while(cont < 21){
      __delay_ms(30);
-     if (PORTBbits.RB0 == 1){ 
+     if (PORTAbits.RA0 == 1){ 
          cont = cont+1; 
         }
-     if (PORTBbits.RB1 == 1){ 
+     if (PORTAbits.RA1 == 1){ 
          cont = cont-1; 
         }
-     
+     if (cont > 7){
+         PORTEbits.RE2 = 1;
+        }
+     else {
+         PORTEbits.RE2 = 0;
+     }
      contled();
     }
      return;  
                 
 }
-    
-    
-   
-    
-    
-
+ 
 
 void config (void){
     ANSEL = 0b00000000;
     ANSELH = 0b00000000;
 
-    TRISB = 0b00000011;
+    TRISA = 0b00000011;
+    TRISB = 0b00000000;
     TRISC = 0b00000000;
     TRISD = 0b00000000;
+    TRISE = 0b000;
     
-    PORTC = 0b00000000;
     PORTD = 0b00000000;
+    PORTC = 0b00000000;
+    PORTE = 0b011;
 }
 
 
@@ -80,40 +83,140 @@ void config (void){
         
             if (cont == 0){ //revisamos el valor del contador 
                 PORTDbits.RD0 = 1; //encendemos el primer led si el contador es 1 
-                PORTDbits.RD1 = 0;
-                PORTDbits.RD2 = 0;
-                PORTDbits.RD3 = 0;
-                PORTDbits.RD4 = 0;
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b0111111;
+                
             }
             if (cont == 1){  //revisamos el valor del contador 
-                PORTDbits.RD0 = 0; //encendemos el primer led si el contador es 1 
-                PORTDbits.RD1 = 1;
-                PORTDbits.RD2 = 0;
-                PORTDbits.RD3 = 0;
-                PORTDbits.RD4 = 0; 
+                PORTDbits.RD1 = 1; //encendemos el primer led si el contador es 1 
+                PORTDbits.RD0 = 0;
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b0000110;
+               
             }
            if (cont == 2){ //revisamos el valor del contador 
-                PORTDbits.RD0 = 0; //encendemos el primer led si el contador es 1 
-                PORTDbits.RD1 = 0;
+                PORTDbits.RD1 = 0; //encendemos el primer led si el contador es 1 
                 PORTDbits.RD2 = 1;
-                PORTDbits.RD3 = 0;
-                PORTDbits.RD4 = 0;         
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1011011;
+                
+                
             }
-           if (cont == 3){ //revisamos el valor del contador 
-                PORTDbits.RD0 = 0; //encendemos el primer led si el contador es 1 
-                PORTDbits.RD1 = 0;
+           if (cont == 3){ //revisamos el valor del contador
                 PORTDbits.RD2 = 0;
                 PORTDbits.RD3 = 1;
-                PORTDbits.RD4 = 0;        
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1001111;
+                
             }
            if (cont == 4){ //revisamos el valor del contador             
-                PORTDbits.RD0 = 0; //encendemos el primer led si el contador es 1 
-                PORTDbits.RD1 = 0;
-                PORTDbits.RD2 = 0;
                 PORTDbits.RD3 = 0;
-                PORTDbits.RD4 = 1;         
+                PORTDbits.RD4 = 1; 
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1100110;
             }
-            if(cont > 4 || cont < 0){
+            
+            if (cont == 5){ //revisamos el valor del contador             
+                PORTDbits.RD4 = 0;  
+                PORTDbits.RD5 = 1;  
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1101101;
+                }
+            
+            if (cont == 6){ //revisamos el valor del contador             
+                PORTDbits.RD5 = 0; 
+                PORTDbits.RD6 = 1; 
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1111101;
+                }               
+                                
+            if (cont == 7){ //revisamos el valor del contador             
+                 PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b0000111;
+                }
+            
+            if (cont == 8){ //revisamos el valor del contador             
+                 PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1111111;
+                }
+            
+            if (cont == 9){ //revisamos el valor del contador             
+                 PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 1;
+                PORTEbits.RE1 = 0;
+                PORTC = 0b1101111;
+                }
+            
+            if (cont == 10){ //revisamos el valor del contador             
+                PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 0;
+                PORTEbits.RE1 = 1;
+                PORTC = 0b1110111;
+                }
+            
+            if (cont == 11){ //revisamos el valor del contador             
+                PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 0;
+                PORTEbits.RE1 = 1;
+                PORTC = 0b1111100;
+                }
+            
+            if (cont == 12){ //revisamos el valor del contador             
+                PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 0;
+                PORTEbits.RE1 = 1;
+                PORTC = 0b0111001;
+                }
+            
+             if (cont == 13){ //revisamos el valor del contador             
+                PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 0;
+                PORTEbits.RE1 = 1;
+                PORTC = 0b1011110;
+                }
+            
+             if (cont == 14){ //revisamos el valor del contador             
+                PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 0;
+                PORTEbits.RE1 = 1;
+                PORTC = 0b1111001;
+                }
+            
+             if (cont == 15){ //revisamos el valor del contador             
+                PORTDbits.RD6 = 0; 
+                PORTDbits.RD7 = 1; 
+                PORTEbits.RE0 = 0;
+                PORTEbits.RE1 = 1;
+                PORTC = 0b1110001;
+                }
+            
+            
+            
+            
+            
+            if(cont < 0){
+                cont = 20;
+            }
+             if(cont > 20 ){
                 cont = 0;
             }
     }
