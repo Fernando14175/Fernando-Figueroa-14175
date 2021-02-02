@@ -30,6 +30,7 @@
 #define _XTAL_FREQ 8000000
 
 int cont = 0;
+int estado = 0;
 
 void config (void);
 void contled(void);
@@ -38,24 +39,40 @@ void contador(void);
     
  void __interrupt() ISR(void) {
         if(INTCONbits.INTF == 1) {
-        //Clear the interrupt
+        
         INTCONbits.INTF = 0;
-        while(cont < 21){
-        __delay_ms(30);
-        if (PORTAbits.RA0 == 1){ 
         cont = cont+1;
-        }
-        if (PORTAbits.RA1 == 1){ 
-         cont = cont-1; 
-        }
-       }
     }  
-}   
+        
+}
 
 
 void main(void) {
+
+    config();
+
+    while(cont < 21){
+     __delay_ms(25);
+     contled();
     
-                
+     if (PORTBbits.RB1 == 0){
+         estado = 1;
+     }
+     if (PORTBbits.RB1 == 1 && estado == 1){ 
+         cont = cont-1; 
+         estado = 0;
+        }
+
+     if (cont > 7){
+         PORTEbits.RE2 = 1;
+        }
+     else {
+         PORTEbits.RE2 = 0;
+     }
+     
+    }
+     return;  
+
 }
  
 
@@ -64,14 +81,22 @@ void config (void){
     ANSELH = 0b00000000;
 
     TRISA = 0b00000011;
-    TRISB = 0b00000000;
+    TRISB = 0b00000011;
     TRISC = 0b00000000;
     TRISD = 0b00000000;
     TRISE = 0b000;
     
+    PORTBbits.RB2 = 0;
+    PORTA = 0b00000000;
     PORTD = 0b00000000;
     PORTC = 0b00000000;
     PORTE = 0b011;
+    
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.INTE = 1;
+    
+    
 }
 
 
@@ -204,15 +229,12 @@ void config (void){
                 PORTEbits.RE1 = 1;
                 PORTC = 0b1110001;
                 }
-            
-            
-            
-            
+           
             
             if(cont < 0){
-                cont = 20;
+                cont = 15;
             }
-             if(cont > 20 ){
+             if(cont > 15 ){
                 cont = 0;
             }
     }
