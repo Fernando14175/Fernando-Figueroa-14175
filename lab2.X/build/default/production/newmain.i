@@ -2517,9 +2517,12 @@ int cont = 0;
 void config (void);
 void contled(void);
 void contador(void);
+void init_ext_interrupt(void);
 
 
-
+void init_ext_interrupt() {
+    cont++;
+}
 
 void main(void) {
 
@@ -2528,7 +2531,7 @@ void main(void) {
     while(cont < 21){
      _delay((unsigned long)((30)*(8000000/4000.0)));
      if (PORTAbits.RA0 == 1){
-         cont = cont+1;
+         init_ext_interrupt();
         }
      if (PORTAbits.RA1 == 1){
          cont = cont-1;

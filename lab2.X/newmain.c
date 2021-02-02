@@ -34,31 +34,27 @@ int cont = 0;
 void config (void);
 void contled(void);
 void contador(void);
+
     
-    
+ void __interrupt() ISR(void) {
+        if(INTCONbits.INTF == 1) {
+        //Clear the interrupt
+        INTCONbits.INTF = 0;
+        while(cont < 21){
+        __delay_ms(30);
+        if (PORTAbits.RA0 == 1){ 
+        cont = cont+1;
+        }
+        if (PORTAbits.RA1 == 1){ 
+         cont = cont-1; 
+        }
+       }
+    }  
+}   
 
 
 void main(void) {
     
-    config();
-    
-    while(cont < 21){
-     __delay_ms(30);
-     if (PORTAbits.RA0 == 1){ 
-         cont = cont+1; 
-        }
-     if (PORTAbits.RA1 == 1){ 
-         cont = cont-1; 
-        }
-     if (cont > 7){
-         PORTEbits.RE2 = 1;
-        }
-     else {
-         PORTEbits.RE2 = 0;
-     }
-     contled();
-    }
-     return;  
                 
 }
  

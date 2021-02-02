@@ -11,11 +11,13 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"41 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+"40 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+[v _init_ext_interrupt init_ext_interrupt `(v  1 e 1 0 ]
+"44
 [v _main main `(v  1 e 1 0 ]
-"66
+"69
 [v _config config `(v  1 e 1 0 ]
-"82
+"85
 [v _contled contled `(v  1 e 1 0 ]
 [s S32 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -71,18 +73,23 @@
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "32 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
 [v _cont cont `i  1 e 2 0 ]
-"41
+"44
 [v _main main `(v  1 e 1 0 ]
 {
-"63
+"66
 } 0
-"82
+"40
+[v _init_ext_interrupt init_ext_interrupt `(v  1 e 1 0 ]
+{
+"42
+} 0
+"85
 [v _contled contled `(v  1 e 1 0 ]
 {
-"222
+"225
 } 0
-"66
+"69
 [v _config config `(v  1 e 1 0 ]
 {
-"79
+"82
 } 0
