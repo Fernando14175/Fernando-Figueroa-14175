@@ -2512,7 +2512,10 @@ extern __bank0 __bit __timeout;
 
 
 
+unsigned char Display[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
+
 int cont = 0;
+int multi = 0;
 int estado = 0;
 
 void config (void);
@@ -2525,6 +2528,7 @@ void contador(void);
 
         INTCONbits.INTF = 0;
         cont = cont+1;
+        multi = multi+1;
     }
 
 }
@@ -2534,7 +2538,7 @@ void main(void) {
 
     config();
 
-    while(cont < 21){
+    while(cont < 16){
      _delay((unsigned long)((25)*(8000000/4000.0)));
      contled();
 
@@ -2543,10 +2547,11 @@ void main(void) {
      }
      if (PORTBbits.RB1 == 1 && estado == 1){
          cont = cont-1;
+         multi = multi-1;
          estado = 0;
         }
 
-     if (cont > 7){
+     if (cont > 8){
          PORTEbits.RE2 = 1;
         }
      else {
@@ -2585,139 +2590,132 @@ void config (void){
 
  void contled (void){
 
-            if (cont == 0){
-                PORTDbits.RD0 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b0111111;
+     if (10 > cont){
+     _delay((unsigned long)((10)*(8000000/4000.0)));
+     PORTC = Display[cont];
+     PORTEbits.RE0 = 1;
+     PORTEbits.RE1 = 0;
+     }
 
-            }
-            if (cont == 1){
-                PORTDbits.RD1 = 1;
-                PORTDbits.RD0 = 0;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b0000110;
-
-            }
-           if (cont == 2){
-                PORTDbits.RD1 = 0;
-                PORTDbits.RD2 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1011011;
+     if (cont >= 10){
+     _delay((unsigned long)((10)*(8000000/4000.0)));
+     PORTC = Display[cont];
+     PORTEbits.RE0 = 0;
+     PORTEbits.RE1 = 1;
+     }
 
 
-            }
-           if (cont == 3){
-                PORTDbits.RD2 = 0;
-                PORTDbits.RD3 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1001111;
+     if(cont > 16 ){
+         cont = 0;
+         PORTDbits.RD7 = 0;
+     }
+     if(cont<0){
+         cont = 0;
+     }
+     switch(cont){
 
-            }
-           if (cont == 4){
-                PORTDbits.RD3 = 0;
-                PORTDbits.RD4 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1100110;
-            }
+         case 1:
+             PORTDbits.RD0 = 1;
+             break;
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 0;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
 
-            if (cont == 5){
-                PORTDbits.RD4 = 0;
-                PORTDbits.RD5 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1101101;
-                }
+         case 2:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
 
-            if (cont == 6){
-                PORTDbits.RD5 = 0;
-                PORTDbits.RD6 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1111101;
-                }
+         case 3:
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
 
-            if (cont == 7){
-                 PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b0000111;
-                }
+         case 4:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
 
-            if (cont == 8){
-                 PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1111111;
-                }
+         case 5:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
 
-            if (cont == 9){
-                 PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 1;
-                PORTEbits.RE1 = 0;
-                PORTC = 0b1101111;
-                }
-
-            if (cont == 10){
-                PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 0;
-                PORTEbits.RE1 = 1;
-                PORTC = 0b1110111;
-                }
-
-            if (cont == 11){
-                PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 0;
-                PORTEbits.RE1 = 1;
-                PORTC = 0b1111100;
-                }
-
-            if (cont == 12){
-                PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 0;
-                PORTEbits.RE1 = 1;
-                PORTC = 0b0111001;
-                }
-
-             if (cont == 13){
-                PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 0;
-                PORTEbits.RE1 = 1;
-                PORTC = 0b1011110;
-                }
-
-             if (cont == 14){
-                PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 0;
-                PORTEbits.RE1 = 1;
-                PORTC = 0b1111001;
-                }
-
-             if (cont == 15){
-                PORTDbits.RD6 = 0;
-                PORTDbits.RD7 = 1;
-                PORTEbits.RE0 = 0;
-                PORTEbits.RE1 = 1;
-                PORTC = 0b1110001;
-                }
+         case 6:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 1;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
 
 
-            if(cont < 0){
-                cont = 15;
-            }
-             if(cont > 15 ){
-                cont = 0;
-            }
-    }
+         case 7:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 1;
+             PORTDbits.RD6 = 1;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 8:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 1;
+             PORTDbits.RD6 = 1;
+             PORTDbits.RD7 = 1;
+             break;
+
+
+         default:
+             PORTDbits.RD0 = 0;
+             PORTDbits.RD1 = 0;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             PORTEbits.RE2 = 1;
+     }
+
+ }
