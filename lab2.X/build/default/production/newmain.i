@@ -2513,10 +2513,13 @@ extern __bank0 __bit __timeout;
 
 
 unsigned char Display[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
+unsigned char Display2[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
 
 int cont = 0;
 int multi = 0;
 int estado = 0;
+int a = 0;
+int b = 0;
 
 void config (void);
 void contled(void);
@@ -2536,10 +2539,11 @@ void contador(void);
 
 void main(void) {
 
+
     config();
 
-    while(cont < 16){
-     _delay((unsigned long)((25)*(8000000/4000.0)));
+    while(cont < 21){
+
      contled();
 
      if (PORTBbits.RB1 == 0){
@@ -2604,8 +2608,23 @@ void config (void){
      PORTEbits.RE1 = 1;
      }
 
+     while (cont >15){
+         a = ((cont/16)%16);
+         b = (cont%16);
+         PORTC=Display[a];
+         PORTEbits.RE0 = 1;
+         _delay((unsigned long)((10)*(8000000/4000.0)));
+         PORTEbits.RE0 = 0;
+         PORTC=Display[b];
+         PORTEbits.RE1 = 1;
+         _delay((unsigned long)((10)*(8000000/4000.0)));
+         PORTEbits.RE1 = 0;
+     }
 
-     if(cont > 16 ){
+
+
+
+     if(cont > 21 ){
          cont = 0;
          PORTDbits.RD7 = 0;
      }

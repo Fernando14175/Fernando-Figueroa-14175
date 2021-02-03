@@ -30,10 +30,13 @@
 #define _XTAL_FREQ 8000000
 
 unsigned char Display[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
+unsigned char Display2[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
 
 int cont = 0;
 int multi = 0;
 int estado = 0;
+int a = 0;
+int b = 0;
 
 void config (void);
 void contled(void);
@@ -52,11 +55,12 @@ void contador(void);
 
 
 void main(void) {
+   
 
     config();
 
-    while(cont < 16){
-     __delay_ms(25);
+    while(cont < 21){
+        
      contled();
     
      if (PORTBbits.RB1 == 0){
@@ -121,8 +125,23 @@ void config (void){
      PORTEbits.RE1 = 1;
      }
      
+     while (cont >15){
+         a = ((cont/16)%16);  // holds 10th digit
+         b = (cont%16);  // holds unit digit value
+         PORTC=Display[a]; // send 1000's place data to fourth digit
+         PORTEbits.RE0 = 1;   //  turn on forth display unit
+         __delay_ms(10);
+         PORTEbits.RE0 = 0;   //  turn off forth display unit
+         PORTC=Display[b];  // send 100's place data to 3rd digit
+         PORTEbits.RE1 = 1;  //  turn on 3rd display unit
+         __delay_ms(10);
+         PORTEbits.RE1 = 0; //  turn off 3rd display unit
+     }
      
-     if(cont > 16 ){
+     
+     
+     
+     if(cont > 21 ){
          cont = 0;
          PORTDbits.RD7 = 0;
      }
