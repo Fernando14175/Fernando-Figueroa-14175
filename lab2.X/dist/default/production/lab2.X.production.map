@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\lab2.X.production.sym \
   --cmf=dist/default/production\lab2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\FERNAN~1\AppData\Local\Temp\s7n0.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\FERNAN~1\AppData\Local\Temp\sbos.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/lab2.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o \
+  -pfunctab=ENTRY -k C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o \
   dist/default/production\lab2.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -294,7 +294,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 100 in file "newmain.c"
+		line 54 in file "newmain.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -324,7 +324,7 @@ Total ram usage:        2 bytes
 
  *************** function _contled *****************
  Defined at:
-		line 144 in file "newmain.c"
+		line 4 in file "Libreria.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -354,7 +354,7 @@ Total ram usage:        0 bytes
 
  *************** function _config *****************
  Defined at:
-		line 46 in file "newmain.c"
+		line 119 in file "Libreria.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -384,7 +384,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 81 in file "newmain.c"
+		line 35 in file "newmain.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -418,10 +418,14 @@ Module		Function		Class		Link	Load	Size
 newmain.c
 		_ISR           		CODE           	0133	0000	41
 		_main          		CODE           	00C0	0000	115
+
+newmain.c estimated size: 156
+
+Libreria.c
 		_contled       		CODE           	0029	0000	151
 		_config        		CODE           	015C	0000	37
 
-newmain.c estimated size: 344
+Libreria.c estimated size: 188
 
 shared
 		__initialization		CODE           	000F	0000	22

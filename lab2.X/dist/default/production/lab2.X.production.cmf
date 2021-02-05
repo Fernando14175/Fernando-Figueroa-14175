@@ -24,7 +24,7 @@ idataBANK0 CODE 0 194 194 10 2
 dataBANK0 BANK0 1 20 20 10 1
 bssCOMMON COMMON 1 70 70 8 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+$C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -73,204 +73,204 @@ STRING 1A4-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\lab2.X.production.o
-F cinit CODE >496:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-F cinit CODE >499:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-F cinit CODE >555:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-10 cinit CODE >556:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-11 cinit CODE >557:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-12 cinit CODE >558:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-13 cinit CODE >559:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-14 cinit CODE >560:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-15 cinit CODE >561:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-16 cinit CODE >562:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-17 cinit CODE >563:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18 cinit CODE >564:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-1D cinit CODE >568:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-1E cinit CODE >569:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-1F cinit CODE >570:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-20 cinit CODE >571:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-21 cinit CODE >572:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-22 cinit CODE >573:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-23 cinit CODE >574:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-24 cinit CODE >575:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-25 cinit CODE >581:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-25 cinit CODE >583:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-26 cinit CODE >584:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-4 intentry CODE >81:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-133 text3 CODE >81:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-133 text3 CODE >83:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-137 text3 CODE >84:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-138 text3 CODE >85:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-140 text3 CODE >87:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-146 text3 CODE >88:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-147 text3 CODE >90:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-14E text3 CODE >91:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-155 text3 CODE >96:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-15C text2 CODE >46:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-15C text2 CODE >47:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-15F text2 CODE >48:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-160 text2 CODE >50:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-163 text2 CODE >51:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-165 text2 CODE >52:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-166 text2 CODE >53:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-167 text2 CODE >54:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-168 text2 CODE >57:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-16B text2 CODE >58:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-16C text2 CODE >59:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-16D text2 CODE >60:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-16F text2 CODE >62:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-170 text2 CODE >63:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-171 text2 CODE >64:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-172 text2 CODE >66:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-173 text2 CODE >67:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-174 text2 CODE >68:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-175 text2 CODE >69:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-176 text2 CODE >70:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-177 text2 CODE >71:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-178 text2 CODE >72:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-179 text2 CODE >73:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-17C text2 CODE >75:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-17D text2 CODE >76:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-180 text2 CODE >78:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-29 text1 CODE >144:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-29 text1 CODE >146:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-36 text1 CODE >147:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-39 text1 CODE >153:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-39 text1 CODE >154:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-3C text1 CODE >155:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-3D text1 CODE >156:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-3E text1 CODE >157:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-3F text1 CODE >158:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-40 text1 CODE >159:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-41 text1 CODE >160:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-42 text1 CODE >161:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-43 text1 CODE >162:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-44 text1 CODE >164:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-44 text1 CODE >165:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-47 text1 CODE >166:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-48 text1 CODE >167:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-49 text1 CODE >168:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4A text1 CODE >169:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4B text1 CODE >170:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4C text1 CODE >171:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4D text1 CODE >172:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4E text1 CODE >173:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4F text1 CODE >175:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-4F text1 CODE >176:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-52 text1 CODE >177:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-53 text1 CODE >178:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-54 text1 CODE >179:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-55 text1 CODE >180:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-56 text1 CODE >181:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-57 text1 CODE >182:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-58 text1 CODE >183:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-59 text1 CODE >184:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-5A text1 CODE >186:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-5A text1 CODE >187:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-5D text1 CODE >188:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-5E text1 CODE >189:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-5F text1 CODE >190:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-60 text1 CODE >191:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-61 text1 CODE >192:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-62 text1 CODE >193:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-63 text1 CODE >194:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-64 text1 CODE >195:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-65 text1 CODE >196:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-66 text1 CODE >198:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-66 text1 CODE >199:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-69 text1 CODE >200:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-6A text1 CODE >201:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-6B text1 CODE >202:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-6C text1 CODE >203:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-6D text1 CODE >204:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-6E text1 CODE >205:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-6F text1 CODE >206:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-70 text1 CODE >207:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-71 text1 CODE >209:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-71 text1 CODE >210:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-74 text1 CODE >211:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-75 text1 CODE >212:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-76 text1 CODE >213:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-77 text1 CODE >214:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-78 text1 CODE >215:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-79 text1 CODE >216:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-7A text1 CODE >217:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-7B text1 CODE >218:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-7C text1 CODE >220:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-7C text1 CODE >221:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-7F text1 CODE >222:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-80 text1 CODE >223:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-81 text1 CODE >224:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-82 text1 CODE >225:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-83 text1 CODE >226:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-84 text1 CODE >227:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-85 text1 CODE >228:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-86 text1 CODE >229:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-87 text1 CODE >232:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-87 text1 CODE >233:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-8A text1 CODE >234:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-8B text1 CODE >235:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-8C text1 CODE >236:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-8D text1 CODE >237:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-8E text1 CODE >238:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-8F text1 CODE >239:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-90 text1 CODE >240:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-91 text1 CODE >241:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-92 text1 CODE >243:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-92 text1 CODE >244:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-95 text1 CODE >245:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-96 text1 CODE >246:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-97 text1 CODE >247:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-98 text1 CODE >248:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-99 text1 CODE >249:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-9A text1 CODE >250:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-9B text1 CODE >251:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-9C text1 CODE >252:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-9D text1 CODE >254:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-BF text1 CODE >256:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-C0 maintext CODE >100:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-C0 maintext CODE >102:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-C5 maintext CODE >104:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-C6 maintext CODE >105:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-CC maintext CODE >106:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-DD maintext CODE >107:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-E3 maintext CODE >109:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-E9 maintext CODE >110:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-EA maintext CODE >112:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-EB maintext CODE >113:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-F0 maintext CODE >114:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-F1 maintext CODE >116:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-F2 maintext CODE >117:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-F3 maintext CODE >119:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-F8 maintext CODE >121:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-FE maintext CODE >122:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-102 maintext CODE >124:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-10C maintext CODE >125:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-114 maintext CODE >126:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-116 maintext CODE >129:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-120 maintext CODE >130:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-121 maintext CODE >131:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-122 maintext CODE >132:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-122 maintext CODE >133:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-123 maintext CODE >104:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-130 maintext CODE >139:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-181 inittext CODE >529:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-181 inittext CODE >530:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-182 inittext CODE >531:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-183 inittext CODE >532:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-184 inittext CODE >533:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-185 inittext CODE >540:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-185 inittext CODE >541:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18A inittext CODE >542:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18B inittext CODE >543:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18C inittext CODE >544:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18D inittext CODE >545:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18E inittext CODE >546:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-18F inittext CODE >547:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-190 inittext CODE >548:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-191 inittext CODE >549:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-192 inittext CODE >550:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
-193 inittext CODE >551:C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.s
+F cinit CODE >652:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+F cinit CODE >655:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+F cinit CODE >711:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+10 cinit CODE >712:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+11 cinit CODE >713:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+12 cinit CODE >714:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+13 cinit CODE >715:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+14 cinit CODE >716:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+15 cinit CODE >717:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+16 cinit CODE >718:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+17 cinit CODE >719:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18 cinit CODE >720:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+1D cinit CODE >724:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+1E cinit CODE >725:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+1F cinit CODE >726:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+20 cinit CODE >727:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+21 cinit CODE >728:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+22 cinit CODE >729:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+23 cinit CODE >730:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+24 cinit CODE >731:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+25 cinit CODE >737:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+25 cinit CODE >739:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+26 cinit CODE >740:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+4 intentry CODE >35:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+133 text3 CODE >35:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+133 text3 CODE >37:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+137 text3 CODE >38:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+138 text3 CODE >39:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+140 text3 CODE >41:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+146 text3 CODE >42:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+147 text3 CODE >44:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+14E text3 CODE >45:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+155 text3 CODE >50:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+15C text2 CODE >119:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+15C text2 CODE >120:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+15F text2 CODE >121:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+160 text2 CODE >123:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+163 text2 CODE >124:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+165 text2 CODE >125:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+166 text2 CODE >126:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+167 text2 CODE >127:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+168 text2 CODE >130:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+16B text2 CODE >131:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+16C text2 CODE >132:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+16D text2 CODE >133:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+16F text2 CODE >135:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+170 text2 CODE >136:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+171 text2 CODE >137:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+172 text2 CODE >139:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+173 text2 CODE >140:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+174 text2 CODE >141:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+175 text2 CODE >142:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+176 text2 CODE >143:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+177 text2 CODE >144:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+178 text2 CODE >145:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+179 text2 CODE >146:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+17C text2 CODE >148:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+17D text2 CODE >149:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+180 text2 CODE >151:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+29 text1 CODE >4:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+29 text1 CODE >6:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+36 text1 CODE >7:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+39 text1 CODE >13:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+39 text1 CODE >14:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+3C text1 CODE >15:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+3D text1 CODE >16:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+3E text1 CODE >17:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+3F text1 CODE >18:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+40 text1 CODE >19:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+41 text1 CODE >20:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+42 text1 CODE >21:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+43 text1 CODE >22:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+44 text1 CODE >24:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+44 text1 CODE >25:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+47 text1 CODE >26:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+48 text1 CODE >27:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+49 text1 CODE >28:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4A text1 CODE >29:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4B text1 CODE >30:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4C text1 CODE >31:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4D text1 CODE >32:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4E text1 CODE >33:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4F text1 CODE >35:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+4F text1 CODE >36:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+52 text1 CODE >37:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+53 text1 CODE >38:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+54 text1 CODE >39:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+55 text1 CODE >40:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+56 text1 CODE >41:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+57 text1 CODE >42:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+58 text1 CODE >43:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+59 text1 CODE >44:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+5A text1 CODE >46:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+5A text1 CODE >47:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+5D text1 CODE >48:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+5E text1 CODE >49:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+5F text1 CODE >50:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+60 text1 CODE >51:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+61 text1 CODE >52:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+62 text1 CODE >53:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+63 text1 CODE >54:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+64 text1 CODE >55:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+65 text1 CODE >56:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+66 text1 CODE >58:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+66 text1 CODE >59:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+69 text1 CODE >60:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+6A text1 CODE >61:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+6B text1 CODE >62:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+6C text1 CODE >63:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+6D text1 CODE >64:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+6E text1 CODE >65:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+6F text1 CODE >66:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+70 text1 CODE >67:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+71 text1 CODE >69:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+71 text1 CODE >70:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+74 text1 CODE >71:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+75 text1 CODE >72:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+76 text1 CODE >73:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+77 text1 CODE >74:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+78 text1 CODE >75:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+79 text1 CODE >76:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+7A text1 CODE >77:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+7B text1 CODE >78:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+7C text1 CODE >80:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+7C text1 CODE >81:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+7F text1 CODE >82:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+80 text1 CODE >83:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+81 text1 CODE >84:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+82 text1 CODE >85:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+83 text1 CODE >86:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+84 text1 CODE >87:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+85 text1 CODE >88:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+86 text1 CODE >89:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+87 text1 CODE >92:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+87 text1 CODE >93:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+8A text1 CODE >94:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+8B text1 CODE >95:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+8C text1 CODE >96:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+8D text1 CODE >97:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+8E text1 CODE >98:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+8F text1 CODE >99:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+90 text1 CODE >100:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+91 text1 CODE >101:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+92 text1 CODE >103:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+92 text1 CODE >104:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+95 text1 CODE >105:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+96 text1 CODE >106:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+97 text1 CODE >107:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+98 text1 CODE >108:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+99 text1 CODE >109:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+9A text1 CODE >110:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+9B text1 CODE >111:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+9C text1 CODE >112:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+9D text1 CODE >114:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+BF text1 CODE >116:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\Libreria.c
+C0 maintext CODE >54:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+C0 maintext CODE >56:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+C5 maintext CODE >58:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+C6 maintext CODE >59:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+CC maintext CODE >60:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+DD maintext CODE >61:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+E3 maintext CODE >63:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+E9 maintext CODE >64:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+EA maintext CODE >66:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+EB maintext CODE >67:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+F0 maintext CODE >68:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+F1 maintext CODE >70:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+F2 maintext CODE >71:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+F3 maintext CODE >73:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+F8 maintext CODE >75:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+FE maintext CODE >76:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+102 maintext CODE >78:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+10C maintext CODE >79:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+114 maintext CODE >80:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+116 maintext CODE >83:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+120 maintext CODE >84:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+121 maintext CODE >85:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+122 maintext CODE >86:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+122 maintext CODE >87:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+123 maintext CODE >58:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+130 maintext CODE >93:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+181 inittext CODE >685:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+181 inittext CODE >686:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+182 inittext CODE >687:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+183 inittext CODE >688:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+184 inittext CODE >689:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+185 inittext CODE >696:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+185 inittext CODE >697:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18A inittext CODE >698:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18B inittext CODE >699:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18C inittext CODE >700:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18D inittext CODE >701:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18E inittext CODE >702:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+18F inittext CODE >703:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+190 inittext CODE >704:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+191 inittext CODE >705:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+192 inittext CODE >706:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
+193 inittext CODE >707:C:\Users\FERNAN~1\AppData\Local\Temp\sbos.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -295,21 +295,21 @@ __Hspace_4 4010 0 ABS 0 - -
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 _cont 76 0 COMMON 1 bssCOMMON dist/default/production\lab2.X.production.o
 _main 180 0 CODE 0 maintext dist/default/production\lab2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\lab2.X.production.o
-start 18 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+start 18 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 __size_of_main 0 0 ABS 0 - dist/default/production\lab2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\lab2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -318,10 +318,10 @@ _ADRESH 1E 0 ABS 0 - dist/default/production\lab2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\lab2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_config 302 0 CODE 0 text2 dist/default/production\lab2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
-___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
+___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\lab2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -370,7 +370,7 @@ _config 2B8 0 CODE 0 text2 dist/default/production\lab2.X.production.o
 _estado 74 0 COMMON 1 bssCOMMON dist/default/production\lab2.X.production.o
 __end_of_ISR 2B8 0 CODE 0 text3 dist/default/production\lab2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\s7n0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\sbos.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\lab2.X.production.o
 _Display 20 0 BANK0 1 dataBANK0 dist/default/production\lab2.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\lab2.X.production.o

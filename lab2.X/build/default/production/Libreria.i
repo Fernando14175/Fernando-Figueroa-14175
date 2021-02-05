@@ -1,4 +1,4 @@
-# 1 "newmain.c"
+# 1 "Libreria.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "newmain.c" 2
-# 10 "newmain.c"
-#pragma config FOSC =HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "Libreria.c" 2
+# 1 "./Libreria.h" 1
+# 33 "./Libreria.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2507,11 +2489,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 28 "newmain.c" 2
+# 33 "./Libreria.h" 2
 
-
-# 1 "./Libreria.h" 1
-# 34 "./Libreria.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2657,68 +2636,155 @@ int cont = 0;
 int estado = 0;
 unsigned int a = 0;
 unsigned int b = 0;
-# 30 "newmain.c" 2
+# 1 "Libreria.c" 2
 
 
 
+ void contled (void){
 
-
- void __attribute__((picinterrupt(("")))) ISR(void) {
-
-     if(INTCONbits.INTF == 1) {
-        INTCONbits.INTF = 0;
-        cont = cont+1;
-    }
-     if (PIR1bits.ADIF ==1){
-        PIR1bits.ADIF = 0;
-
-        a = ADRESH;
-        b = ADRESH;
-
-        return;
-    }
-
-}
-
-
-
-void main(void) {
-
-    config();
-
-    while(cont < 99){
-        if(ADCON0bits.GO_DONE == 0){
-        a = ((a/16)%16);
-        b = (b%16);
-
-         PORTC = Display[a];
-         PORTEbits.RE0 = 1;
-
-         PORTEbits.RE0 = 0;
-         PORTC=Display[b];
-         PORTEbits.RE1 = 1;
-
-         PORTEbits.RE1 = 0;
-         ADCON0bits.GO_DONE = 1;
-        }
-     contled();
-
-     if (PORTBbits.RB1 == 0){
-         estado = 1;
-     }
-     if (PORTBbits.RB1 == 1 && estado == 1){
-         cont = cont-1;
-         estado = 0;
-        }
-
-     if (a > cont){
-         PORTEbits.RE2 = 1;
-        }
-     else {
-         PORTEbits.RE2 = 0;
-     }
+     if(cont > 99 ){
+         cont = 0;
 
      }
-     return;
+
+     switch(cont){
+
+         case 0:
+             PORTDbits.RD0 = 0;
+             PORTDbits.RD1 = 0;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 1:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 0;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 2:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 3:
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 4:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 5:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 6:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 1;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
+             break;
+
+
+         case 7:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 1;
+             PORTDbits.RD6 = 1;
+             PORTDbits.RD7 = 0;
+             break;
+
+         case 8:
+             PORTDbits.RD0 = 1;
+             PORTDbits.RD1 = 1;
+             PORTDbits.RD2 = 1;
+             PORTDbits.RD3 = 1;
+             PORTDbits.RD4 = 1;
+             PORTDbits.RD5 = 1;
+             PORTDbits.RD6 = 1;
+             PORTDbits.RD7 = 1;
+             break;
+
+     }
+
+ }
+
+
+ void config (void){
+    ANSEL = 0b00000000;
+    ANSELH = 0b00000000;
+
+    TRISA = 0b00000000;
+    TRISB = 0b00100011;
+    TRISC = 0b00000000;
+    TRISD = 0b00000000;
+    TRISE = 0b000;
+
+
+    PORTA = 0b00000000;
+    PORTD = 0b00000000;
+    PORTC = 0b00000000;
+    PORTE = 0b011;
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.INTE = 1;
+
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.CHS0 = 1;
+    ADCON0bits.CHS1 = 0;
+    ADCON0bits.CHS2 = 1;
+    ADCON0bits.CHS3 = 1;
+    ADCON0bits.ADON = 1;
+    ADCON1bits.ADFM = 0;
+
+    PIE1bits.ADIE = 1;
+    PIR1bits.ADIF = 0;
 
 }
