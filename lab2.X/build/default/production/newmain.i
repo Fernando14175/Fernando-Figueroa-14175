@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "newmain.c" 2
 # 10 "newmain.c"
-#pragma config FOSC = XT
+#pragma config FOSC =HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2512,73 +2512,31 @@ extern __bank0 __bit __timeout;
 
 
 
+
 unsigned char Display[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
-unsigned char Display2[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
+
 
 int cont = 0;
-int multi = 0;
 int estado = 0;
-int a = 0;
-int b = 0;
+unsigned int a = 0;
+unsigned int b = 0;
 
 void config (void);
 void contled(void);
 void contador(void);
 
 
- void __attribute__((picinterrupt(("")))) ISR(void) {
-        if(INTCONbits.INTF == 1) {
-
-        INTCONbits.INTF = 0;
-        cont = cont+1;
-        multi = multi+1;
-    }
-
-}
-
-
-void main(void) {
-
-
-    config();
-
-    while(cont < 21){
-
-     contled();
-
-     if (PORTBbits.RB1 == 0){
-         estado = 1;
-     }
-     if (PORTBbits.RB1 == 1 && estado == 1){
-         cont = cont-1;
-         multi = multi-1;
-         estado = 0;
-        }
-
-     if (cont > 8){
-         PORTEbits.RE2 = 1;
-        }
-     else {
-         PORTEbits.RE2 = 0;
-     }
-
-    }
-     return;
-
-}
-
-
 void config (void){
     ANSEL = 0b00000000;
     ANSELH = 0b00000000;
 
-    TRISA = 0b00000011;
-    TRISB = 0b00000011;
+    TRISA = 0b00000000;
+    TRISB = 0b00100011;
     TRISC = 0b00000000;
     TRISD = 0b00000000;
     TRISE = 0b000;
 
-    PORTBbits.RB2 = 0;
+
     PORTA = 0b00000000;
     PORTD = 0b00000000;
     PORTC = 0b00000000;
@@ -2588,54 +2546,105 @@ void config (void){
     INTCONbits.PEIE = 1;
     INTCONbits.INTE = 1;
 
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.CHS0 = 1;
+    ADCON0bits.CHS1 = 0;
+    ADCON0bits.CHS2 = 1;
+    ADCON0bits.CHS3 = 1;
+    ADCON0bits.ADON = 1;
+    ADCON1bits.ADFM = 0;
+
+    PIE1bits.ADIE = 1;
+    PIR1bits.ADIF = 0;
 
 }
 
 
- void contled (void){
+ void __attribute__((picinterrupt(("")))) ISR(void) {
 
-     if (10 > cont){
-     _delay((unsigned long)((10)*(8000000/4000.0)));
-     PORTC = Display[cont];
-     PORTEbits.RE0 = 1;
-     PORTEbits.RE1 = 0;
-     }
+     if(INTCONbits.INTF == 1) {
+        INTCONbits.INTF = 0;
+        cont = cont+1;
+    }
+     if (PIR1bits.ADIF ==1){
+        PIR1bits.ADIF = 0;
 
-     if (cont >= 10){
-     _delay((unsigned long)((10)*(8000000/4000.0)));
-     PORTC = Display[cont];
-     PORTEbits.RE0 = 0;
-     PORTEbits.RE1 = 1;
-     }
+        a = ADRESH;
+        b = ADRESH;
 
-     while (cont >15){
-         a = ((cont/16)%16);
-         b = (cont%16);
-         PORTC=Display[a];
+        return;
+    }
+
+}
+
+
+
+void main(void) {
+
+    config();
+
+    while(cont < 99){
+        if(ADCON0bits.GO_DONE == 0){
+        a = ((a/16)%16);
+        b = (b%16);
+
+         PORTC = Display[a];
          PORTEbits.RE0 = 1;
-         _delay((unsigned long)((10)*(8000000/4000.0)));
+
          PORTEbits.RE0 = 0;
          PORTC=Display[b];
          PORTEbits.RE1 = 1;
-         _delay((unsigned long)((10)*(8000000/4000.0)));
+
          PORTEbits.RE1 = 0;
+         ADCON0bits.GO_DONE = 1;
+        }
+     contled();
+
+     if (PORTBbits.RB1 == 0){
+         estado = 1;
+     }
+     if (PORTBbits.RB1 == 1 && estado == 1){
+         cont = cont-1;
+         estado = 0;
+        }
+
+     if (a > cont){
+         PORTEbits.RE2 = 1;
+        }
+     else {
+         PORTEbits.RE2 = 0;
      }
 
+     }
+     return;
+
+}
 
 
 
-     if(cont > 21 ){
+
+ void contled (void){
+
+     if(cont > 99 ){
          cont = 0;
-         PORTDbits.RD7 = 0;
+
      }
-     if(cont<0){
-         cont = 0;
-     }
+
      switch(cont){
 
-         case 1:
-             PORTDbits.RD0 = 1;
+         case 0:
+             PORTDbits.RD0 = 0;
+             PORTDbits.RD1 = 0;
+             PORTDbits.RD2 = 0;
+             PORTDbits.RD3 = 0;
+             PORTDbits.RD4 = 0;
+             PORTDbits.RD5 = 0;
+             PORTDbits.RD6 = 0;
+             PORTDbits.RD7 = 0;
              break;
+
+         case 1:
              PORTDbits.RD0 = 1;
              PORTDbits.RD1 = 0;
              PORTDbits.RD2 = 0;
@@ -2644,6 +2653,7 @@ void config (void){
              PORTDbits.RD5 = 0;
              PORTDbits.RD6 = 0;
              PORTDbits.RD7 = 0;
+             break;
 
          case 2:
              PORTDbits.RD0 = 1;
@@ -2724,17 +2734,6 @@ void config (void){
              PORTDbits.RD7 = 1;
              break;
 
-
-         default:
-             PORTDbits.RD0 = 0;
-             PORTDbits.RD1 = 0;
-             PORTDbits.RD2 = 0;
-             PORTDbits.RD3 = 0;
-             PORTDbits.RD4 = 0;
-             PORTDbits.RD5 = 0;
-             PORTDbits.RD6 = 0;
-             PORTDbits.RD7 = 0;
-             PORTEbits.RE2 = 1;
      }
 
  }

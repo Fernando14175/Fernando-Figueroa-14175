@@ -3,8 +3,6 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -14,16 +12,16 @@
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "46 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-[v _ISR ISR `II(v  1 e 1 0 ]
-"57
-[v _main main `(v  1 e 1 0 ]
-"88
 [v _config config `(v  1 e 1 0 ]
-"112
+"81
+[v _ISR ISR `II(v  1 e 1 0 ]
+"100
+[v _main main `(v  1 e 1 0 ]
+"144
 [v _contled contled `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S62 . 1 `uc 1 RB0 1 0 :1:0 
+[s S182 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -33,13 +31,13 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S71 . 1 `S62 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES71  1 e 1 @6 ]
+[u S191 . 1 `S182 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES191  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S113 . 1 `uc 1 RD0 1 0 :1:0 
+[s S203 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -49,19 +47,19 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S122 . 1 `S113 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES122  1 e 1 @8 ]
+[u S212 . 1 `S203 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES212  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S83 . 1 `uc 1 RE0 1 0 :1:0 
+[s S165 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S88 . 1 `S83 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES88  1 e 1 @9 ]
-[s S22 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S170 . 1 `S165 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES170  1 e 1 @9 ]
+[s S33 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -71,13 +69,49 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S31 . 1 `uc 1 . 1 0 :2:0 
+[s S42 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
+[u S47 . 1 `S33 1 . 1 0 `S42 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES47  1 e 1 @11 ]
+[s S145 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S153 . 1 `S145 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES153  1 e 1 @12 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S65 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1276
+[s S70 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S79 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S82 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S85 . 1 `S65 1 . 1 0 `S70 1 . 1 0 `S79 1 . 1 0 `S82 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES85  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
@@ -88,52 +122,57 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
+[s S126 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S134 . 1 `S126 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES134  1 e 1 @140 ]
+[s S111 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2991
+[u S117 . 1 `S111 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES117  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"32 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
+"33 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
 [v _Display Display `[16]uc  1 e 16 0 ]
-"35
-[v _cont cont `i  1 e 2 0 ]
 "36
-[v _multi multi `i  1 e 2 0 ]
+[v _cont cont `i  1 e 2 0 ]
 "37
 [v _estado estado `i  1 e 2 0 ]
 "38
-[v _a a `i  1 e 2 0 ]
+[v _a a `ui  1 e 2 0 ]
 "39
-[v _b b `i  1 e 2 0 ]
-"57
+[v _b b `ui  1 e 2 0 ]
+"100
 [v _main main `(v  1 e 1 0 ]
 {
-"85
+"139
 } 0
-"112
+"144
 [v _contled contled `(v  1 e 1 0 ]
 {
-"257
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 2 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 1 ]
-[v ___awdiv@counter counter `uc  1 a 1 0 ]
-"5
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-[v ___awdiv@dividend dividend `i  1 p 2 4 ]
-"41
-} 0
-"88 C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\lab2.X\newmain.c
-[v _config config `(v  1 e 1 0 ]
-{
-"109
+"256
 } 0
 "46
+[v _config config `(v  1 e 1 0 ]
+{
+"78
+} 0
+"81
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"54
+"96
 } 0
