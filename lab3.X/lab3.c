@@ -65,30 +65,30 @@ void main(void) {
     
     while(1){
               
-        conversion(1);          
-        conversion(0);           
+        conversion(1);  //se manda a llamar la funcion conversion con 1 como valor para indentificar que puerto analogico esta trabajndp       
+        conversion(0);  //se manda a llamar la funcion conversion con 0 como valor para indentificar que puerto analogico esta trabajndp       
         
     }
 }
 
 
-void conversion(char puertoANL){       
+void conversion(char puertoANL){  //funcion conversion la cual hace la conversion del valor del adc a voltaje y identifica para cual puerto es cada valor con un if
     
     ADCON0bits.CHS = puertoANL;   
-    if (ADCON0bits.GO_DONE==0 && puertoANL ==0){
+    if (ADCON0bits.GO_DONE==0 && puertoANL ==0){ // bit de conversion e 0 indicando que no ha empezado y puerto analogico en 0 para determinar cual puerto es el que se utiliza 
         
-        vpot1 = (5*c)/255;
-        sprintf(buffer, "%.3f", vpot1);  
+        vpot1 = (5*c)/255; //valor del voltaje del potenciometo
+        sprintf(buffer, "%.3f", vpot1);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
         Lcd_Set_Cursor(2,1);        
-        Lcd_Write_String(buffer);  
-        ADCON0bits.GO_DONE=1;
+        Lcd_Write_String(buffer); //escribimos el valor de buffer el cual contiene el valor del potenciometro 
+        ADCON0bits.GO_DONE=1; //empezamos la conversion del adc 
     }
     else{
-        vpot2 = (5*b)/255;        
-        sprintf(buffer, "%.3f", vpot2);  
+        vpot2 = (5*b)/255;  //valor del voltaje del potenciometo       
+        sprintf(buffer, "%.3f", vpot2);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
         Lcd_Set_Cursor(2,7); 
-        Lcd_Write_String(buffer); 
-        ADCON0bits.GO_DONE=1;
+        Lcd_Write_String(buffer); //escribimos el valor de buffer el cual contiene el valor del potenciometro 
+        ADCON0bits.GO_DONE=1; //empezamos la conversion del adc 
     }
 }    
 
