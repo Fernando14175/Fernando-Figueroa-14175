@@ -18,17 +18,15 @@
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is disabled)
 #pragma config LVP = OFF        // Low Voltage Programming Enable bit (RB3 pin has digital I/O, HV on MCLR must be used for programming)
 
-// CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
 
-#define _XTAL_FREQ  9000000
+
+#define _XTAL_FREQ  9000000 //frecuencia
 #include <xc.h>
-#include "PIC16F887.h"
-#include "Libreria2.h"
+#include "PIC16F887.h" //libreria del pic 
+#include "Libreria2.h"//libreria qcreada 
 #include <string.h>            
 #include <stdio.h> 
 #include <stdint.h>
@@ -38,31 +36,31 @@ void conversion (char puertoANL);
 
  void __interrupt() ISR(void) {
     
-     if (PIR1bits.ADIF ==1){
+     if (PIR1bits.ADIF ==1){ // configuracion de la interrupcion
         PIR1bits.ADIF = 0;   
-        c = ADRESH;
-        b = ADRESH;
+        c = ADRESH; //valor de la conversion 
+        b = ADRESH;//valor de la conversion
     }
  }
    
 void main(void) {
-    config();
-    Lcd_Init(); 
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("DIGITAL 2");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("FernandoFigueroa");
-    __delay_ms(100);
-    Lcd_Clear();
+    config(); //configuracion de los puertos 
+    Lcd_Init(); //inicializar la lcd 
+    Lcd_Set_Cursor(1,1); //cursor para escribir 
+    Lcd_Write_String("DIGITAL 2");//escribimos las letras en pantalla
+    Lcd_Set_Cursor(2,1); //cursor para escribir 
+    Lcd_Write_String("FernandoFigueroa"); //escribimos las letras en pantalla
+    __delay_ms(100); 
+    Lcd_Clear();// limpiamos lo escrito de la lcd 
     
-     Lcd_Set_Cursor(1,1);        
-     Lcd_Write_String("Volt1"); 
-     Lcd_Set_Cursor(1,7);        
-     Lcd_Write_String("Volt2");
+     Lcd_Set_Cursor(1,1);  //cursor para escribir       
+     Lcd_Write_String("Volt1"); //escribimos las letras en pantalla
+     Lcd_Set_Cursor(1,7);  //cursor para escribir       
+     Lcd_Write_String("Volt2"); //escribimos las letras en pantalla
      
-     Lcd_Set_Cursor(1,13);        
-     Lcd_Write_String("CONT");     
-     Lcd_Set_Cursor(2,11);        
+     Lcd_Set_Cursor(1,13);  //cursor para escribir       
+     Lcd_Write_String("CNT"); //escribimos las letras en pantalla
+     Lcd_Set_Cursor(2,11);   //cursor para escribir      
         
     
     while(1){
