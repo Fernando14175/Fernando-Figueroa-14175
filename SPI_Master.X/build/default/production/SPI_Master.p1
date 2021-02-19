@@ -1,0 +1,485 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"24 SPI_Master.c
+[; ;SPI_Master.c: 24: void SPI_Master_Init();
+[v _SPI_Master_Init `(v ~T0 @X0 0 e? ]
+"1478 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1602
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"1664
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"352
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"414
+[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"3387
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"3449
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"4103
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"4106 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"4109
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"25 SPI_Master.c
+[; ;SPI_Master.c: 25: void SPI_Write(uint8_t);
+[v _SPI_Write `(v ~T0 @X0 0 ef1`uc ]
+"4280 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[v _SSPM0 `Vb ~T0 @X0 0 e@160 ]
+"4283
+[v _SSPM1 `Vb ~T0 @X0 0 e@161 ]
+"4286
+[v _SSPM2 `Vb ~T0 @X0 0 e@162 ]
+"4289
+[v _SSPM3 `Vb ~T0 @X0 0 e@163 ]
+"4271
+[v _SSPEN `Vb ~T0 @X0 0 e@165 ]
+"3833
+[v _CKP `Vb ~T0 @X0 0 e@164 ]
+"3830
+[v _CKE `Vb ~T0 @X0 0 e@1190 ]
+"4256
+[v _SMP `Vb ~T0 @X0 0 e@1191 ]
+"4463
+[v _TRISC5 `Vb ~T0 @X0 0 e@1085 ]
+"4460
+[v _TRISC4 `Vb ~T0 @X0 0 e@1084 ]
+"4457
+[v _TRISC3 `Vb ~T0 @X0 0 e@1083 ]
+"843
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"3641
+[v _BF `Vb ~T0 @X0 0 e@1184 ]
+"4277
+[v _SSPIF `Vb ~T0 @X0 0 e@99 ]
+"4292
+[v _SSPOV `Vb ~T0 @X0 0 e@166 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"1 SPI_Master.c
+[; ;SPI_Master.c: 1: 
+[p x FOSC  =  XT   ]
+"2
+[p x WDTE  =  OFF  ]
+"3
+[p x PWRTE  =  ON  ]
+"4
+[p x BOREN  =  ON  ]
+"5
+[p x LVP  =  OFF   ]
+"7
+[p x CPD  =  OFF   ]
+"8
+[p x WRT  =  OFF   ]
+"10
+[p x CP  =  OFF    ]
+"54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F887.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"230
+[; <" PORTB equ 06h ;# ">
+"292
+[; <" PORTC equ 07h ;# ">
+"354
+[; <" PORTD equ 08h ;# ">
+"416
+[; <" PORTE equ 09h ;# ">
+"454
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; <" T1CON equ 010h ;# ">
+"767
+[; <" TMR2 equ 011h ;# ">
+"774
+[; <" T2CON equ 012h ;# ">
+"845
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; <" SSPCON equ 014h ;# ">
+"922
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; <" TXREG equ 019h ;# ">
+"1142
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; <" TRISA equ 085h ;# ">
+"1480
+[; <" TRISB equ 086h ;# ">
+"1542
+[; <" TRISC equ 087h ;# ">
+"1604
+[; <" TRISD equ 088h ;# ">
+"1666
+[; <" TRISE equ 089h ;# ">
+"1704
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; <" PR2 equ 092h ;# ">
+"2050
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; <" MSK equ 093h ;# ">
+"2179
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; <" WPUB equ 095h ;# ">
+"2418
+[; <" IOCB equ 096h ;# ">
+"2488
+[; <" VRCON equ 097h ;# ">
+"2558
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; <" EECON2 equ 018Dh ;# ">
+"26 SPI_Master.c
+[; ;SPI_Master.c: 26: uint8_t Data2;
+[v _Data2 `uc ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"29
+[; ;SPI_Master.c: 29: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"30
+[; ;SPI_Master.c: 30: {
+{
+[e :U _main ]
+[f ]
+"32
+[; ;SPI_Master.c: 32:   SPI_Master_Init();
+[e ( _SPI_Master_Init ..  ]
+"33
+[; ;SPI_Master.c: 33:   uint8_t Data = 0;
+[v _Data `uc ~T0 @X0 1 a ]
+[e = _Data -> -> 0 `i `uc ]
+"34
+[; ;SPI_Master.c: 34:   TRISB = 0x07;
+[e = _TRISB -> -> 7 `i `uc ]
+"35
+[; ;SPI_Master.c: 35:   TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"36
+[; ;SPI_Master.c: 36:   TRISE = 0x00;
+[e = _TRISE -> -> 0 `i `uc ]
+"37
+[; ;SPI_Master.c: 37:   PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"38
+[; ;SPI_Master.c: 38:   PORTE = 0b000;
+[e = _PORTE -> -> 0 `i `uc ]
+"40
+[; ;SPI_Master.c: 40:   ANSEL = 0b00000000;
+[e = _ANSEL -> -> 0 `i `uc ]
+"41
+[; ;SPI_Master.c: 41:   ANSELH = 0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
+"44
+[; ;SPI_Master.c: 44:   while(1)
+[e :U 140 ]
+"45
+[; ;SPI_Master.c: 45:   {
+{
+"46
+[; ;SPI_Master.c: 46:     if (RB0)
+[e $ ! _RB0 142  ]
+"47
+[; ;SPI_Master.c: 47:     {
+{
+"48
+[; ;SPI_Master.c: 48:       Data++;
+[e ++ _Data -> -> 1 `i `uc ]
+"49
+[; ;SPI_Master.c: 49:       _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"50
+[; ;SPI_Master.c: 50:     }
+}
+[e :U 142 ]
+"51
+[; ;SPI_Master.c: 51:     if (RB1)
+[e $ ! _RB1 143  ]
+"52
+[; ;SPI_Master.c: 52:     {
+{
+"53
+[; ;SPI_Master.c: 53:       Data--;
+[e -- _Data -> -> 1 `i `uc ]
+"54
+[; ;SPI_Master.c: 54:       _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"55
+[; ;SPI_Master.c: 55:     }
+}
+[e :U 143 ]
+"56
+[; ;SPI_Master.c: 56:     if (RB2)
+[e $ ! _RB2 144  ]
+"57
+[; ;SPI_Master.c: 57:     {
+{
+"58
+[; ;SPI_Master.c: 58:       SPI_Write(Data);
+[e ( _SPI_Write (1 _Data ]
+"59
+[; ;SPI_Master.c: 59:       _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"60
+[; ;SPI_Master.c: 60:     }
+}
+[e :U 144 ]
+"61
+[; ;SPI_Master.c: 61:     PORTD = Data;
+[e = _PORTD _Data ]
+"62
+[; ;SPI_Master.c: 62:     PORTE = Data2;
+[e = _PORTE _Data2 ]
+"63
+[; ;SPI_Master.c: 63:   }
+}
+[e :U 139 ]
+[e $U 140  ]
+[e :U 141 ]
+"64
+[; ;SPI_Master.c: 64:   return;
+[e $UE 138  ]
+"65
+[; ;SPI_Master.c: 65: }
+[e :UE 138 ]
+}
+"68
+[; ;SPI_Master.c: 68: void SPI_Master_Init()
+[v _SPI_Master_Init `(v ~T0 @X0 1 ef ]
+"69
+[; ;SPI_Master.c: 69: {
+{
+[e :U _SPI_Master_Init ]
+[f ]
+"71
+[; ;SPI_Master.c: 71:   SSPM0 = 0;
+[e = _SSPM0 -> -> 0 `i `b ]
+"72
+[; ;SPI_Master.c: 72:   SSPM1 = 0;
+[e = _SSPM1 -> -> 0 `i `b ]
+"73
+[; ;SPI_Master.c: 73:   SSPM2 = 0;
+[e = _SSPM2 -> -> 0 `i `b ]
+"74
+[; ;SPI_Master.c: 74:   SSPM3 = 0;
+[e = _SSPM3 -> -> 0 `i `b ]
+"76
+[; ;SPI_Master.c: 76:   SSPEN = 1;
+[e = _SSPEN -> -> 1 `i `b ]
+"78
+[; ;SPI_Master.c: 78:   CKP = 0;
+[e = _CKP -> -> 0 `i `b ]
+"79
+[; ;SPI_Master.c: 79:   CKE = 0;
+[e = _CKE -> -> 0 `i `b ]
+"81
+[; ;SPI_Master.c: 81:   SMP = 0;
+[e = _SMP -> -> 0 `i `b ]
+"83
+[; ;SPI_Master.c: 83:   TRISC5 = 0;
+[e = _TRISC5 -> -> 0 `i `b ]
+"84
+[; ;SPI_Master.c: 84:   TRISC4 = 1;
+[e = _TRISC4 -> -> 1 `i `b ]
+"85
+[; ;SPI_Master.c: 85:   TRISC3 = 0;
+[e = _TRISC3 -> -> 0 `i `b ]
+"88
+[; ;SPI_Master.c: 88: }
+[e :UE 145 ]
+}
+"89
+[; ;SPI_Master.c: 89: void SPI_Write(uint8_t Data)
+[v _SPI_Write `(v ~T0 @X0 1 ef1`uc ]
+"90
+[; ;SPI_Master.c: 90: {
+{
+[e :U _SPI_Write ]
+"89
+[; ;SPI_Master.c: 89: void SPI_Write(uint8_t Data)
+[v _Data `uc ~T0 @X0 1 r1 ]
+"90
+[; ;SPI_Master.c: 90: {
+[f ]
+"91
+[; ;SPI_Master.c: 91:   SSPBUF = Data;
+[e = _SSPBUF _Data ]
+"95
+[; ;SPI_Master.c: 95: }
+[e :UE 146 ]
+}
+"97
+[; ;SPI_Master.c: 97: uint8_t SPI_Read()
+[v _SPI_Read `(uc ~T0 @X0 1 ef ]
+"98
+[; ;SPI_Master.c: 98: {
+{
+[e :U _SPI_Read ]
+[f ]
+"99
+[; ;SPI_Master.c: 99:   uint8_t Data2;
+[v _Data2 `uc ~T0 @X0 1 a ]
+"100
+[; ;SPI_Master.c: 100:   if(BF)
+[e $ ! _BF 148  ]
+"101
+[; ;SPI_Master.c: 101:   {
+{
+"102
+[; ;SPI_Master.c: 102:     Data2 = SSPBUF;
+[e = _Data2 _SSPBUF ]
+"103
+[; ;SPI_Master.c: 103:     BF = 0;
+[e = _BF -> -> 0 `i `b ]
+"104
+[; ;SPI_Master.c: 104:     SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"105
+[; ;SPI_Master.c: 105:     SSPOV = 0;
+[e = _SSPOV -> -> 0 `i `b ]
+"106
+[; ;SPI_Master.c: 106:     return Data2;
+[e ) _Data2 ]
+[e $UE 147  ]
+"107
+[; ;SPI_Master.c: 107:   }
+}
+[e :U 148 ]
+"108
+[; ;SPI_Master.c: 108: }
+[e :UE 147 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"109
+[; ;SPI_Master.c: 109: void __attribute__((picinterrupt(("")))) ISR(void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"110
+[; ;SPI_Master.c: 110: {
+{
+[e :U _ISR ]
+[f ]
+"111
+[; ;SPI_Master.c: 111:   if(SSPIF)
+[e $ ! _SSPIF 150  ]
+"112
+[; ;SPI_Master.c: 112:   {
+{
+"113
+[; ;SPI_Master.c: 113:     Data2 = SSPBUF;
+[e = _Data2 _SSPBUF ]
+"114
+[; ;SPI_Master.c: 114:     SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"115
+[; ;SPI_Master.c: 115:   }
+}
+[e :U 150 ]
+"116
+[; ;SPI_Master.c: 116: }
+[e :UE 149 ]
+}

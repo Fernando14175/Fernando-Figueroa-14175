@@ -57,11 +57,6 @@ void main(void) {
      Lcd_Write_String("Volt1"); //escribimos las letras en pantalla
      Lcd_Set_Cursor(1,7);  //cursor para escribir       
      Lcd_Write_String("Volt2"); //escribimos las letras en pantalla
-     
-     Lcd_Set_Cursor(1,13);  //cursor para escribir       
-     Lcd_Write_String("CNT"); //escribimos las letras en pantalla
-     Lcd_Set_Cursor(2,11);   //cursor para escribir      
-        
     
     while(1){
               

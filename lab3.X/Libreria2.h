@@ -104,6 +104,6 @@ void Lcd_Init(){
     Lcd_Cmd(0x38);    // utilizamos el conamdo 0x38  
     Lcd_Cmd(0x01);     // utilizamos el conamdo 0x01         
     Lcd_Cmd(0x06);     // utilizamos el conamdo 0x06         
-    Lcd_Cmd(0x0F);      // utilizamos el conamdo 0x0F         
+    Lcd_Cmd(0x0F);      // utilizamos el conamdo 0x0         
    
 }
