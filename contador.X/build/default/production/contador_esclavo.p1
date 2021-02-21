@@ -7,10 +7,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1540
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
-"1602
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"290
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "228
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "352
@@ -24,6 +20,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S7 . . ]
 "245
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"290
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "10 contador_esclavo.c
 [p x FOSC  =HS ]
 "11
@@ -240,96 +238,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 "41
 [; ;contador_esclavo.c: 41:     TRISC = 0b00000000;
 [e = _TRISC -> -> 0 `i `uc ]
-"42
-[; ;contador_esclavo.c: 42:     TRISD = 0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
-"44
-[; ;contador_esclavo.c: 44:     PORTC = 0b00000000;
-[e = _PORTC -> -> 0 `i `uc ]
-"45
-[; ;contador_esclavo.c: 45:     PORTB = 0b00000000;
+"43
+[; ;contador_esclavo.c: 43:     PORTB = 0b00000000;
 [e = _PORTB -> -> 0 `i `uc ]
-"46
-[; ;contador_esclavo.c: 46:     PORTD = 0b00000000;
+"44
+[; ;contador_esclavo.c: 44:     PORTD = 0b00000000;
 [e = _PORTD -> -> 0 `i `uc ]
-"48
-[; ;contador_esclavo.c: 48: }
+"46
+[; ;contador_esclavo.c: 46: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51
-[; ;contador_esclavo.c: 51: void main(void) {
+"49
+[; ;contador_esclavo.c: 49: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"52
-[; ;contador_esclavo.c: 52:     config();
+"50
+[; ;contador_esclavo.c: 50:     config();
 [e ( _config ..  ]
-"53
-[; ;contador_esclavo.c: 53:     while(1){
+"51
+[; ;contador_esclavo.c: 51:     while(1){
 [e :U 141 ]
 {
-"55
-[; ;contador_esclavo.c: 55:     if (PORTBbits.RB0 == 0){
+"53
+[; ;contador_esclavo.c: 53:     if (PORTBbits.RB0 == 0){
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 143  ]
 {
-"56
-[; ;contador_esclavo.c: 56:     estado = 1;
+"54
+[; ;contador_esclavo.c: 54:     estado = 1;
 [e = _estado -> 1 `i ]
-"57
-[; ;contador_esclavo.c: 57:     }
+"55
+[; ;contador_esclavo.c: 55:     }
 }
 [e :U 143 ]
-"59
-[; ;contador_esclavo.c: 59:     if (PORTBbits.RB0 == 1 && estado == 1){
+"57
+[; ;contador_esclavo.c: 57:     if (PORTBbits.RB0 == 1 && estado == 1){
 [e $ ! && == -> . . _PORTBbits 0 0 `i -> 1 `i == _estado -> 1 `i 144  ]
 {
-"60
-[; ;contador_esclavo.c: 60:          PORTC++;
+"58
+[; ;contador_esclavo.c: 58:          PORTC++;
 [e ++ _PORTC -> -> 1 `i `Vuc ]
-"61
-[; ;contador_esclavo.c: 61:          estado = 0;
+"59
+[; ;contador_esclavo.c: 59:          estado = 0;
 [e = _estado -> 0 `i ]
-"62
-[; ;contador_esclavo.c: 62:         }
+"60
+[; ;contador_esclavo.c: 60:         }
 }
 [e :U 144 ]
-"64
-[; ;contador_esclavo.c: 64:     if (PORTBbits.RB1 == 0){
+"62
+[; ;contador_esclavo.c: 62:     if (PORTBbits.RB1 == 0){
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 145  ]
 {
-"65
-[; ;contador_esclavo.c: 65:     estado2 = 1;
+"63
+[; ;contador_esclavo.c: 63:     estado2 = 1;
 [e = _estado2 -> 1 `i ]
-"66
-[; ;contador_esclavo.c: 66:     }
+"64
+[; ;contador_esclavo.c: 64:     }
 }
 [e :U 145 ]
-"68
-[; ;contador_esclavo.c: 68:     if (PORTBbits.RB1 == 1 && estado2 == 1){
+"66
+[; ;contador_esclavo.c: 66:     if (PORTBbits.RB1 == 1 && estado2 == 1){
 [e $ ! && == -> . . _PORTBbits 0 1 `i -> 1 `i == _estado2 -> 1 `i 146  ]
 {
-"69
-[; ;contador_esclavo.c: 69:          PORTC--;
+"67
+[; ;contador_esclavo.c: 67:          PORTC--;
 [e -- _PORTC -> -> 1 `i `Vuc ]
-"70
-[; ;contador_esclavo.c: 70:          estado2 = 0;
+"68
+[; ;contador_esclavo.c: 68:          estado2 = 0;
 [e = _estado2 -> 0 `i ]
-"71
-[; ;contador_esclavo.c: 71:         }
+"69
+[; ;contador_esclavo.c: 69:         }
 }
 [e :U 146 ]
-"73
-[; ;contador_esclavo.c: 73:      }
+"71
+[; ;contador_esclavo.c: 71:      }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"74
-[; ;contador_esclavo.c: 74:       return;
+"72
+[; ;contador_esclavo.c: 72:       return;
 [e $UE 139  ]
-"76
-[; ;contador_esclavo.c: 76:    }
+"74
+[; ;contador_esclavo.c: 74:    }
 [e :UE 139 ]
 }

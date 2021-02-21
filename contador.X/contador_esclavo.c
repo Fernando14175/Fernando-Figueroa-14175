@@ -39,9 +39,7 @@ void config (void){
     
     TRISB = 0b00000011;
     TRISC = 0b00000000;
-    TRISD = 0b00000000;
     
-    PORTC = 0b00000000;
     PORTB = 0b00000000;
     PORTD = 0b00000000;
     
