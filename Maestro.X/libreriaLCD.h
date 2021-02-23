@@ -4,16 +4,15 @@
 #include <xc.h> // inclu
 #define _XTAL_FREQ  9000000 //frecuencia
 
-int temperatura;
+
 float tempt;
-int c;  //inicializamos variable c //inicializamos variable b
+int c;  //inicializamos variable c 
 int cc;
 float vpot1; //inicializamos la variable vpot1
-float vpot2; //inicializamos la variable vpot1
 float contm;
 char buffer1[]; //inicializamos la variable buffer
-char buffer2[]; //inicializamos la variable buffer
-char buffer3[];
+char buffer2[]; //inicializamos la variable buffer2
+char buffer3[]; //inicializamos la variable buffer3
 void Lcd_Set_Cursor(char x, char y); //inicializamos funcion que setea el cursor del lcd 
 void Lcd_Write_String(char *a); //inicializamos funcion que escribe strings en la lcd 
 void Lcd_Write_Char(char a); // inicializamos funcion que escribe chars en la lcd 
@@ -41,7 +40,7 @@ void Lcd_Set_Cursor(char a, char b) //funcion para setear el cursor de la lcd
 	  temp = 0x80 + b - 1; //calculo de la posicion del cursor 
 		//z = temp>>8;
 		//y = temp & 0x0F;
-		Lcd_Cmd(temp); //mandamos los valores al lcd para leer la posicion del cursor 
+		Lcd_Cmd(temp);    //mandamos los valores al lcd para leer la posicion del cursor 
 		
 	}
 	else if(a == 2)

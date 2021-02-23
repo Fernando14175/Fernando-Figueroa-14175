@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\contador.X.production.sym \
   --cmf=dist/default/production\contador.X.production.cmf -z -Q16F887 \
-  -oC:\Users\FERNAN~1\AppData\Local\Temp\sfig.3 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\FERNAN~1\AppData\Local\Temp\scpg.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/contador.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\FERNAN~1\AppData\Local\Temp\sfig.o \
+  -pfunctab=ENTRY -k C:\Users\FERNAN~1\AppData\Local\Temp\scpg.o \
   dist/default/production\contador.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\FERNAN~1\AppData\Local\Temp\sfig.o
+C:\Users\FERNAN~1\AppData\Local\Temp\scpg.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -292,7 +292,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 55 in file "contador_esclavo.c"
+		line 43 in file "contador_esclavo.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -321,7 +321,7 @@ Total ram usage:        1 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 84 in file "contador_esclavo.c"
+		line 70 in file "contador_esclavo.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -351,14 +351,14 @@ Total ram usage:        0 bytes
 
  *************** function _spiInit *****************
  Defined at:
-		line 109 in file "contador_esclavo.c"
+		line 95 in file "contador_esclavo.c"
  Parameters:    Size  Location     Type
-  sType           1    wreg     enum E1292
-  sDataSample     1    0[BANK0 ] enum E1300
-  sClockIdle      1    1[BANK0 ] enum E1304
-  sTransmitEdg    1    2[BANK0 ] enum E1308
+  sType           1    wreg     enum E1264
+  sDataSample     1    0[BANK0 ] enum E1272
+  sClockIdle      1    1[BANK0 ] enum E1276
+  sTransmitEdg    1    2[BANK0 ] enum E1280
  Auto vars:     Size  Location     Type
-  sType           1    3[COMMON] enum E1292
+  sType           1    3[COMMON] enum E1264
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -384,7 +384,7 @@ Total ram usage:        4 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 45 in file "contador_esclavo.c"
+		line 35 in file "contador_esclavo.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -414,7 +414,7 @@ Total ram usage:        2 bytes
 
  *************** function _spiWrite *****************
  Defined at:
-		line 131 in file "contador_esclavo.c"
+		line 117 in file "contador_esclavo.c"
  Parameters:    Size  Location     Type
   dat             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type

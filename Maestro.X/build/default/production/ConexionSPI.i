@@ -2553,12 +2553,11 @@ char spiRead();
 
 
 
-int temperatura;
+
 float tempt;
 int c;
 int cc;
 float vpot1;
-float vpot2;
 float contm;
 char buffer1[];
 char buffer2[];
@@ -3044,8 +3043,8 @@ void conversion(void){
         Lcd_Write_String(buffer2);
 }
 void temperaturac(void){
-        vpot2 = (cc*5.0/255)*100;
-        sprintf(buffer3, "%.1f", vpot2);
+        tempt = (cc*5.0/255)*100;
+        sprintf(buffer3, "%.1f", tempt);
         Lcd_Set_Cursor(2,13);
         Lcd_Write_String(buffer3);
 }

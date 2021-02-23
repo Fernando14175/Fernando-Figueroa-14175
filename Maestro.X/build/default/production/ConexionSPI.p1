@@ -292,10 +292,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3546
 [; <" EECON2 equ 018Dh ;# ">
-"7 ./libreriaLCD.h
-[; ;./libreriaLCD.h: 7: int temperatura;
-[v _temperatura `i ~T0 @X0 1 e ]
-"8
+"8 ./libreriaLCD.h
 [; ;./libreriaLCD.h: 8: float tempt;
 [v _tempt `f ~T0 @X0 1 e ]
 "9
@@ -308,214 +305,211 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./libreriaLCD.h: 11: float vpot1;
 [v _vpot1 `f ~T0 @X0 1 e ]
 "12
-[; ;./libreriaLCD.h: 12: float vpot2;
-[v _vpot2 `f ~T0 @X0 1 e ]
-"13
-[; ;./libreriaLCD.h: 13: float contm;
+[; ;./libreriaLCD.h: 12: float contm;
 [v _contm `f ~T0 @X0 1 e ]
-"14
-[; ;./libreriaLCD.h: 14: char buffer1[];
+"13
+[; ;./libreriaLCD.h: 13: char buffer1[];
 [v _buffer1 `uc ~T0 @X0 -> -> 1 `i `ux e ]
-"15
-[; ;./libreriaLCD.h: 15: char buffer2[];
+"14
+[; ;./libreriaLCD.h: 14: char buffer2[];
 [v _buffer2 `uc ~T0 @X0 -> -> 1 `i `ux e ]
-"16
-[; ;./libreriaLCD.h: 16: char buffer3[];
+"15
+[; ;./libreriaLCD.h: 15: char buffer3[];
 [v _buffer3 `uc ~T0 @X0 -> -> 1 `i `ux e ]
-"22
-[; ;./libreriaLCD.h: 22: void Lcd_Cmd(char a){
+"21
+[; ;./libreriaLCD.h: 21: void Lcd_Cmd(char a){
 [v _Lcd_Cmd `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Lcd_Cmd ]
 [v _a `uc ~T0 @X0 1 r1 ]
 [f ]
-"23
-[; ;./libreriaLCD.h: 23:  PORTDbits.RD2 =0;
+"22
+[; ;./libreriaLCD.h: 22:  PORTDbits.RD2 =0;
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-"24
-[; ;./libreriaLCD.h: 24:  PORTB=a;
+"23
+[; ;./libreriaLCD.h: 23:  PORTB=a;
 [e = _PORTB -> _a `uc ]
-"25
-[; ;./libreriaLCD.h: 25:     PORTDbits.RD3=1;
+"24
+[; ;./libreriaLCD.h: 24:     PORTDbits.RD3=1;
 [e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-"26
-[; ;./libreriaLCD.h: 26:     _delay((unsigned long)((4)*(9000000/4000.0)));
+"25
+[; ;./libreriaLCD.h: 25:     _delay((unsigned long)((4)*(9000000/4000.0)));
 [e ( __delay (1 -> * -> -> 4 `i `d / -> -> 9000000 `l `d .4000.0 `ul ]
-"27
-[; ;./libreriaLCD.h: 27:     PORTDbits.RD3=0;
+"26
+[; ;./libreriaLCD.h: 26:     PORTDbits.RD3=0;
 [e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
-"28
-[; ;./libreriaLCD.h: 28: }
+"27
+[; ;./libreriaLCD.h: 27: }
 [e :UE 138 ]
 }
-"31
-[; ;./libreriaLCD.h: 31: Lcd_Clear(){
+"30
+[; ;./libreriaLCD.h: 30: Lcd_Clear(){
 [v _Lcd_Clear `(i ~T0 @X0 1 ef ]
 {
 [e :U _Lcd_Clear ]
 [f ]
-"32
-[; ;./libreriaLCD.h: 32:  Lcd_Cmd(0);
+"31
+[; ;./libreriaLCD.h: 31:  Lcd_Cmd(0);
 [e ( _Lcd_Cmd (1 -> -> 0 `i `uc ]
-"33
-[; ;./libreriaLCD.h: 33:  Lcd_Cmd(1);
+"32
+[; ;./libreriaLCD.h: 32:  Lcd_Cmd(1);
 [e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"34
-[; ;./libreriaLCD.h: 34: }
+"33
+[; ;./libreriaLCD.h: 33: }
 [e :UE 139 ]
 }
-"36
-[; ;./libreriaLCD.h: 36: void Lcd_Set_Cursor(char a, char b)
+"35
+[; ;./libreriaLCD.h: 35: void Lcd_Set_Cursor(char a, char b)
 [v _Lcd_Set_Cursor `(v ~T0 @X0 1 ef2`uc`uc ]
-"37
-[; ;./libreriaLCD.h: 37: {
+"36
+[; ;./libreriaLCD.h: 36: {
 {
 [e :U _Lcd_Set_Cursor ]
-"36
-[; ;./libreriaLCD.h: 36: void Lcd_Set_Cursor(char a, char b)
+"35
+[; ;./libreriaLCD.h: 35: void Lcd_Set_Cursor(char a, char b)
 [v _a `uc ~T0 @X0 1 r1 ]
 [v _b `uc ~T0 @X0 1 r2 ]
-"37
-[; ;./libreriaLCD.h: 37: {
+"36
+[; ;./libreriaLCD.h: 36: {
 [f ]
-"38
-[; ;./libreriaLCD.h: 38:  char temp,z,y;
+"37
+[; ;./libreriaLCD.h: 37:  char temp,z,y;
 [v _temp `uc ~T0 @X0 1 a ]
 [v _z `uc ~T0 @X0 1 a ]
 [v _y `uc ~T0 @X0 1 a ]
-"39
-[; ;./libreriaLCD.h: 39:  if(a == 1)
+"38
+[; ;./libreriaLCD.h: 38:  if(a == 1)
 [e $ ! == -> _a `i -> 1 `i 141  ]
-"40
-[; ;./libreriaLCD.h: 40:  {
+"39
+[; ;./libreriaLCD.h: 39:  {
 {
-"41
-[; ;./libreriaLCD.h: 41:    temp = 0x80 + b - 1;
+"40
+[; ;./libreriaLCD.h: 40:    temp = 0x80 + b - 1;
 [e = _temp -> - + -> 128 `i -> _b `i -> 1 `i `uc ]
-"44
-[; ;./libreriaLCD.h: 44:   Lcd_Cmd(temp);
+"43
+[; ;./libreriaLCD.h: 43:   Lcd_Cmd(temp);
 [e ( _Lcd_Cmd (1 _temp ]
-"46
-[; ;./libreriaLCD.h: 46:  }
+"45
+[; ;./libreriaLCD.h: 45:  }
 }
 [e $U 142  ]
-"47
-[; ;./libreriaLCD.h: 47:  else if(a == 2)
+"46
+[; ;./libreriaLCD.h: 46:  else if(a == 2)
 [e :U 141 ]
 [e $ ! == -> _a `i -> 2 `i 143  ]
-"48
-[; ;./libreriaLCD.h: 48:  {
+"47
+[; ;./libreriaLCD.h: 47:  {
 {
-"49
-[; ;./libreriaLCD.h: 49:   temp = 0xC0 + b - 1;
+"48
+[; ;./libreriaLCD.h: 48:   temp = 0xC0 + b - 1;
 [e = _temp -> - + -> 192 `i -> _b `i -> 1 `i `uc ]
-"52
-[; ;./libreriaLCD.h: 52:   Lcd_Cmd(temp);
+"51
+[; ;./libreriaLCD.h: 51:   Lcd_Cmd(temp);
 [e ( _Lcd_Cmd (1 _temp ]
-"54
-[; ;./libreriaLCD.h: 54:  }
+"53
+[; ;./libreriaLCD.h: 53:  }
 }
 [e :U 143 ]
 [e :U 142 ]
-"55
-[; ;./libreriaLCD.h: 55: }
+"54
+[; ;./libreriaLCD.h: 54: }
 [e :UE 140 ]
 }
-"57
-[; ;./libreriaLCD.h: 57: void Lcd_Write_Char(char a){
+"56
+[; ;./libreriaLCD.h: 56: void Lcd_Write_Char(char a){
 [v _Lcd_Write_Char `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Lcd_Write_Char ]
 [v _a `uc ~T0 @X0 1 r1 ]
 [f ]
-"58
-[; ;./libreriaLCD.h: 58:     PORTDbits.RD2 = 1;
+"57
+[; ;./libreriaLCD.h: 57:     PORTDbits.RD2 = 1;
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-"59
-[; ;./libreriaLCD.h: 59:     PORTB = a;
+"58
+[; ;./libreriaLCD.h: 58:     PORTB = a;
 [e = _PORTB -> _a `uc ]
-"60
-[; ;./libreriaLCD.h: 60:     PORTDbits.RD3=1;
+"59
+[; ;./libreriaLCD.h: 59:     PORTDbits.RD3=1;
 [e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-"61
-[; ;./libreriaLCD.h: 61:     _delay((unsigned long)((40)*(9000000/4000000.0)));
+"60
+[; ;./libreriaLCD.h: 60:     _delay((unsigned long)((40)*(9000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 40 `i `d / -> -> 9000000 `l `d .4000000.0 `ul ]
-"62
-[; ;./libreriaLCD.h: 62:     PORTDbits.RD3=0;
+"61
+[; ;./libreriaLCD.h: 61:     PORTDbits.RD3=0;
 [e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
-"63
-[; ;./libreriaLCD.h: 63: }
+"62
+[; ;./libreriaLCD.h: 62: }
 [e :UE 144 ]
 }
-"65
-[; ;./libreriaLCD.h: 65: void Lcd_Write_String(char *a)
+"64
+[; ;./libreriaLCD.h: 64: void Lcd_Write_String(char *a)
 [v _Lcd_Write_String `(v ~T0 @X0 1 ef1`*uc ]
-"66
-[; ;./libreriaLCD.h: 66: {
+"65
+[; ;./libreriaLCD.h: 65: {
 {
 [e :U _Lcd_Write_String ]
-"65
-[; ;./libreriaLCD.h: 65: void Lcd_Write_String(char *a)
+"64
+[; ;./libreriaLCD.h: 64: void Lcd_Write_String(char *a)
 [v _a `*uc ~T0 @X0 1 r1 ]
-"66
-[; ;./libreriaLCD.h: 66: {
+"65
+[; ;./libreriaLCD.h: 65: {
 [f ]
-"67
-[; ;./libreriaLCD.h: 67:  int i;
+"66
+[; ;./libreriaLCD.h: 66:  int i;
 [v _i `i ~T0 @X0 1 a ]
-"68
-[; ;./libreriaLCD.h: 68:  for(i=0;a[i]!='\0';i++)
+"67
+[; ;./libreriaLCD.h: 67:  for(i=0;a[i]!='\0';i++)
 {
 [e = _i -> 0 `i ]
 [e $U 149  ]
 [e :U 146 ]
-"69
-[; ;./libreriaLCD.h: 69:      Lcd_Write_Char(a[i]);
+"68
+[; ;./libreriaLCD.h: 68:      Lcd_Write_Char(a[i]);
 [e ( _Lcd_Write_Char (1 *U + _a * -> _i `x -> -> # *U _a `i `x ]
 [e ++ _i -> 1 `i ]
 [e :U 149 ]
 [e $ != -> *U + _a * -> _i `x -> -> # *U _a `i `x `ui -> 0 `ui 146  ]
 [e :U 147 ]
 }
-"70
-[; ;./libreriaLCD.h: 70: }
+"69
+[; ;./libreriaLCD.h: 69: }
 [e :UE 145 ]
 }
-"72
-[; ;./libreriaLCD.h: 72: void Lcd_Init(){
+"71
+[; ;./libreriaLCD.h: 71: void Lcd_Init(){
 [v _Lcd_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Lcd_Init ]
 [f ]
-"74
-[; ;./libreriaLCD.h: 74:     PORTDbits.RD2 = 0;
+"73
+[; ;./libreriaLCD.h: 73:     PORTDbits.RD2 = 0;
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-"76
-[; ;./libreriaLCD.h: 76:     Lcd_Cmd(0x00);
+"75
+[; ;./libreriaLCD.h: 75:     Lcd_Cmd(0x00);
 [e ( _Lcd_Cmd (1 -> -> 0 `i `uc ]
-"77
-[; ;./libreriaLCD.h: 77:     _delay((unsigned long)((15)*(9000000/4000.0)));
+"76
+[; ;./libreriaLCD.h: 76:     _delay((unsigned long)((15)*(9000000/4000.0)));
 [e ( __delay (1 -> * -> -> 15 `i `d / -> -> 9000000 `l `d .4000.0 `ul ]
-"80
-[; ;./libreriaLCD.h: 80:     Lcd_Cmd(0x30);
+"79
+[; ;./libreriaLCD.h: 79:     Lcd_Cmd(0x30);
 [e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
-"81
-[; ;./libreriaLCD.h: 81:     _delay((unsigned long)((160)*(9000000/4000000.0)));
+"80
+[; ;./libreriaLCD.h: 80:     _delay((unsigned long)((160)*(9000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 160 `i `d / -> -> 9000000 `l `d .4000000.0 `ul ]
-"83
-[; ;./libreriaLCD.h: 83:     Lcd_Cmd(0x38);
+"82
+[; ;./libreriaLCD.h: 82:     Lcd_Cmd(0x38);
 [e ( _Lcd_Cmd (1 -> -> 56 `i `uc ]
-"84
-[; ;./libreriaLCD.h: 84:     Lcd_Cmd(0x01);
+"83
+[; ;./libreriaLCD.h: 83:     Lcd_Cmd(0x01);
 [e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"85
-[; ;./libreriaLCD.h: 85:     Lcd_Cmd(0x06);
+"84
+[; ;./libreriaLCD.h: 84:     Lcd_Cmd(0x06);
 [e ( _Lcd_Cmd (1 -> -> 6 `i `uc ]
-"86
-[; ;./libreriaLCD.h: 86:     Lcd_Cmd(0x0F);
+"85
+[; ;./libreriaLCD.h: 85:     Lcd_Cmd(0x0F);
 [e ( _Lcd_Cmd (1 -> -> 15 `i `uc ]
-"88
-[; ;./libreriaLCD.h: 88: }
+"87
+[; ;./libreriaLCD.h: 87: }
 [e :UE 150 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
@@ -894,11 +888,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _temperaturac ]
 [f ]
 "159
-[; ;ConexionSPI.c: 159:         vpot2 = (cc*5.0/255)*100;
-[e = _vpot2 -> * / * -> _cc `d .5.0 -> -> 255 `i `d -> -> 100 `i `d `f ]
+[; ;ConexionSPI.c: 159:         tempt = (cc*5.0/255)*100;
+[e = _tempt -> * / * -> _cc `d .5.0 -> -> 255 `i `d -> -> 100 `i `d `f ]
 "160
-[; ;ConexionSPI.c: 160:         sprintf(buffer3, "%.1f", vpot2);
-[e ( _sprintf (1 , (. , &U _buffer3 :s 8C -> _vpot2 `d ]
+[; ;ConexionSPI.c: 160:         sprintf(buffer3, "%.1f", tempt);
+[e ( _sprintf (1 , (. , &U _buffer3 :s 8C -> _tempt `d ]
 "161
 [; ;ConexionSPI.c: 161:         Lcd_Set_Cursor(2,13);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 13 `i `uc ]

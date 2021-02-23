@@ -25,59 +25,59 @@
 void setup(void);
 void Contador(void);
 void conversion(void);
-void temperaturac(void);
+void temperaturac(void); // funcion temperatura
 
 void main(void) {
     
     setup();
-    Lcd_Init(); //inicializar la lcd 
-    Lcd_Set_Cursor(1,1); //cursor para escribir 
-    Lcd_Write_String("DIGITAL 2");//escribimos las letras en pantalla
-    Lcd_Set_Cursor(2,1); //cursor para escribir 
+    Lcd_Init();                         //inicializar la lcd 
+    Lcd_Set_Cursor(1,1);                //cursor para escribir 
+    Lcd_Write_String("DIGITAL 2");      //escribimos las letras en pantalla
+    Lcd_Set_Cursor(2,1);                //cursor para escribir 
     Lcd_Write_String("FernandoFigueroa"); //escribimos las letras en pantalla
     __delay_ms(100); 
-    Lcd_Clear();// limpiamos lo escrito de la lcd 
+    Lcd_Clear();                        // limpiamos lo escrito de la lcd 
     
-     Lcd_Set_Cursor(1,1);  //cursor para escribir       
-     Lcd_Write_String("Cont"); //escribimos las letras en pantalla
+     Lcd_Set_Cursor(1,1);               //cursor para escribir       
+     Lcd_Write_String("Cont");          //escribimos las letras en pantalla
      Lcd_Set_Cursor(1,8);
      Lcd_Write_String("Volt"); 
       Lcd_Set_Cursor(1,14);
      Lcd_Write_String("Tmp"); 
-     //Lcd_Set_Cursor(2,1);  //cursor para escribir       
+                                        //cursor para escribir       
      
      
     while(1){
-        PORTCbits.RC2 = 0;
+        PORTCbits.RC2 = 0;  //selesccionamos esclavo
        __delay_ms(5);
-       spiWrite(PORTB); 
-       contm = spiRead();
-       Contador();
+       spiWrite(PORTB);    //escrimos el valor del puerto b de regreso
+       contm = spiRead();  //leemos el valor que mandamos del esclavo y lo metemos en contm
+       Contador();         //llamamos la funcion contador 
        __delay_ms(5);
-       PORTCbits.RC2 = 1;
+       PORTCbits.RC2 = 1;  //apagamos el esclavo
        
-       PORTCbits.RC1 = 0;
+       PORTCbits.RC1 = 0;  //seleccionamos el esclavo
         __delay_ms(5);
-        spiWrite(PORTB);
-        c = spiRead();
-        conversion();
+        spiWrite(PORTB);   //escribimos el valor del puerto de regreso
+        c = spiRead();     //leemos el valor que mandamos del esclavo y lo metemos en c 
+        conversion();      //llamamos la funcion conversion
         __delay_ms(5);
-      PORTCbits.RC1 = 1;
+      PORTCbits.RC1 = 1;   //apagamos el esclavo 
         
-      PORTCbits.RC0 = 0;
+      PORTCbits.RC0 = 0;   //seleccionamos el esclavo
         __delay_ms(5);
-        spiWrite(PORTB);
-        cc = spiRead();
-        temperaturac();
+        spiWrite(PORTB);   //mandamos el valor del peurto b de regreso
+        cc = spiRead();    //leemos el valor del esclavo y lo metemos en cc 
+        temperaturac();    //llamamos la funcion temperatura c 
         __delay_ms(5);
-      PORTCbits.RC0 = 1;
+      PORTCbits.RC0 = 1;   //apagamos el esclavo 
         
     }       
         
     return;
 }
 
-void setup(void){
+void setup(void){  //funcion setup para los pines 
     ANSEL = 0;
     ANSELH = 0;
     
@@ -93,11 +93,11 @@ void setup(void){
     PORTD = 0;
     PORTA = 0;
     
-    PORTCbits.RC2 = 0;
-    PORTCbits.RC1 = 0;
-    PORTCbits.RC0 = 0; 
+    PORTCbits.RC2 = 0; //ponemos el modo esclavo del pic
+    PORTCbits.RC1 = 0; //ponemos el modo esclavo del pic 
+    PORTCbits.RC0 = 0; //ponemos el modo esclavo del pic 
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+    //inicializamos el esclavo
 }
 
 void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
@@ -119,10 +119,10 @@ void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockI
 
 static void spiReceiveWait()
 {
-    while ( !SSPSTATbits.BF ); // Wait for Data Receive complete
+    while ( !SSPSTATbits.BF );
 }
 
-void spiWrite(char dat)  //Write data to SPI bus
+void spiWrite(char dat)  
 {
     SSPBUF = dat;
 }
@@ -142,22 +142,22 @@ char spiRead() //REad the received data
 }
 
 void Contador(void){ 
-      // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla //valor del voltaje del potenciometo
-      sprintf(buffer1,"%.3f",contm);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
+      
+      sprintf(buffer1,"%.3f",contm);  // convertimos el valor del pot a letras para que pueda ser impreso en la pantalla
       Lcd_Set_Cursor(2,1);        
       Lcd_Write_String(buffer1);
 }
 
 void conversion(void){
        
-        vpot1 = (5*c)/255; //valor del voltaje del potenciometo
+        vpot1 = (5*c)/255;                //valor del voltaje del potenciometo
         sprintf(buffer2, "%.2f", vpot1);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
         Lcd_Set_Cursor(2,8);        
         Lcd_Write_String(buffer2); 
 }
 void temperaturac(void){
-        vpot2 = (cc*5.0/255)*100; 
-        sprintf(buffer3, "%.1f", vpot2);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
+        tempt = (cc*5.0/255)*100;         //valor de la temperatura
+        sprintf(buffer3, "%.1f", tempt);  // convertimos el valor del sensor a letras para que pueda ser impreso en la pantalla
         Lcd_Set_Cursor(2,13);        
         Lcd_Write_String(buffer3); 
 }

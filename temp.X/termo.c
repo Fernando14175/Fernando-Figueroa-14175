@@ -59,7 +59,7 @@ void main(void) {
     Lcd_Clear();// limpiamos lo escrito de la lcd 
     
      Lcd_Set_Cursor(1,1);  //cursor para escribir       
-     Lcd_Write_String("Volt1"); //escribimos las letras en pantalla
+     Lcd_Write_String("Temp"); //escribimos las letras en pantalla
      
     
     while(1){
@@ -113,7 +113,7 @@ void config(void){
     ANSELbits.ANS0 = 1;     //entrada anlogica    AN0
     ANSELbits.ANS1 = 1;     //entrada anlogica    AN1
           
-    
+    //
     ADCON0bits.ADON=1;     //encendemos el adc           
     ADCON1bits.ADFM=0;     //justificacion de bits            
     

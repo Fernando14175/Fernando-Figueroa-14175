@@ -2925,7 +2925,7 @@ void main(void) {
     Lcd_Clear();
 
      Lcd_Set_Cursor(1,1);
-     Lcd_Write_String("Volt1");
+     Lcd_Write_String("Temp");
 
 
     while(1){

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\temp.X.production.sym \
   --cmf=dist/default/production\temp.X.production.cmf -z -Q16F887 \
-  -oC:\Users\FERNAN~1\AppData\Local\Temp\s648.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\FERNAN~1\AppData\Local\Temp\s8dc.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/temp.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\FERNAN~1\AppData\Local\Temp\s648.o \
+  -pfunctab=ENTRY -k C:\Users\FERNAN~1\AppData\Local\Temp\s8dc.o \
   dist/default/production\temp.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\FERNAN~1\AppData\Local\Temp\s648.o
+C:\Users\FERNAN~1\AppData\Local\Temp\s8dc.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -75,7 +75,7 @@ dist/default/production\temp.X.production.o
                 cstackCOMMON                         70       70        9       70       1
                 cstackBANK1                          A0       A0       33       A0       1
                 bssBANK1                             D3       D3        7       A0       1
-                strings                             800      800       C6     1000       0
+                strings                             800      800       C5     1000       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -124,7 +124,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STRCODE        
 
         CLASS   STRING         
-                strings                             800      800       C6         0
+                strings                             800      800       C5         0
 
         CLASS   CONST          
 
@@ -173,7 +173,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackBANK0                    000020  00004F  00006F        20       1  BANK0       1
                 cstackCOMMON                   000070  000009  000079        70       1  COMMON      1
                 cstackBANK1                    0000A0  00003A  0000DA        A0       1  BANK1       1
-                strings                        000800  0000C6  0008C6      1000       0  STRING      2
+                strings                        000800  0000C5  0008C5      1000       0  STRING      2
                 text31                         0008C7  00000D  0008D4      118E       0  CODE        2
                 text17                         0008D4  000068  00093C      11A8       0  CODE        2
                 text10                         00093C  000361  000C9D      1278       0  CODE        2
@@ -216,17 +216,17 @@ UNUSED ADDRESS RANGES
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
                          07FF-07FF              1
-                         08C6-08C6              1
+                         08C5-08C6              2
                          1800-18E0             E1
         COMMON           0079-007D              5           1
         CONST            0003-0003              1           2
                          07FF-07FF              1
-                         08C6-08C6              1
+                         08C5-08C6              2
                          1800-18E0             E1
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
                          07FF-07FF              1
-                         08C6-08C6              1
+                         08C5-08C6              2
                          1800-18E0             E1
         IDLOC            2000-2003              4           2
         RAM              006F-006F              1           1
@@ -240,11 +240,11 @@ UNUSED ADDRESS RANGES
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
                          07FF-07FF              1
-                         08C6-08C6              1
+                         08C5-08C6              2
                          1800-18E0             E1
         STRING           0003-0003              1           2
                          07FF-07FF              1
-                         08C6-08C6              1
+                         08C5-08C6              2
                          1800-18E0             E1
 
                                   Symbol Table
@@ -1512,7 +1512,7 @@ Total ram usage:       26 bytes
 		line 62 in file "./temperatura.h"
  Parameters:    Size  Location     Type
   a               2    7[COMMON] PTR unsigned char 
-		 -> bufferr(1), STR_3(6), STR_2(17), STR_1(10), 
+		 -> bufferr(1), STR_3(5), STR_2(17), STR_1(10), 
  Auto vars:     Size  Location     Type
   i               2    3[BANK0 ] int 
  Return value:  Size  Location     Type

@@ -54,7 +54,7 @@ intentry CODE 0 4 4 8 2
 bssBANK1 BANK1 1 CE CE 7 1
 strings STRING 0 800 800 C6 2
 config CONFIG 4 2007 2007 2 2
-$C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+$C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -112,20 +112,20 @@ STRING 1800-1BAB 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\pot.X.production.o
-F cinit CODE >798:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-F cinit CODE >801:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-F cinit CODE >818:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-10 cinit CODE >819:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-11 cinit CODE >820:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-12 cinit CODE >821:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-13 cinit CODE >822:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-14 cinit CODE >823:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-15 cinit CODE >824:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-16 cinit CODE >825:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-17 cinit CODE >826:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-18 cinit CODE >832:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-18 cinit CODE >834:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
-19 cinit CODE >835:C:\Users\FERNAN~1\AppData\Local\Temp\sfto.s
+F cinit CODE >798:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+F cinit CODE >801:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+F cinit CODE >818:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+10 cinit CODE >819:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+11 cinit CODE >820:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+12 cinit CODE >821:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+13 cinit CODE >822:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+14 cinit CODE >823:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+15 cinit CODE >824:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+16 cinit CODE >825:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+17 cinit CODE >826:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+18 cinit CODE >832:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+18 cinit CODE >834:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
+19 cinit CODE >835:C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.s
 4 intentry CODE >38:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\pot.X\potenciometro.c
 1003 text33 CODE >137:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\pot.X\potenciometro.c
 1004 text33 CODE >139:C:\Users\Fernando Figueroa\Documents\GitHub\Fernando-Figueroa-14175\pot.X\potenciometro.c
@@ -846,11 +846,11 @@ spiInit@sTransmitEdge 77 0 COMMON 1 cstackCOMMON dist/default/production\pot.X.p
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __end_of_Lcd_Init 3A08 0 CODE 0 text29 dist/default/production\pot.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+___sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 _main 3D84 0 CODE 0 maintext dist/default/production\pot.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\pot.X.production.o
 _Lcd_Write_Char 376E 0 CODE 0 text25 dist/default/production\pot.X.production.o
-start 18 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+start 18 0 CODE 0 init C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 ___flmul@aexp 3E 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
 ___flmul@bexp 3F 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
 ___flmul@prod 40 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
@@ -873,12 +873,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 22 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
 __end_of__npowers_ 10F0 0 STRING 0 strings dist/default/production\pot.X.production.o
 _sprintf$1165 B2 0 BANK1 1 cstackBANK1 dist/default/production\pot.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 __size_of__div_to_l_ 0 0 ABS 0 - dist/default/production\pot.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\pot.X.production.o
 ___llmod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
@@ -921,8 +921,8 @@ __end_of___lwmod 3A80 0 CODE 0 text8 dist/default/production\pot.X.production.o
 __size_of_isdigit 0 0 ABS 0 - dist/default/production\pot.X.production.o
 __end_of_config 38F0 0 CODE 0 text27 dist/default/production\pot.X.production.o
 __Umul8_16@multiplicand 75 0 COMMON 1 cstackCOMMON dist/default/production\pot.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
-___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+___stackhi 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
+___stacklo 0 0 ABS 0 - C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 _dpowers 10F0 0 STRING 0 strings dist/default/production\pot.X.production.o
 __size_of__tdiv_to_l_ 0 0 ABS 0 - dist/default/production\pot.X.production.o
 __end_of_fround 2AF0 0 CODE 0 text7 dist/default/production\pot.X.production.o
@@ -953,7 +953,7 @@ __tdiv_to_l_@f1 20 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.productio
 __tdiv_to_l_@f2 24 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\pot.X.production.o
 _isdigit$973 75 0 COMMON 1 cstackCOMMON dist/default/production\pot.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+___int_sp 0 0 STACK 2 stack C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1024,7 +1024,7 @@ __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\pot.X.production.
 __stringtab 1000 0 STRING 0 strings dist/default/production\pot.X.production.o
 Lcd_Write_String@a 77 0 COMMON 1 cstackCOMMON dist/default/production\pot.X.production.o
 Lcd_Write_String@i 23 0 BANK0 1 cstackBANK0 dist/default/production\pot.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\sfto.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\FERNAN~1\AppData\Local\Temp\sdp4.o
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production\pot.X.production.o
 __end_of_conversion 2120 0 CODE 0 text1 dist/default/production\pot.X.production.o
 __end_of___xxtofl 23E0 0 CODE 0 text14 dist/default/production\pot.X.production.o

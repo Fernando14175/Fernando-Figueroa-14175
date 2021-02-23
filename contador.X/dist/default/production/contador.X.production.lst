@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sun Feb 21 22:01:19 2021
+                                                                                               Tue Feb 23 16:12:50 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -332,7 +332,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    318 ;;
    319 ;; *************** function _main *****************
    320 ;; Defined at:
-   321 ;;		line 55 in file "contador_esclavo.c"
+   321 ;;		line 43 in file "contador_esclavo.c"
    322 ;; Parameters:    Size  Location     Type
    323 ;;		None
    324 ;; Auto vars:     Size  Location     Type
@@ -367,11 +367,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    353                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    354                           
    355                           
-   356                           ;contador_esclavo.c: 56:     setup();
+   356                           ;contador_esclavo.c: 44:     setup();
    357  0019  120A  118A  2062  120A  118A  	fcall	_setup
    358  001E                     l869:
    359                           
-   360                           ;contador_esclavo.c: 61:         if (PORTBbits.RB0 == 0){
+   360                           ;contador_esclavo.c: 47:         if (PORTBbits.RB0 == 0){
    361  001E  1283               	bcf	3,5	;RP0=0, select bank0
    362  001F  1303               	bcf	3,6	;RP1=0, select bank0
    363  0020  1806               	btfsc	6,0	;volatile
@@ -382,14 +382,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    368  0024                     u180:
    369  0024                     l871:
    370                           
-   371                           ;contador_esclavo.c: 62:          estado = 1;
+   371                           ;contador_esclavo.c: 48:          estado = 1;
    372  0024  3001               	movlw	1
    373  0025  00F4               	movwf	_estado
    374  0026  3000               	movlw	0
    375  0027  00F5               	movwf	_estado+1
    376  0028                     l873:
    377                           
-   378                           ;contador_esclavo.c: 64:         if (PORTBbits.RB0 == 1 && estado == 1){
+   378                           ;contador_esclavo.c: 50:         if (PORTBbits.RB0 == 1 && estado == 1){
    379  0028  1C06               	btfss	6,0	;volatile
    380  0029  282B               	goto	u191
    381  002A  282C               	goto	u190
@@ -407,13 +407,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    393  0032                     u200:
    394  0032                     l877:
    395                           
-   396                           ;contador_esclavo.c: 65:          PORTD++;
+   396                           ;contador_esclavo.c: 51:          PORTD++;
    397  0032  3001               	movlw	1
    398  0033  00FA               	movwf	??_main
    399  0034  087A               	movf	??_main,w
    400  0035  0788               	addwf	8,f	;volatile
    401                           
-   402                           ;contador_esclavo.c: 66:          cont = cont+1;
+   402                           ;contador_esclavo.c: 52:          cont = cont+1;
    403  0036  0870               	movf	_cont,w
    404  0037  3E01               	addlw	1
    405  0038  00F0               	movwf	_cont
@@ -424,12 +424,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    410  003D  00F1               	movwf	_cont+1
    411  003E                     l879:
    412                           
-   413                           ;contador_esclavo.c: 67:          estado = 0;
+   413                           ;contador_esclavo.c: 53:          estado = 0;
    414  003E  01F4               	clrf	_estado
    415  003F  01F5               	clrf	_estado+1
    416  0040                     l881:
    417                           
-   418                           ;contador_esclavo.c: 69:          if (PORTBbits.RB1 == 0){
+   418                           ;contador_esclavo.c: 55:          if (PORTBbits.RB1 == 0){
    419  0040  1886               	btfsc	6,1	;volatile
    420  0041  2843               	goto	u211
    421  0042  2844               	goto	u210
@@ -438,14 +438,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    424  0044                     u210:
    425  0044                     l883:
    426                           
-   427                           ;contador_esclavo.c: 70:          estado2 = 1;
+   427                           ;contador_esclavo.c: 56:          estado2 = 1;
    428  0044  3001               	movlw	1
    429  0045  00F2               	movwf	_estado2
    430  0046  3000               	movlw	0
    431  0047  00F3               	movwf	_estado2+1
    432  0048                     l885:
    433                           
-   434                           ;contador_esclavo.c: 72:         if (PORTBbits.RB1 == 1 && estado2 == 1){
+   434                           ;contador_esclavo.c: 58:         if (PORTBbits.RB1 == 1 && estado2 == 1){
    435  0048  1C86               	btfss	6,1	;volatile
    436  0049  284B               	goto	u221
    437  004A  284C               	goto	u220
@@ -463,11 +463,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    449  0052                     u230:
    450  0052                     l889:
    451                           
-   452                           ;contador_esclavo.c: 73:          PORTD--;
+   452                           ;contador_esclavo.c: 59:          PORTD--;
    453  0052  3001               	movlw	1
    454  0053  0288               	subwf	8,f	;volatile
    455                           
-   456                           ;contador_esclavo.c: 74:          cont = cont-1; ;
+   456                           ;contador_esclavo.c: 60:          cont = cont-1; ;
    457  0054  0870               	movf	_cont,w
    458  0055  3EFF               	addlw	255
    459  0056  00F0               	movwf	_cont
@@ -478,7 +478,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    464  005B  00F1               	movwf	_cont+1
    465  005C                     l891:
    466                           
-   467                           ;contador_esclavo.c: 75:          estado2 = 0;
+   467                           ;contador_esclavo.c: 61:          estado2 = 0;
    468  005C  01F2               	clrf	_estado2
    469  005D  01F3               	clrf	_estado2+1
    470  005E  281E               	goto	l869
@@ -489,7 +489,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    475  0062                     __ptext1:	
    476 ;; *************** function _setup *****************
    477 ;; Defined at:
-   478 ;;		line 84 in file "contador_esclavo.c"
+   478 ;;		line 70 in file "contador_esclavo.c"
    479 ;; Parameters:    Size  Location     Type
    480 ;;		None
    481 ;; Auto vars:     Size  Location     Type
@@ -525,68 +525,68 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    511                           ; Regs used in _setup: [wreg+status,2+status,0+pclath+cstack]
    512                           
    513                           
-   514                           ;contador_esclavo.c: 86:     ANSEL = 0;
+   514                           ;contador_esclavo.c: 72:     ANSEL = 0;
    515  0062  1683               	bsf	3,5	;RP0=1, select bank3
    516  0063  1703               	bsf	3,6	;RP1=1, select bank3
    517  0064  0188               	clrf	8	;volatile
    518                           
-   519                           ;contador_esclavo.c: 87:     ANSELH = 0;
+   519                           ;contador_esclavo.c: 73:     ANSELH = 0;
    520  0065  0189               	clrf	9	;volatile
    521  0066                     l843:
    522                           
-   523                           ;contador_esclavo.c: 89:     TRISB = 0b00000011;
+   523                           ;contador_esclavo.c: 75:     TRISB = 0b00000011;
    524  0066  3003               	movlw	3
    525  0067  1683               	bsf	3,5	;RP0=1, select bank1
    526  0068  1303               	bcf	3,6	;RP1=0, select bank1
    527  0069  0086               	movwf	6	;volatile
    528  006A                     l845:
    529                           
-   530                           ;contador_esclavo.c: 91:     TRISB = 0;
+   530                           ;contador_esclavo.c: 77:     TRISB = 0;
    531  006A  0186               	clrf	6	;volatile
    532  006B                     l847:
    533                           
-   534                           ;contador_esclavo.c: 92:     TRISD = 0;
+   534                           ;contador_esclavo.c: 78:     TRISD = 0;
    535  006B  0188               	clrf	8	;volatile
    536  006C                     l849:
    537                           
-   538                           ;contador_esclavo.c: 94:     PORTB = 0;
+   538                           ;contador_esclavo.c: 80:     PORTB = 0;
    539  006C  1283               	bcf	3,5	;RP0=0, select bank0
    540  006D  1303               	bcf	3,6	;RP1=0, select bank0
    541  006E  0186               	clrf	6	;volatile
    542  006F                     l851:
    543                           
-   544                           ;contador_esclavo.c: 95:     PORTD = 0;
+   544                           ;contador_esclavo.c: 81:     PORTD = 0;
    545  006F  0188               	clrf	8	;volatile
    546  0070                     l853:
    547                           
-   548                           ;contador_esclavo.c: 96:     PORTE = 0;
+   548                           ;contador_esclavo.c: 82:     PORTE = 0;
    549  0070  0189               	clrf	9	;volatile
    550  0071                     l855:
    551                           
-   552                           ;contador_esclavo.c: 99:     INTCONbits.GIE = 1;
+   552                           ;contador_esclavo.c: 85:     INTCONbits.GIE = 1;
    553  0071  178B               	bsf	11,7	;volatile
    554  0072                     l857:
    555                           
-   556                           ;contador_esclavo.c: 100:     INTCONbits.PEIE = 1;
+   556                           ;contador_esclavo.c: 86:     INTCONbits.PEIE = 1;
    557  0072  170B               	bsf	11,6	;volatile
    558  0073                     l859:
    559                           
-   560                           ;contador_esclavo.c: 101:     PIR1bits.SSPIF = 0;
+   560                           ;contador_esclavo.c: 87:     PIR1bits.SSPIF = 0;
    561  0073  118C               	bcf	12,3	;volatile
    562  0074                     l861:
    563                           
-   564                           ;contador_esclavo.c: 102:     PIE1bits.SSPIE = 1;
+   564                           ;contador_esclavo.c: 88:     PIE1bits.SSPIE = 1;
    565  0074  1683               	bsf	3,5	;RP0=1, select bank1
    566  0075  1303               	bcf	3,6	;RP1=0, select bank1
    567  0076  158C               	bsf	12,3	;volatile
    568  0077                     l863:
    569                           
-   570                           ;contador_esclavo.c: 103:     TRISAbits.TRISA5 = 1;
+   570                           ;contador_esclavo.c: 89:     TRISAbits.TRISA5 = 1;
    571  0077  1685               	bsf	5,5	;volatile
    572  0078                     l865:
    573                           
-   574                           ;contador_esclavo.c: 105:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK
-      +                          _IDLE_LOW, SPI_IDLE_2_ACTIVE);
+   574                           ;contador_esclavo.c: 91:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_
+      +                          IDLE_LOW, SPI_IDLE_2_ACTIVE);
    575  0078  1283               	bcf	3,5	;RP0=0, select bank0
    576  0079  1303               	bcf	3,6	;RP1=0, select bank0
    577  007A  01A0               	clrf	spiInit@sDataSample
@@ -602,14 +602,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    587  0084                     __ptext2:	
    588 ;; *************** function _spiInit *****************
    589 ;; Defined at:
-   590 ;;		line 109 in file "contador_esclavo.c"
+   590 ;;		line 95 in file "contador_esclavo.c"
    591 ;; Parameters:    Size  Location     Type
-   592 ;;  sType           1    wreg     enum E1292
-   593 ;;  sDataSample     1    0[BANK0 ] enum E1300
-   594 ;;  sClockIdle      1    1[BANK0 ] enum E1304
-   595 ;;  sTransmitEdg    1    2[BANK0 ] enum E1308
+   592 ;;  sType           1    wreg     enum E1264
+   593 ;;  sDataSample     1    0[BANK0 ] enum E1272
+   594 ;;  sClockIdle      1    1[BANK0 ] enum E1276
+   595 ;;  sTransmitEdg    1    2[BANK0 ] enum E1280
    596 ;; Auto vars:     Size  Location     Type
-   597 ;;  sType           1    3[COMMON] enum E1292
+   597 ;;  sType           1    3[COMMON] enum E1264
    598 ;; Return value:  Size  Location     Type
    599 ;;                  1    wreg      void 
    600 ;; Registers used:
@@ -643,14 +643,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    628  0084  00F9               	movwf	spiInit@sType
    629  0085                     l831:
    630                           
-   631                           ;contador_esclavo.c: 109: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_
-      +                          Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge);contador_esclavo.c: 110: {;conta
-      +                          dor_esclavo.c: 111:     TRISC5 = 0;
+   631                           ;contador_esclavo.c: 95: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_C
+      +                          lock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge);contador_esclavo.c: 96: {;contado
+      +                          r_esclavo.c: 97:     TRISC5 = 0;
    632  0085  1683               	bsf	3,5	;RP0=1, select bank1
    633  0086  1303               	bcf	3,6	;RP1=0, select bank1
    634  0087  1287               	bcf	7,5	;volatile
    635                           
-   636                           ;contador_esclavo.c: 112:     if(sType & 0b00000100)
+   636                           ;contador_esclavo.c: 98:     if(sType & 0b00000100)
    637  0088  1D79               	btfss	spiInit@sType,2
    638  0089  288B               	goto	u171
    639  008A  288C               	goto	u170
@@ -659,8 +659,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    642  008C                     u170:
    643  008C                     l833:
    644                           
-   645                           ;contador_esclavo.c: 113:     {;contador_esclavo.c: 114:         SSPSTAT = sTransmitEdge
-      +                          ;
+   645                           ;contador_esclavo.c: 99:     {;contador_esclavo.c: 100:         SSPSTAT = sTransmitEdge;
    646  008C  1283               	bcf	3,5	;RP0=0, select bank0
    647  008D  1303               	bcf	3,6	;RP1=0, select bank0
    648  008E  0822               	movf	spiInit@sTransmitEdge,w
@@ -669,14 +668,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    651  0091  0094               	movwf	20	;volatile
    652  0092                     l835:
    653                           
-   654                           ;contador_esclavo.c: 115:         TRISC3 = 1;
+   654                           ;contador_esclavo.c: 101:         TRISC3 = 1;
    655  0092  1587               	bsf	7,3	;volatile
    656                           
-   657                           ;contador_esclavo.c: 116:     }
+   657                           ;contador_esclavo.c: 102:     }
    658  0093  289C               	goto	l75
    659  0094                     l837:
    660                           
-   661                           ;contador_esclavo.c: 118:     {;contador_esclavo.c: 119:         SSPSTAT = sDataSample |
+   661                           ;contador_esclavo.c: 104:     {;contador_esclavo.c: 105:         SSPSTAT = sDataSample |
       +                           sTransmitEdge;
    662  0094  1283               	bcf	3,5	;RP0=0, select bank0
    663  0095  1303               	bcf	3,6	;RP1=0, select bank0
@@ -687,13 +686,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    668  009A  0094               	movwf	20	;volatile
    669  009B                     l839:
    670                           
-   671                           ;contador_esclavo.c: 120:         TRISC3 = 0;
+   671                           ;contador_esclavo.c: 106:         TRISC3 = 0;
    672  009B  1187               	bcf	7,3	;volatile
    673  009C                     l75:	
-   674                           ;contador_esclavo.c: 121:     }
+   674                           ;contador_esclavo.c: 107:     }
    675                           
    676                           
-   677                           ;contador_esclavo.c: 123:     SSPCON = sType | sClockIdle;
+   677                           ;contador_esclavo.c: 109:     SSPCON = sType | sClockIdle;
    678  009C  0879               	movf	spiInit@sType,w
    679  009D  1283               	bcf	3,5	;RP0=0, select bank0
    680  009E  1303               	bcf	3,6	;RP1=0, select bank0
@@ -707,7 +706,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    688  00A2                     __ptext3:	
    689 ;; *************** function _isr *****************
    690 ;; Defined at:
-   691 ;;		line 45 in file "contador_esclavo.c"
+   691 ;;		line 35 in file "contador_esclavo.c"
    692 ;; Parameters:    Size  Location     Type
    693 ;;		None
    694 ;; Auto vars:     Size  Location     Type
@@ -740,7 +739,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    721  00A2                     _isr:
    722  00A2                     i1l725:
    723                           
-   724                           ;contador_esclavo.c: 46:    if(SSPIF == 1){
+   724                           ;contador_esclavo.c: 36:    if(SSPIF == 1){
    725  00A2  1283               	bcf	3,5	;RP0=0, select bank0
    726  00A3  1303               	bcf	3,6	;RP1=0, select bank0
    727  00A4  1D8C               	btfss	12,3	;volatile
@@ -751,12 +750,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    732  00A8                     u3_20:
    733  00A8                     i1l727:
    734                           
-   735                           ;contador_esclavo.c: 48:         spiWrite(cont);
+   735                           ;contador_esclavo.c: 38:         spiWrite(cont);
    736  00A8  0870               	movf	_cont,w
    737  00A9  120A  118A  20B8  120A  118A  	fcall	_spiWrite
    738  00AE                     i1l729:
    739                           
-   740                           ;contador_esclavo.c: 49:         SSPIF = 0;
+   740                           ;contador_esclavo.c: 39:         SSPIF = 0;
    741  00AE  1283               	bcf	3,5	;RP0=0, select bank0
    742  00AF  1303               	bcf	3,6	;RP1=0, select bank0
    743  00B0  118C               	bcf	12,3	;volatile
@@ -788,7 +787,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    769  00B8                     __ptext4:	
    770 ;; *************** function _spiWrite *****************
    771 ;; Defined at:
-   772 ;;		line 131 in file "contador_esclavo.c"
+   772 ;;		line 117 in file "contador_esclavo.c"
    773 ;; Parameters:    Size  Location     Type
    774 ;;  dat             1    wreg     unsigned char 
    775 ;; Auto vars:     Size  Location     Type
@@ -825,8 +824,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    806  00B8  00F6               	movwf	spiWrite@dat
    807  00B9                     i1l695:
    808                           
-   809                           ;contador_esclavo.c: 131: void spiWrite(char dat);contador_esclavo.c: 132: {;contador_es
-      +                          clavo.c: 133:     SSPBUF = dat;
+   809                           ;contador_esclavo.c: 117: void spiWrite(char dat);contador_esclavo.c: 118: {;contador_es
+      +                          clavo.c: 119:     SSPBUF = dat;
    810  00B9  0876               	movf	spiWrite@dat,w
    811  00BA  1283               	bcf	3,5	;RP0=0, select bank0
    812  00BB  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1002,7 +1001,7 @@ DATA                 0      0       E      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sun Feb 21 22:01:19 2021
+Symbol Table                                                                                   Tue Feb 23 16:12:50 2021
 
             _SSPSTATbits 0094                       l71 0083                       l75 009C  
                      l76 00A1                      l831 0085                      l833 008C  

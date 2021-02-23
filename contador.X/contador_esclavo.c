@@ -21,12 +21,7 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
 
-//*****************************************************************************
-// Definición e importación de librerías
-//*****************************************************************************
 #define _XTAL_FREQ  9000000 //frecuencia
 #include <xc.h>
 #include "PIC16F887.h" //libreria del pic 
@@ -34,42 +29,33 @@
 #include <string.h>            
 #include <stdio.h> 
 #include <stdint.h>
-//*****************************************************************************
-// Definición de funciones para que se puedan colocar después del main de lo 
-// contrario hay que colocarlos todas las funciones antes del main
-//*****************************************************************************
+
 void setup(void);
-//*****************************************************************************
-// Código de Interrupción 
-//*****************************************************************************
+
 void __interrupt() isr(void){
-   if(SSPIF == 1){
-        //PORTD = spiRead(); //esto le escribe al puerto del esclavo
-        spiWrite(cont);
-        SSPIF = 0;
+   if(SSPIF == 1){           //bandera que nos indica cuando el valor ya fue mandado y esta esperando para quelo lea el maestro
+        //PORTD = spiRead(); // le escribe al puerto del esclavo
+        spiWrite(cont);      //mandamos la variable para que sea leida por el maestro
+        SSPIF = 0;           //limpiamos la bandera 
     }
 }
-//*****************************************************************************
-// Código Principal
-//*****************************************************************************
+
 void main(void) {
-    setup();
-    //*************************************************************************
-    // Loop infinito
-    //*************************************************************************
+    setup();                                    //llamamos la funcion setup
+    
     while(1){
-        if (PORTBbits.RB0 == 0){
+        if (PORTBbits.RB0 == 0){                //revisamos el boton para el antirebote 
          estado = 1;
         }
-        if (PORTBbits.RB0 == 1 && estado == 1){ 
+        if (PORTBbits.RB0 == 1 && estado == 1){ //revisamos el boton para aumentar el contador 
          PORTD++;
          cont = cont+1;
          estado = 0;
         }
-         if (PORTBbits.RB1 == 0){
+         if (PORTBbits.RB1 == 0){               //revisamos el boton para el antirebote 
          estado2 = 1;
         }
-        if (PORTBbits.RB1 == 1 && estado2 == 1){ 
+        if (PORTBbits.RB1 == 1 && estado2 == 1){//revisamos el boton para disminuir el contador 
          PORTD--;
          cont = cont-1;        ;
          estado2 = 0;
@@ -81,12 +67,12 @@ void main(void) {
 //*****************************************************************************
 // Función de Inicialización
 //*****************************************************************************
-void setup(void){
+void setup(void){               //funcion setup para los pines 
     
-    ANSEL = 0;
+    ANSEL = 0;                  //puertos digitales 
     ANSELH = 0;
-    
-    TRISB = 0b00000011;
+     
+    TRISB = 0b00000011;         //entradas
     
     TRISB = 0;
     TRISD = 0;
@@ -96,25 +82,25 @@ void setup(void){
     PORTE = 0;
     
     
-    INTCONbits.GIE = 1;         // Habilitamos interrupciones
-    INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
-    PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
-    PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
-    TRISAbits.TRISA5 = 1;       // Slave Select
+    INTCONbits.GIE = 1;         //  interrupciones globales
+    INTCONbits.PEIE = 1;        // interrupciones adc
+    PIR1bits.SSPIF = 0;         // limpiamos la bandera
+    PIE1bits.SSPIE = 1;         // habilitamos la interrupcion para leer los datos que se mandan
+    TRISAbits.TRISA5 = 1;       // escogemos el esclavo
    
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+    //inicializamos la conexion spi
 }
 
-void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge) //funcion spi
 {
     TRISC5 = 0;
-    if(sType & 0b00000100) //If Slave Mode
+    if(sType & 0b00000100) 
     {
         SSPSTAT = sTransmitEdge;
         TRISC3 = 1;
     }
-    else              //If Master Mode
+    else              
     {
         SSPSTAT = sDataSample | sTransmitEdge;
         TRISC3 = 0;
@@ -123,17 +109,17 @@ void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockI
     SSPCON = sType | sClockIdle;
 }
 
-static void spiReceiveWait()
+static void spiReceiveWait()  //funcion para esperar cuando se reciben datos
 {
-    while ( !SSPSTATbits.BF ); // Wait for Data Receive complete
+    while ( !SSPSTATbits.BF ); 
 }
 
-void spiWrite(char dat)  //Write data to SPI bus
+void spiWrite(char dat)  //funcion pra escribir los datos a mndar
 {
     SSPBUF = dat;
 }
 
-unsigned spiDataReady() //Check whether the data is ready to read
+unsigned spiDataReady() //revisar que los datos ya esten cargados
 {
     if(SSPSTATbits.BF)
         return 1;
@@ -141,9 +127,9 @@ unsigned spiDataReady() //Check whether the data is ready to read
         return 0;
 }
 
-char spiRead() //REad the received data
+char spiRead() //leemos los datos que cargamos
 {
-    spiReceiveWait();        // wait until the all bits receive
-    return(SSPBUF); // read the received data from the buffer
+    spiReceiveWait();        
+    return(SSPBUF);
 }
 

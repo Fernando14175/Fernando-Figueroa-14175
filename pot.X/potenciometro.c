@@ -31,35 +31,35 @@
 #include <stdio.h> 
 #include <stdint.h>
 
-void conversion (char puertoANL);
-void config(void);
+void conversion (char puertoANL); //inicializamos la funcion conversion
+void config(void);                //declaramos la funcion de los pines 
 
 
  void __interrupt() ISR(void) {
     
      if (PIR1bits.ADIF ==1){ // configuracion de la interrupcion
         PIR1bits.ADIF = 0;   
-        c = ADRESH; //valor de la conversion     
+        c = ADRESH;          //valor de la conversion     
     }
       if(SSPIF == 1){
         //PORTD = spiRead(); //esto le escribe al puerto del esclavo
-        spiWrite(c);
+        spiWrite(c);         //mandamos el valor de c para que los la el maestro
         SSPIF = 0;
     }
  }
    
 void main(void) {
-    config(); //configuracion de los puertos 
-    Lcd_Init(); //inicializar la lcd 
-    Lcd_Set_Cursor(1,1); //cursor para escribir 
+    config();                     //configuracion de los puertos 
+    Lcd_Init();                   //inicializar la lcd 
+    Lcd_Set_Cursor(1,1);          //cursor para escribir 
     Lcd_Write_String("DIGITAL 2");//escribimos las letras en pantalla
-    Lcd_Set_Cursor(2,1); //cursor para escribir 
+    Lcd_Set_Cursor(2,1);          //cursor para escribir 
     Lcd_Write_String("FernandoFigueroa"); //escribimos las letras en pantalla
     __delay_ms(100); 
-    Lcd_Clear();// limpiamos lo escrito de la lcd 
+    Lcd_Clear();                  // limpiamos lo escrito de la lcd 
     
-     Lcd_Set_Cursor(1,1);  //cursor para escribir       
-     Lcd_Write_String("Volt1"); //escribimos las letras en pantalla
+     Lcd_Set_Cursor(1,1);         //cursor para escribir       
+     Lcd_Write_String("Volt1");   //escribimos las letras en pantalla
      
     
     while(1){
@@ -76,10 +76,10 @@ void conversion(char puertoANL){  //funcion conversion la cual hace la conversio
     if (ADCON0bits.GO_DONE==0 && puertoANL ==0){ // bit de conversion e 0 indicando que no ha empezado y puerto analogico en 0 para determinar cual puerto es el que se utiliza 
         
         vpot1 = (5*c)/255; 
-        sprintf(buffer, "%.3f", vpot1);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
+        sprintf(buffer, "%.3f", vpot1);         // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
         Lcd_Set_Cursor(2,1);        
-        Lcd_Write_String(buffer); //escribimos el valor de buffer el cual contiene el valor del potenciometro 
-        ADCON0bits.GO_DONE=1; //empezamos la conversion del adc 
+        Lcd_Write_String(buffer);               //escribimos el valor de buffer el cual contiene el valor del potenciometro 
+        ADCON0bits.GO_DONE=1;                   //empezamos la conversion del adc 
     }
     
 }    
@@ -109,7 +109,7 @@ void config(void){
     TRISAbits.TRISA5 = 1;       // Slave Select
    
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+    //inicializar la conexon spi
 }
 
 void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
