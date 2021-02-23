@@ -1,10 +1,9 @@
 
-#pragma config FOSC = INTRC_NOCLKOUT //
-
+#define _XTAL_FREQ 8000000
 
 int c;  //inicializamos variable c
 int b;  //inicializamos variable b
-float vpot1; //inicializamos la variable vpot1
+int vpot1; //inicializamos la variable vpot1
 float vpot2; //inicializamos la variable vpot2
 char buffer []; //inicializamos la variable buffer
 
@@ -12,8 +11,6 @@ void config (void); //inicializamos la funcion config
 void Lcd_Set_Cursor(char x, char y); //inicializamos funcion que setea el cursor del lcd 
 void Lcd_Write_String(char *a); //inicializamos funcion que escribe strings en la lcd 
 void Lcd_Write_Char(char a); // inicializamos funcion que escribe chars en la lcd 
-
-
 
 void config (void){  
         

@@ -1,5 +1,5 @@
-#ifndef __SPI_H
-#define	__SPI_H
+#ifndef __LibreriaSPIA_H
+#define	__LibreriaSPIA_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <pic16f887.h>
@@ -36,5 +36,6 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
+
 
 #endif	/* SPI_H */

@@ -5,9 +5,8 @@
  * Created on January 23, 2021, 12:38 PM
  */
 
-//configuracion del programa 
 // CONFIG1
-#pragma config FOSC =HS// Oscillator Selection bits (EC: I/O function on RA6/OSC2/CLKOUT pin, CLKIN on RA7/OSC1/CLKIN)
+#pragma config FOSC = EXTRC_NOCLKOUT// Oscillator Selection bits (RCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -25,54 +24,126 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+//*****************************************************************************
+// Definición e importación de librerías
+//*****************************************************************************
+#define _XTAL_FREQ  9000000 //frecuencia
 #include <xc.h>
-#include "PIC16F887.h"
+#include "PIC16F887.h" //libreria del pic 
+#include "ContadorSPI.h"//libreria qcreada 
+#include <string.h>            
+#include <stdio.h> 
 #include <stdint.h>
-#define _XTAL_FREQ  4000000
-
-int estado = 0;
-int estado2 =0;
-int cont = 0;
-void config (void){
-    ANSEL = 0b00000000;
-    ANSELH = 0b00000000;
-    
-    TRISB = 0b00000011;
-    TRISC = 0b00000000;
-    
-    PORTB = 0b00000000;
-    PORTD = 0b00000000;
-    
-}
-
-
-void main(void) {
-    config();
-    while(1){  
- 
-    if (PORTBbits.RB0 == 0){
-    estado = 1;
+//*****************************************************************************
+// Definición de funciones para que se puedan colocar después del main de lo 
+// contrario hay que colocarlos todas las funciones antes del main
+//*****************************************************************************
+void setup(void);
+//*****************************************************************************
+// Código de Interrupción 
+//*****************************************************************************
+void __interrupt() isr(void){
+   if(SSPIF == 1){
+        //PORTD = spiRead(); //esto le escribe al puerto del esclavo
+        spiWrite(cont);
+        SSPIF = 0;
     }
-    
-    if (PORTBbits.RB0 == 1 && estado == 1){ 
-         PORTC++;
+}
+//*****************************************************************************
+// Código Principal
+//*****************************************************************************
+void main(void) {
+    setup();
+    //*************************************************************************
+    // Loop infinito
+    //*************************************************************************
+    while(1){
+        if (PORTBbits.RB0 == 0){
+         estado = 1;
+        }
+        if (PORTBbits.RB0 == 1 && estado == 1){ 
+         PORTD++;
+         cont = cont+1;
          estado = 0;
         }
-    
-    if (PORTBbits.RB1 == 0){
-    estado2 = 1;
-    }
-    
-    if (PORTBbits.RB1 == 1 && estado2 == 1){ 
-         PORTC--;
+         if (PORTBbits.RB1 == 0){
+         estado2 = 1;
+        }
+        if (PORTBbits.RB1 == 1 && estado2 == 1){ 
+         PORTD--;
+         cont = cont-1;        ;
          estado2 = 0;
         }
-        
-     }
-      return; 
-         
-   }
+    }
+    
+    return;
+}
+//*****************************************************************************
+// Función de Inicialización
+//*****************************************************************************
+void setup(void){
+    
+    ANSEL = 0;
+    ANSELH = 0;
+    
+    TRISB = 0b00000011;
+    
+    TRISB = 0;
+    TRISD = 0;
+    
+    PORTB = 0;
+    PORTD = 0;
+    PORTE = 0;
+    
+    
+    INTCONbits.GIE = 1;         // Habilitamos interrupciones
+    INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
+    PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1;       // Slave Select
+   
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
+}
 
- 
- 
+void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+{
+    TRISC5 = 0;
+    if(sType & 0b00000100) //If Slave Mode
+    {
+        SSPSTAT = sTransmitEdge;
+        TRISC3 = 1;
+    }
+    else              //If Master Mode
+    {
+        SSPSTAT = sDataSample | sTransmitEdge;
+        TRISC3 = 0;
+    }
+    
+    SSPCON = sType | sClockIdle;
+}
+
+static void spiReceiveWait()
+{
+    while ( !SSPSTATbits.BF ); // Wait for Data Receive complete
+}
+
+void spiWrite(char dat)  //Write data to SPI bus
+{
+    SSPBUF = dat;
+}
+
+unsigned spiDataReady() //Check whether the data is ready to read
+{
+    if(SSPSTATbits.BF)
+        return 1;
+    else
+        return 0;
+}
+
+char spiRead() //REad the received data
+{
+    spiReceiveWait();        // wait until the all bits receive
+    return(SSPBUF); // read the received data from the buffer
+}
+

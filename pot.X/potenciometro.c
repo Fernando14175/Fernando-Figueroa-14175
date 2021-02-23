@@ -31,15 +31,20 @@
 #include <stdio.h> 
 #include <stdint.h>
 
-
 void conversion (char puertoANL);
+void config(void);
+
 
  void __interrupt() ISR(void) {
     
      if (PIR1bits.ADIF ==1){ // configuracion de la interrupcion
         PIR1bits.ADIF = 0;   
-        c = ADRESH; //valor de la conversion 
-        
+        c = ADRESH; //valor de la conversion     
+    }
+      if(SSPIF == 1){
+        //PORTD = spiRead(); //esto le escribe al puerto del esclavo
+        spiWrite(c);
+        SSPIF = 0;
     }
  }
    
@@ -70,7 +75,7 @@ void conversion(char puertoANL){  //funcion conversion la cual hace la conversio
     ADCON0bits.CHS = puertoANL;   
     if (ADCON0bits.GO_DONE==0 && puertoANL ==0){ // bit de conversion e 0 indicando que no ha empezado y puerto analogico en 0 para determinar cual puerto es el que se utiliza 
         
-        vpot1 = (5*c)/255; //valor del voltaje del potenciometo
+        vpot1 = (5*c)/255; 
         sprintf(buffer, "%.3f", vpot1);  // convertimos el valor del pot a le tras para que pueda ser impreso en la pantalla
         Lcd_Set_Cursor(2,1);        
         Lcd_Write_String(buffer); //escribimos el valor de buffer el cual contiene el valor del potenciometro 
@@ -78,4 +83,73 @@ void conversion(char puertoANL){  //funcion conversion la cual hace la conversio
     }
     
 }    
+
+void config(void){
+    ANSEL =  0b0000000;   //puerto a digital               
+    ANSELH = 0b0000000;  //pueto a digital 
+     
+    TRISA = 0b00000001; //ponemos el puerto a en 0 con dos entradas analogicas               
+    TRISB = 0b00000000; //ponemos el puerto b en 0             
+    TRISD = 0b00000000; //ponemos el puerto d en 0    
+    
+    ANSELbits.ANS0 = 1;     //entrada anlogica    AN0
+    ANSELbits.ANS1 = 1;     //entrada anlogica    AN1
+          
+    
+    ADCON0bits.ADON=1;     //encendemos el adc           
+    ADCON1bits.ADFM=0;     //justificacion de bits            
+    
+    INTCONbits.GIE = 1;      //interrupciones globales    
+    INTCONbits.PEIE = 1;     //interrupciones perifericas 
+
+    PIE1bits.ADIE = 1;          //interrupciones del ADC de conversion
+    PIR1bits.ADIF = 0;          //interrupciones del adc 
+    PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1;       // Slave Select
+   
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
+}
+
+void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+{
+    TRISC5 = 0;
+    if(sType & 0b00000100) //If Slave Mode
+    {
+        SSPSTAT = sTransmitEdge;
+        TRISC3 = 1;
+    }
+    else              //If Master Mode
+    {
+        SSPSTAT = sDataSample | sTransmitEdge;
+        TRISC3 = 0;
+    }
+    
+    SSPCON = sType | sClockIdle;
+}
+
+static void spiReceiveWait()
+{
+    while ( !SSPSTATbits.BF ); // Wait for Data Receive complete
+}
+
+void spiWrite(char dat)  //Write data to SPI bus
+{
+    SSPBUF = dat;
+}
+
+unsigned spiDataReady() //Check whether the data is ready to read
+{
+    if(SSPSTATbits.BF)
+        return 1;
+    else
+        return 0;
+}
+
+char spiRead() //REad the received data
+{
+    spiReceiveWait();        // wait until the all bits receive
+    return(SSPBUF); // read the received data from the buffer
+}
 

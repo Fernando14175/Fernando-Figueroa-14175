@@ -1,44 +1,20 @@
 
-#pragma config FOSC = INTRC_NOCLKOUT //
+#ifndef __ContadorSPI_H
+#define	__ContadorSPI_H
 
+#include <xc.h> // include processor files - each processor file is guarded.  
 
-int c;  //inicializamos variable c
-int b;  //inicializamos variable b
-float vpot1; //inicializamos la variable vpot1
-float vpot2; //inicializamos la variable vpot2
-char buffer []; //inicializamos la variable buffer
-
-void config (void); //inicializamos la funcion config
+void spiWrite(char);
+unsigned spiDataReady();
 void Lcd_Set_Cursor(char x, char y); //inicializamos funcion que setea el cursor del lcd 
 void Lcd_Write_String(char *a); //inicializamos funcion que escribe strings en la lcd 
 void Lcd_Write_Char(char a); // inicializamos funcion que escribe chars en la lcd 
 
+int c;  //inicializamos variable c
+float vpot1; //inicializamos la variable vpot1
+char buffer []; //inicializamos la variable buffer
+char spiRead();
 
-
-void config (void){  
-        
-    ANSEL = 0b0000000;   //puerto a digital               
-    ANSELH = 0b0000000;  //pueto a digital 
-     
-    TRISA = 0b00000011; //ponemos el puerto a en 0 con dos entradas analogicas               
-    TRISB = 0b00000000; //ponemos el puerto b en 0             
-    TRISD = 0b00000000; //ponemos el puerto d en 0    
-    
-    ANSELbits.ANS0 = 1;     //entrada anlogica    AN0
-    ANSELbits.ANS1 = 1;     //entrada anlogica    AN1
-          
-    
-    ADCON0bits.ADON=1;     //encendemos el adc           
-    ADCON1bits.ADFM=0;     //justificacion de bits            
-    
-    INTCONbits.GIE = 1;      //interrupciones globales    
-    INTCONbits.PEIE = 1;     //interrupciones perifericas 
-
-    PIE1bits.ADIE = 1;          //interrupciones del ADC de conversion
-    PIR1bits.ADIF = 0;          //interrupciones del adc 
-
- 
-}
 
 void Lcd_Cmd(char a){       //se cargan los comandos a la lcd para inicializacion asi como para limpiar la lcd 
 	PORTDbits.RD2 =0;       //ponemos en 0 para poder escribir valores a la lcd 
@@ -105,5 +81,36 @@ void Lcd_Init(){
     Lcd_Cmd(0x01);     // utilizamos el conamdo 0x01         
     Lcd_Cmd(0x06);     // utilizamos el conamdo 0x06         
     Lcd_Cmd(0x0F);      // utilizamos el conamdo 0x0         
-   
 }
+
+typedef enum 
+{
+    SPI_MASTER_OSC_DIV4  = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2      = 0b00100011,
+    SPI_SLAVE_SS_EN      = 0b00100100,
+    SPI_SLAVE_SS_DIS     = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE   = 0b00000000,
+    SPI_DATA_SAMPLE_END      = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH  = 0b00010000,
+    SPI_CLOCK_IDLE_LOW   = 0b00000000        
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE    = 0b00000000,
+    SPI_ACTIVE_2_IDLE    = 0b01000000
+}Spi_Transmit_Edge;
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+
+#endif	/* SPI_H */
