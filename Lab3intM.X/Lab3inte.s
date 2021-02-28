@@ -15,11 +15,13 @@ PROCESSOR 16F887
     ;configuration word 1
     CONFIG WRT = OFF
     CONFIG BOR4V=BOR40V
+    contarriba EQU 0
     
 PSECT udata_bank0 
     
   CONT1: ds 1 
   CONT2: ds 1
+  
 
 PSECT udata_shr 
   STATUS_TEMP: DS 1
@@ -42,9 +44,12 @@ ORG 04h
     
  isr:
     btfsc  RBIF 
-    call   int_rb 
+    call   PuertoA
     
+    btfsc  T0IF 
+    call   timerint
     
+
  pop:
     SWAPF STATUS_TEMP, W
     MOVWF STATUS 
@@ -52,14 +57,18 @@ ORG 04h
     SWAPF W_TEMP, W
     RETFIE
  ;---------------interrupcion----------------------------
- int_rb:
-    btfss  PORTB, 7
+ PuertoA:
+    btfss  PORTB, 1
     incf   PORTA
     btfss  PORTB, 0
     decf   PORTA
     movf   PORTB, W 
     bcf    RBIF
     return
+ 
+ timerint:
+   incf  PORTD          //incrementamos el puertob
+   return
  
     
 PSECT code, delta = 2, abs 
@@ -69,22 +78,30 @@ PSECT code, delta = 2, abs
     
 main:    
      
-      /*call frecuencia	    //llamamos la funcion frecuencia
-      call timer0	    //llamamos la funcion timer0
-      btfss T0IF            //llamamos la funcion T0IF
-      goto  $-1
-      call  empezar         //llamamos la funcion empezar
-      incf  PORTD          //incrementamos el puertob*/
       call SETUP
-      call rbioc 
+      call rbioc     
+   
+      
                //vamos al main
 ;--------------------Interrupcion----------------------
-loop: 
-    call DELAY
-    goto loop
+loop:
+        //llamamos la rutina comparar
+    call frecuencia	    //llamamos la funcion frecuencia
+    call timer0	    //llamamos la funcion timer0
+    btfss T0IF            //llamamos la funcion T0IF
+    goto  $-1
+    call  empezar         //llamamos la funcion empezar
+    incf  contarriba          //incrementamos el puertob 
+    movf  contarriba, W
+    call  display
+    movwf PORTD
+    movf  PORTA, W
+    call  display
+    movwf PORTC
+    goto  loop
 rbioc: 
     banksel TRISA
-    movlw   10000001B
+    movlw   00000011B
     movwf   IOCB 
     
     banksel PORTB
@@ -113,44 +130,68 @@ SETUP:
     bsf TRISB, 3
     bsf TRISB, 7
     
+    bcf TRISC, 0
+    bcf TRISC, 1
+    bcf TRISC, 2
+    bcf TRISC, 3
+    bcf TRISC, 4
+    bcf TRISC, 5
+    bcf TRISC, 6
+    bcf TRISC, 7
+    
+    bcf TRISD, 0
+    bcf TRISD, 1
+    bcf TRISD, 2
+    bcf TRISD, 3
+    bcf TRISD, 4
+    bcf TRISD, 5
+    bcf TRISD, 6
+    bcf TRISD, 7
+    
+    
+    
     bcf   OPTION_REG, 7 //encendemos el bit del pull up 
-    movlw 0xff
+    movlw 11111111B
     movwf WPUB
     
     
     banksel PORTA
-    clrf PORTA  
+    clrf PORTA 
+    clrf PORTC
+    clrf PORTD
     return
   
 ;--------------------Tabla----------------------
     
-/*display:
+display:
    CLRF  PCLATH              ;limpiamos el registro
-   bsf   PCLATH, 0           ;ponemos en 1 el bit 0 del registro
+   bsf   PCLATH, 0 ;ponemos en 1 el bit 0 del registro
+   andlw 00001111B
    ADDWF PCL                 ;sumamos 1 al pcl para poder determinar que sale ne l display
-   RETLW 0000B ;numero_0
-   RETLW 1000B ;numero_1
-   RETLW 0100B ;numero_2
-   RETLW 1100B ;numero_3
-   RETLW 0010B ;numero_4
-   RETLW 1010B ;numero_5
-   RETLW 0110B ;numero_6
-   RETLW 1110B ;numero_7
-   RETLW 0001B ;numero_8
-   RETLW 1001B ;numero_9
-   RETLW 0101B ;numero_A
-   RETLW 1101B ;numero_B
-   RETLW 0011B ;numero_C
-   RETLW 1011B ;numero_D
-   RETLW 0111B ;numero_E
-   RETLW 1111B ;numero_F
-   return*/
-    
+   RETLW 00111111B ;numero_0
+   RETLW 00000110B ;numero_1
+   RETLW 01011011B ;numero_2
+   RETLW 01001111B ;numero_3
+   RETLW 01100110B ;numero_4
+   RETLW 01101101B ;numero_5
+   RETLW 01111101B ;numero_6
+   RETLW 00000111B ;numero_7
+   RETLW 01111111B ;numero_8
+   RETLW 01101111B ;numero_9
+   RETLW 01110111B ;numero_A
+   RETLW 01111100B ;numero_B
+   RETLW 00111001B ;numero_C
+   RETLW 01011110B ;numero_D
+   RETLW 01111001B ;numero_E
+   RETLW 01110001B ;numero_F
+   return
+   
+  
 ;-----------Configuraciones timer y oscilador-----------------
 
  
     
-/*timer0:
+timer0:
     banksel OPTION_REG //nos vamos al banko 1
     bcf     T0CS //escogemos los valores del timer
     bcf     PSA
@@ -174,7 +215,7 @@ SETUP:
     movlw   226  //movemos la literal al timer 0
     movwf   TMR0
     bcf     T0IF
-    return*/
+    return
     
 ;-----------------------------Alarma---------------------------
 

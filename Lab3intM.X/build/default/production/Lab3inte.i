@@ -2464,11 +2464,13 @@ ENDM
     ;configuration word 1
     CONFIG WRT = OFF
     CONFIG BOR4V=BOR40V
+    contarriba EQU 0
 
 PSECT udata_bank0
 
   CONT1: ds 1
   CONT2: ds 1
+
 
 PSECT udata_shr
   STATUS_TEMP: DS 1
@@ -2491,7 +2493,10 @@ ORG 04h
 
  isr:
     btfsc ((INTCON) and 07Fh), 0
-    call int_rb
+    call PuertoA
+
+    btfsc ((INTCON) and 07Fh), 2
+    call timerint
 
 
  pop:
@@ -2501,14 +2506,18 @@ ORG 04h
     SWAPF W_TEMP, W
     RETFIE
  ;---------------interrupcion----------------------------
- int_rb:
-    btfss PORTB, 7
+ PuertoA:
+    btfss PORTB, 1
     incf PORTA
     btfss PORTB, 0
     decf PORTA
     movf PORTB, W
     bcf ((INTCON) and 07Fh), 0
     return
+
+ timerint:
+   incf PORTD
+   return
 
 
 PSECT code, delta = 2, abs
@@ -2518,22 +2527,30 @@ PSECT code, delta = 2, abs
 
 main:
 
-
-
-
-
-
-
       call SETUP
       call rbioc
 
+
+
 ;--------------------Interrupcion----------------------
 loop:
-    call DELAY
+
+    call frecuencia
+    call timer0
+    btfss ((INTCON) and 07Fh), 2
+    goto $-1
+    call empezar
+    incf contarriba
+    movf contarriba, W
+    call display
+    movwf PORTD
+    movf PORTA, W
+    call display
+    movwf PORTC
     goto loop
 rbioc:
     banksel TRISA
-    movlw 10000001B
+    movlw 00000011B
     movwf IOCB
 
     banksel PORTB
@@ -2562,19 +2579,93 @@ SETUP:
     bsf TRISB, 3
     bsf TRISB, 7
 
+    bcf TRISC, 0
+    bcf TRISC, 1
+    bcf TRISC, 2
+    bcf TRISC, 3
+    bcf TRISC, 4
+    bcf TRISC, 5
+    bcf TRISC, 6
+    bcf TRISC, 7
+
+    bcf TRISD, 0
+    bcf TRISD, 1
+    bcf TRISD, 2
+    bcf TRISD, 3
+    bcf TRISD, 4
+    bcf TRISD, 5
+    bcf TRISD, 6
+    bcf TRISD, 7
+
+
+
     bcf OPTION_REG, 7
-    movlw 0xff
+    movlw 11111111B
     movwf WPUB
 
 
     banksel PORTA
     clrf PORTA
+    clrf PORTC
+    clrf PORTD
     return
 
 ;--------------------Tabla----------------------
-# 149 "Lab3inte.s"
+
+display:
+   CLRF PCLATH ;limpiamos el registro
+   bsf PCLATH, 0 ;ponemos en 1 el bit 0 del registro
+   andlw 00001111B
+   ADDWF PCL ;sumamos 1 al pcl para poder determinar que sale ne l display
+   RETLW 00111111B ;numero_0
+   RETLW 00000110B ;numero_1
+   RETLW 01011011B ;numero_2
+   RETLW 01001111B ;numero_3
+   RETLW 01100110B ;numero_4
+   RETLW 01101101B ;numero_5
+   RETLW 01111101B ;numero_6
+   RETLW 00000111B ;numero_7
+   RETLW 01111111B ;numero_8
+   RETLW 01101111B ;numero_9
+   RETLW 01110111B ;numero_A
+   RETLW 01111100B ;numero_B
+   RETLW 00111001B ;numero_C
+   RETLW 01011110B ;numero_D
+   RETLW 01111001B ;numero_E
+   RETLW 01110001B ;numero_F
+   return
+
+
 ;-----------Configuraciones timer y oscilador-----------------
-# 179 "Lab3inte.s"
+
+
+
+timer0:
+    banksel OPTION_REG
+    bcf ((OPTION_REG) and 07Fh), 5
+    bcf ((OPTION_REG) and 07Fh), 3
+    bsf ((OPTION_REG) and 07Fh), 2
+    bsf ((OPTION_REG) and 07Fh), 1
+    bcf ((OPTION_REG) and 07Fh), 0
+    banksel PORTA
+    call empezar
+    return
+
+ frecuencia:
+    banksel OSCCON
+    bcf ((OSCCON) and 07Fh), 4
+    bcf ((OSCCON) and 07Fh), 5
+    bcf ((OSCCON) and 07Fh), 6
+    bsf ((OSCCON) and 07Fh), 0
+    return
+
+
+ empezar:
+    movlw 226
+    movwf TMR0
+    bcf ((INTCON) and 07Fh), 2
+    return
+
 ;-----------------------------Alarma---------------------------
 
 DELAY:
