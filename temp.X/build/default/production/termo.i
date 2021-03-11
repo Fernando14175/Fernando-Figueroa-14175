@@ -2897,142 +2897,30 @@ typedef uint16_t uintptr_t;
 # 32 "termo.c" 2
 
 
-void conversion (char puertoANL);
-void config(void);
-
-
- void __attribute__((picinterrupt(("")))) ISR(void) {
-
-     if (PIR1bits.ADIF ==1){
-        PIR1bits.ADIF = 0;
-        cc = ADRESH;
-    }
-      if(SSPIF == 1){
-
-        spiWrite(cc);
-        SSPIF = 0;
-    }
- }
+void config (void);
 
 void main(void) {
     config();
-    Lcd_Init();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("DIGITAL 2");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("FernandoFigueroa");
-    _delay((unsigned long)((100)*(9000000/4000.0)));
-    Lcd_Clear();
-
-     Lcd_Set_Cursor(1,1);
-     Lcd_Write_String("Temp");
-
 
     while(1){
 
-        conversion(0);
+       PORTEbits.RE0=1;
+       PORTEbits.RE1=1;
+       PORTEbits.RE2=1;
 
     }
 }
 
-
-void conversion(char puertoANL){
-
-    ADCON0bits.CHS = puertoANL;
-    if (ADCON0bits.GO_DONE==0 && puertoANL ==0){
-
-        temp = (cc*5.0/255)*100;
-        if (temp < 24){
-            PORTEbits.RE0 = 1;
-            PORTEbits.RE1 = 0;
-            PORTEbits.RE2 = 0;
-        }
-        if(temp > 25 && temp < 35){
-            PORTEbits.RE0 = 0;
-            PORTEbits.RE1 = 1;
-            PORTEbits.RE2 = 0;
-        }
-        if(temp > 36){
-            PORTEbits.RE0 = 0;
-            PORTEbits.RE1 = 0;
-            PORTEbits.RE2 = 1;
-        }
-        sprintf(bufferr, "%.3f", temp);
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String(bufferr);
-        ADCON0bits.GO_DONE=1;
-    }
-
-}
 
 void config(void){
     ANSEL = 0b0000000;
     ANSELH = 0b0000000;
 
-    TRISA = 0b00000001;
-    TRISB = 0b00000000;
-    TRISD = 0b00000000;
+
     TRISE = 0b000;
 
     PORTE = 0;
 
-    ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
 
 
-    ADCON0bits.ADON=1;
-    ADCON1bits.ADFM=0;
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-
-    PIE1bits.ADIE = 1;
-    PIR1bits.ADIF = 0;
-    PIR1bits.SSPIF = 0;
-    PIE1bits.SSPIE = 1;
-    TRISAbits.TRISA5 = 1;
-
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
-}
-
-void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
-{
-    TRISC5 = 0;
-    if(sType & 0b00000100)
-    {
-        SSPSTAT = sTransmitEdge;
-        TRISC3 = 1;
-    }
-    else
-    {
-        SSPSTAT = sDataSample | sTransmitEdge;
-        TRISC3 = 0;
-    }
-
-    SSPCON = sType | sClockIdle;
-}
-
-static void spiReceiveWait()
-{
-    while ( !SSPSTATbits.BF );
-}
-
-void spiWrite(char dat)
-{
-    SSPBUF = dat;
-}
-
-unsigned spiDataReady()
-{
-    if(SSPSTATbits.BF)
-        return 1;
-    else
-        return 0;
-}
-
-char spiRead()
-{
-    spiReceiveWait();
-    return(SSPBUF);
 }

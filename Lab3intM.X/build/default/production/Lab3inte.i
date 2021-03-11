@@ -2464,12 +2464,14 @@ ENDM
     ;configuration word 1
     CONFIG WRT = OFF
     CONFIG BOR4V=BOR40V
-    contarriba EQU 0
+
 
 PSECT udata_bank0
+  var: ds 1
+  banderas: ds 1
+  nibble: ds 2
+  display_var: ds 2
 
-  CONT1: ds 1
-  CONT2: ds 1
 
 
 PSECT udata_shr
@@ -2487,135 +2489,56 @@ PSECT intVect, class = CODE,abs, delta = 2
 ORG 04h
 
  push:
-    MOVWF W_TEMP
+    MOVWF W_TEMP ;interrupciones
     SWAPF STATUS, W
     MOVWF STATUS_TEMP
 
  isr:
-    btfsc ((INTCON) and 07Fh), 0
-    call PuertoA
-
     btfsc ((INTCON) and 07Fh), 2
-    call timerint
+    call int_t0
+
 
 
  pop:
-    SWAPF STATUS_TEMP, W
+    SWAPF STATUS_TEMP
     MOVWF STATUS
     SWAPF W_TEMP, F
     SWAPF W_TEMP, W
     RETFIE
- ;---------------interrupcion----------------------------
- PuertoA:
-    btfss PORTB, 1
-    incf PORTA
-    btfss PORTB, 0
-    decf PORTA
-    movf PORTB, W
-    bcf ((INTCON) and 07Fh), 0
-    return
 
- timerint:
-   incf PORTD
-   return
+int_t0:
+    movlw 61
+    movwf TMR0
+    bcf ((INTCON) and 07Fh), 2
+    clrf PORTD
+    btfsc banderas, 0
+    goto display_1
+    ;goto display_0
+
+display_0:
+    movf display_var+0, W
+    movwf PORTC
+    bsf PORTD, 0
+    goto siguiente_display
+
+display_1:
+    movf display_var+1, W
+    movwf PORTC
+    bsf PORTD, 1
+
+siguiente_display:
+    movlw 1
+    xorwf banderas, F
+    return
 
 
 PSECT code, delta = 2, abs
  ORG 100h
 
-;-----------Main-----------------
-
-main:
-
-      call SETUP
-      call rbioc
-
-
-
-;--------------------Interrupcion----------------------
-loop:
-
-    call frecuencia
-    call timer0
-    btfss ((INTCON) and 07Fh), 2
-    goto $-1
-    call empezar
-    incf contarriba
-    movf contarriba, W
-    call display
-    movwf PORTD
-    movf PORTA, W
-    call display
-    movwf PORTC
-    goto loop
-rbioc:
-    banksel TRISA
-    movlw 00000011B
-    movwf IOCB
-
-    banksel PORTB
-    movf PORTB, W
-    bcf ((INTCON) and 07Fh), 0
-    bsf ((INTCON) and 07Fh), 7
-    bsf ((INTCON) and 07Fh), 3
-    return
-
-SETUP:
-    banksel ANSEL
-    CLRF ANSEL ;entradas digitales
-    CLRF ANSELH ;entradas digitales
-
-
-   banksel TRISA
-
-    bcf TRISA, 0
-    bcf TRISA, 1
-    bcf TRISA, 2
-    bcf TRISA, 3
-
-    bsf TRISB, 0
-    bsf TRISB, 1
-    bsf TRISB, 2
-    bsf TRISB, 3
-    bsf TRISB, 7
-
-    bcf TRISC, 0
-    bcf TRISC, 1
-    bcf TRISC, 2
-    bcf TRISC, 3
-    bcf TRISC, 4
-    bcf TRISC, 5
-    bcf TRISC, 6
-    bcf TRISC, 7
-
-    bcf TRISD, 0
-    bcf TRISD, 1
-    bcf TRISD, 2
-    bcf TRISD, 3
-    bcf TRISD, 4
-    bcf TRISD, 5
-    bcf TRISD, 6
-    bcf TRISD, 7
-
-
-
-    bcf OPTION_REG, 7
-    movlw 11111111B
-    movwf WPUB
-
-
-    banksel PORTA
-    clrf PORTA
-    clrf PORTC
-    clrf PORTD
-    return
-
-;--------------------Tabla----------------------
-
-display:
+ display:
    CLRF PCLATH ;limpiamos el registro
    bsf PCLATH, 0 ;ponemos en 1 el bit 0 del registro
-   andlw 00001111B
+   andlw 0x0f ;evitamos que el display se pase del numero que queremos
    ADDWF PCL ;sumamos 1 al pcl para poder determinar que sale ne l display
    RETLW 00111111B ;numero_0
    RETLW 00000110B ;numero_1
@@ -2633,54 +2556,75 @@ display:
    RETLW 01011110B ;numero_D
    RETLW 01111001B ;numero_E
    RETLW 01110001B ;numero_F
-   return
 
 
-;-----------Configuraciones timer y oscilador-----------------
+main:
+      call SETUP ;llamamos la configuracion del pic
+      call config_reloj
+      call config_tmr0_ie
+      banksel PORTA
 
+loop:
+     movlw 0xF9
+     movwf var
+     call separar_nibbles
+     call preparar_displays
+     goto loop ;regresamos al loop
 
+separar_nibbles:
+    movf var,W
+    andlw 0x0f
+    movwf nibble
+    swapf var, W
+    andlw 0x0f
+    movwf nibble+1
+    return
 
-timer0:
-    banksel OPTION_REG
+preparar_displays:
+    movf nibble, W
+    call display
+    movwf display_var
+    movf nibble+1, W
+    call display
+    movwf display_var+1
+    return
+
+SETUP:
+    banksel ANSEL
+    clrf ANSEL
+    clrf ANSELH
+
+    banksel TRISA
+    clrf TRISC
+    bcf TRISD, 0
+    bcf TRISD, 1
+
+    banksel PORTA
+    clrf PORTC
+    clrf PORTD
+    return
+
+config_reloj:
+    banksel OSCCON
+    bsf ((OSCCON) and 07Fh), 6
+    bsf ((OSCCON) and 07Fh), 5
+    bcf ((OSCCON) and 07Fh), 4
+    bsf ((OSCCON) and 07Fh), 0
+    return
+
+config_tmr0_ie:
+    banksel TRISA
     bcf ((OPTION_REG) and 07Fh), 5
     bcf ((OPTION_REG) and 07Fh), 3
     bsf ((OPTION_REG) and 07Fh), 2
     bsf ((OPTION_REG) and 07Fh), 1
-    bcf ((OPTION_REG) and 07Fh), 0
+    bsf ((OPTION_REG) and 07Fh), 0
     banksel PORTA
-    call empezar
-    return
-
- frecuencia:
-    banksel OSCCON
-    bcf ((OSCCON) and 07Fh), 4
-    bcf ((OSCCON) and 07Fh), 5
-    bcf ((OSCCON) and 07Fh), 6
-    bsf ((OSCCON) and 07Fh), 0
-    return
-
-
- empezar:
-    movlw 226
+    movlw 61
     movwf TMR0
     bcf ((INTCON) and 07Fh), 2
+    bsf ((INTCON) and 07Fh), 7
+    bsf ((INTCON) and 07Fh), 5
+    bcf ((INTCON) and 07Fh), 2
     return
-
-;-----------------------------Alarma---------------------------
-
-DELAY:
-
-    MOVLW 0Xfa
-    MOVWF CONT1
-    MOVLW 0X0d
-    MOVWF CONT2
-
-LOOP:
-    DECFSZ CONT1, 1
-    GOTO LOOP
-    DECFSZ CONT2, 1
-    GOTO LOOP
-    NOP
-RETURN
-
 END
